@@ -1,0 +1,1 @@
+- Make top down camera follow character
