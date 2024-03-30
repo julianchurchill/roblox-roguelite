@@ -1,2 +1,1 @@
-- [ ] Stop camera from jumping with character
 - [x] Make top down camera follow character
