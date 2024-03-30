@@ -1,1 +1,5 @@
+- [ ] move camera to centre player better
+- [ ] pick things up from floor
+- [ ] show inventory
+- [ ] create a static map to move around
 - [x] Make top down camera follow character
