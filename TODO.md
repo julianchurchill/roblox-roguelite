@@ -1,4 +1,3 @@
-- [ ] move camera to centre player better, allow more zoom out
 - [ ] pick things up from floor, coins
 - [ ] track coins and show in UI, save between games
 - [ ] doors that can open and close
@@ -11,6 +10,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] move camera to centre player better, allow more zoom out
 - [x] create a static map to move around, low walls and stone floor
 - [x] disable jumping
 - [x] Make top down camera follow character

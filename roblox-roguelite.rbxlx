@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-22.4848938</X>
-					<Y>35.9706993</Y>
-					<Z>54.3613434</Z>
-					<R00>0.999999881</R00>
-					<R01>0.000338224199</R01>
-					<R02>-0.000545501593</R02>
-					<R10>-0</R10>
-					<R11>0.84989363</R11>
-					<R12>0.526954532</R12>
-					<R20>0.000641847029</R20>
-					<R21>-0.526954472</R21>
-					<R22>0.849893391</R22>
+					<X>-32.2334518</X>
+					<Y>24.8615341</Y>
+					<Z>18.1096935</Z>
+					<R00>0.9795748</R00>
+					<R01>-0.117338762</R01>
+					<R02>0.163293853</R02>
+					<R10>7.4505806e-09</R10>
+					<R11>0.812083125</R11>
+					<R12>0.58354193</R12>
+					<R20>-0.201080248</R20>
+					<R21>-0.571622968</R21>
+					<R22>0.795496106</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-22.4838028</X>
-					<Y>34.91679</Y>
-					<Z>52.6615562</Z>
+					<X>-32.5600395</X>
+					<Y>23.6944504</Y>
+					<Z>16.5187016</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -4635,16 +4635,26 @@ gP+A/4D/gP+A/w==]]></BinaryString>
 local char = script.Parent or game.Players.LocalPlayer.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
-local distance = 15
+local initialDistance = 20
+local distance = initialDistance
 
-local minDistance = 5
-local maxDistance = 20
+local minDistance = 15
+local maxDistance = 30
+
+local minCameraAngleRadians = 65
+local maxCameraAngleRadians = 85
 
 local RunService = game:GetService("RunService")
 
 camera.CameraType = Enum.CameraType.Scriptable
 RunService.RenderStepped:Connect(function()
-    camera.CFrame = CFrame.new(hrp.Position + (hrp.CFrame.UpVector * distance)) * CFrame.Angles(math.rad(-70), 0, 0)
+	local backCameraOffset = Vector3.new(0, 0, 5);
+	local upCameraOffset = hrp.CFrame.UpVector * distance;
+	local distanceAsProportionOfFullDistance = (distance - minDistance) / (maxDistance - minDistance);
+	local cameraAngleRange = maxCameraAngleRadians - minCameraAngleRadians;
+	local cameraAngleInRadians = minCameraAngleRadians + cameraAngleRange * distanceAsProportionOfFullDistance;
+	local cameraAngle = CFrame.Angles(math.rad(-cameraAngleInRadians), 0, 0);
+    camera.CFrame = CFrame.new(hrp.Position + upCameraOffset + backCameraOffset) * cameraAngle
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
