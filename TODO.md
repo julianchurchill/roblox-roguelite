@@ -1,7 +1,7 @@
-- [ ] create a static map to move around, low walls and stone floor
-- [ ] move camera to centre player better
+- [ ] move camera to centre player better, allow more zoom out
 - [ ] pick things up from floor, coins
 - [ ] track coins and show in UI, save between games
+- [ ] doors that can open and close
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
 - [ ] teleport to any reached dungeon level
@@ -11,5 +11,6 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] create a static map to move around, low walls and stone floor
 - [x] disable jumping
 - [x] Make top down camera follow character
