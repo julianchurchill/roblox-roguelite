@@ -1,5 +1,14 @@
+- [ ] disable jumping
+- [ ] create a static map to move around, low walls and stone floor
 - [ ] move camera to centre player better
-- [ ] pick things up from floor
+- [ ] pick things up from floor, coins
+- [ ] track coins and show in UI, save between games
+- [ ] starting location - town
+- [ ] reveal dungeon by exploration
+- [ ] teleport to any reached dungeon level
+- [ ] portal back to town when not fighting
+- [ ] xp from killing monsters, show in UI
+- [ ] dungeons regnerate after leaving server
+- [ ] can force regeneration of dungeon levels
 - [ ] show inventory
-- [ ] create a static map to move around
 - [x] Make top down camera follow character
