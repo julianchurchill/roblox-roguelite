@@ -11,7 +11,7 @@ local RunService = game:GetService("RunService")
 
 camera.CameraType = Enum.CameraType.Scriptable
 RunService.RenderStepped:Connect(function()
-    camera.CFrame = CFrame.new(hrp.Position + (hrp.CFrame.UpVector * distance)) * CFrame.Angles(math.rad(-70), 0, 0)
+    camera.CFrame = CFrame.new(hrp.Position + (hrp.CFrame.UpVector * distance)) * CFrame.Angles(math.rad(-80), 0, 0)
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
