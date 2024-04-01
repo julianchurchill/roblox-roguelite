@@ -2,10 +2,10 @@ local camera = game.Workspace:WaitForChild("Camera")
 local char = script.Parent or game.Players.LocalPlayer.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
-local distance = 15
+local distance = 20
 
 local minDistance = 5
-local maxDistance = 20
+local maxDistance = 30
 
 local RunService = game:GetService("RunService")
 
