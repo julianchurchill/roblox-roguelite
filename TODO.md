@@ -1,4 +1,3 @@
-- [ ] disable jumping
 - [ ] create a static map to move around, low walls and stone floor
 - [ ] move camera to centre player better
 - [ ] pick things up from floor, coins
@@ -11,4 +10,6 @@
 - [ ] dungeons regnerate after leaving server
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
+
+- [x] disable jumping
 - [x] Make top down camera follow character

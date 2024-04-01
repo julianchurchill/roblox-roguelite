@@ -714,7 +714,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 			<token name="CameraMode">0</token>
 			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 			<float name="CharacterJumpHeight">7.19999981</float>
-			<float name="CharacterJumpPower">50</float>
+			<float name="CharacterJumpPower">0</float>
 			<float name="CharacterMaxSlopeAngle">89</float>
 			<bool name="CharacterUseJumpPower">true</bool>
 			<float name="CharacterWalkSpeed">16</float>
