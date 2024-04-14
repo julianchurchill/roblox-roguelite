@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-25.2896709</X>
-					<Y>40.1186295</Y>
-					<Z>-7.53797674</Z>
-					<R00>0.734143376</R00>
-					<R01>0.516324699</R01>
-					<R02>-0.440956205</R02>
+					<X>-8.37559032</X>
+					<Y>14.4283094</Y>
+					<Z>17.2366066</Z>
+					<R00>0.72855705</R00>
+					<R01>-0.100112192</R01>
+					<R02>0.677629769</R02>
 					<R10>-0</R10>
-					<R11>0.649425328</R11>
-					<R12>0.760425448</R12>
-					<R20>0.678994477</R20>
-					<R21>-0.558261335</R21>
-					<R22>0.476771295</R22>
+					<R11>0.989262044</R11>
+					<R12>0.146152362</R12>
+					<R20>-0.684985101</R20>
+					<R21>-0.10648033</R21>
+					<R22>0.720733881</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-24.4077606</X>
-					<Y>38.5977821</Y>
-					<Z>-8.49151707</Z>
+					<X>-9.73085117</X>
+					<Y>14.1360044</Y>
+					<Z>15.7951374</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -2213,6 +2213,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<UniqueId name="UniqueId">7a5f1ded2539ccf3062d2fbb00008744</UniqueId>
 								<float name="heat_xml">9</float>
 								<float name="size_xml">5</float>
+							</Properties>
+						</Item>
+						<Item class="PointLight" referent="RBX3C3B4DD8F2B6487788EABBC3CC6AA2B6">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<float name="Brightness">2.42000008</float>
+								<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+								<Color3 name="Color">
+									<R>0.850980401</R>
+									<G>0.43921569</G>
+									<B>0.145098045</B>
+								</Color3>
+								<bool name="DefinesCapabilities">false</bool>
+								<bool name="Enabled">true</bool>
+								<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+								<string name="Name">PointLight</string>
+								<float name="Range">18</float>
+								<bool name="Shadows">true</bool>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007ede</UniqueId>
 							</Properties>
 						</Item>
 					</Item>
@@ -4535,6 +4556,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<float name="size_xml">1.39999998</float>
 								</Properties>
 							</Item>
+							<Item class="PointLight" referent="RBXF60618D1B7D6450EAAE29D80FAB506D3">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+									<Color3 name="Color">
+										<R>0.850980401</R>
+										<G>0.43921569</G>
+										<B>0.145098045</B>
+									</Color3>
+									<bool name="DefinesCapabilities">false</bool>
+									<bool name="Enabled">true</bool>
+									<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+									<string name="Name">PointLight</string>
+									<float name="Range">10</float>
+									<bool name="Shadows">true</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007f6a</UniqueId>
+								</Properties>
+							</Item>
 						</Item>
 					</Item>
 					<Item class="Model" referent="RBXC51E90D9CDD540F99EBBF0295764A947">
@@ -4912,6 +4954,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007318</UniqueId>
 									<float name="heat_xml">5.5999999</float>
 									<float name="size_xml">1.39999998</float>
+								</Properties>
+							</Item>
+							<Item class="PointLight" referent="RBXAAA6709AE6F14C0D80AAEF3BB2A4A584">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+									<Color3 name="Color">
+										<R>0.850980401</R>
+										<G>0.43921569</G>
+										<B>0.145098045</B>
+									</Color3>
+									<bool name="DefinesCapabilities">false</bool>
+									<bool name="Enabled">true</bool>
+									<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+									<string name="Name">PointLight</string>
+									<float name="Range">10</float>
+									<bool name="Shadows">true</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007f96</UniqueId>
 								</Properties>
 							</Item>
 						</Item>
@@ -5393,6 +5456,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<float name="size_xml">1.39999998</float>
 								</Properties>
 							</Item>
+							<Item class="PointLight" referent="RBX4DB44EECCA8A476EBE54369CB841D4EE">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+									<Color3 name="Color">
+										<R>0.850980401</R>
+										<G>0.43921569</G>
+										<B>0.145098045</B>
+									</Color3>
+									<bool name="DefinesCapabilities">false</bool>
+									<bool name="Enabled">true</bool>
+									<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+									<string name="Name">PointLight</string>
+									<float name="Range">10</float>
+									<bool name="Shadows">true</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007fb7</UniqueId>
+								</Properties>
+							</Item>
 						</Item>
 					</Item>
 					<Item class="Model" referent="RBXC92D6F273F9F46E0A8CEBDCAC50409C5">
@@ -5772,6 +5856,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<float name="size_xml">1.39999998</float>
 								</Properties>
 							</Item>
+							<Item class="PointLight" referent="RBXF3668536513446D79B12E0F508992BFC">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+									<Color3 name="Color">
+										<R>0.850980401</R>
+										<G>0.43921569</G>
+										<B>0.145098045</B>
+									</Color3>
+									<bool name="DefinesCapabilities">false</bool>
+									<bool name="Enabled">true</bool>
+									<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+									<string name="Name">PointLight</string>
+									<float name="Range">10</float>
+									<bool name="Shadows">true</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007fd8</UniqueId>
+								</Properties>
+							</Item>
 						</Item>
 					</Item>
 					<Item class="Model" referent="RBXB4D5411027B340BA8551C476B4F4E029">
@@ -6149,6 +6254,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007c09</UniqueId>
 									<float name="heat_xml">5.5999999</float>
 									<float name="size_xml">1.39999998</float>
+								</Properties>
+							</Item>
+							<Item class="PointLight" referent="RBXFE1F9A3074114CFD9C5A6F2C0F439117">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+									<Color3 name="Color">
+										<R>0.850980401</R>
+										<G>0.43921569</G>
+										<B>0.145098045</B>
+									</Color3>
+									<bool name="DefinesCapabilities">false</bool>
+									<bool name="Enabled">true</bool>
+									<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+									<string name="Name">PointLight</string>
+									<float name="Range">10</float>
+									<bool name="Shadows">true</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007ff9</UniqueId>
 								</Properties>
 							</Item>
 						</Item>
@@ -7697,6 +7823,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<float name="size_xml">5</float>
 						</Properties>
 					</Item>
+					<Item class="PointLight" referent="RBXD99289BB60734AA4953297C9E0E56A2A">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="Brightness">2.42000008</float>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<Color3 name="Color">
+								<R>0.850980401</R>
+								<G>0.43921569</G>
+								<B>0.145098045</B>
+							</Color3>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">PointLight</string>
+							<float name="Range">18</float>
+							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00007f06</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Model" referent="RBX5178F2C344024B14AEBBE781E33C25CB">
@@ -8074,6 +8221,27 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00004992</UniqueId>
 							<float name="heat_xml">5.5999999</float>
 							<float name="size_xml">1.39999998</float>
+						</Properties>
+					</Item>
+					<Item class="PointLight" referent="RBXE8EF5637CBA84920B9493D6D76C7E48A">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="Brightness">1</float>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<Color3 name="Color">
+								<R>0.850980401</R>
+								<G>0.43921569</G>
+								<B>0.145098045</B>
+							</Color3>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">PointLight</string>
+							<float name="Range">10</float>
+							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">66246e18517cfac9062d7bfb0000802e</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
