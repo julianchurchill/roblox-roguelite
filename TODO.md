@@ -1,3 +1,5 @@
+- [ ] wall torches, fire
+- [ ] general darkness/fog, player has single point light
 - [ ] pick things up from floor, coins
 - [ ] track coins and show in UI, save between games
 - [ ] doors that can open and close
