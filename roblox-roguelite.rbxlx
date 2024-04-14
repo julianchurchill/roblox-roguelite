@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-8.37559032</X>
-					<Y>14.4283094</Y>
-					<Z>17.2366066</Z>
-					<R00>0.72855705</R00>
-					<R01>-0.100112192</R01>
-					<R02>0.677629769</R02>
+					<X>-32.7835159</X>
+					<Y>25.1696434</Y>
+					<Z>24.1258106</Z>
+					<R00>0.984918237</R00>
+					<R01>0.132157519</R01>
+					<R02>-0.111671448</R02>
 					<R10>-0</R10>
-					<R11>0.989262044</R11>
-					<R12>0.146152362</R12>
-					<R20>-0.684985101</R20>
-					<R21>-0.10648033</R21>
-					<R22>0.720733881</R22>
+					<R11>0.645422935</R11>
+					<R12>0.763825417</R12>
+					<R20>0.173020586</R20>
+					<R21>-0.752305567</R21>
+					<R22>0.635688782</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-9.73085117</X>
-					<Y>14.1360044</Y>
-					<Z>15.7951374</Z>
+					<X>-32.560173</X>
+					<Y>23.6419926</Y>
+					<Z>22.8544331</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -17463,9 +17463,59 @@ end]]></ProtectedString>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 			<token name="Technology">1</token>
-			<string name="TimeOfDay">14:00:00</string>
+			<string name="TimeOfDay">21:00:00</string>
 			<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df0000036d</UniqueId>
 		</Properties>
+		<Item class="Atmosphere" referent="RBX6AEA2C329C63476691E44D491269FEA5">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<Color3 name="Color">
+					<R>0.784300029</R>
+					<G>0.666700006</G>
+					<B>0.423500001</B>
+				</Color3>
+				<Color3 name="Decay">
+					<R>0.360799998</R>
+					<G>0.235300004</G>
+					<B>0.0549000017</B>
+				</Color3>
+				<bool name="DefinesCapabilities">false</bool>
+				<float name="Density">0.43900001</float>
+				<float name="Glare">0</float>
+				<float name="Haze">0</float>
+				<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+				<string name="Name">Atmosphere</string>
+				<float name="Offset">0</float>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<UniqueId name="UniqueId">66246e18517cfac9062d7bfb000081e3</UniqueId>
+			</Properties>
+		</Item>
+		<Item class="Sky" referent="RBXD9F3AFB74FDA46FC91708C799C0D2D20">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="CelestialBodiesShown">false</bool>
+				<bool name="DefinesCapabilities">false</bool>
+				<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+				<float name="MoonAngularSize">11</float>
+				<Content name="MoonTextureId"><url>rbxasset://sky/moon.jpg</url></Content>
+				<string name="Name">EmptySky</string>
+				<Content name="SkyboxBk"><url>rbxasset://textures/sky/sky512_bk.tex</url></Content>
+				<Content name="SkyboxDn"><url>rbxasset://textures/sky/sky512_dn.tex</url></Content>
+				<Content name="SkyboxFt"><url>rbxasset://textures/sky/sky512_ft.tex</url></Content>
+				<Content name="SkyboxLf"><url>rbxasset://textures/sky/sky512_lf.tex</url></Content>
+				<Content name="SkyboxRt"><url>rbxasset://textures/sky/sky512_rt.tex</url></Content>
+				<Content name="SkyboxUp"><url>rbxasset://textures/sky/sky512_up.tex</url></Content>
+				<int64 name="SourceAssetId">-1</int64>
+				<int name="StarCount">0</int>
+				<float name="SunAngularSize">21</float>
+				<Content name="SunTextureId"><url>rbxasset://sky/sun.jpg</url></Content>
+				<BinaryString name="Tags"></BinaryString>
+				<UniqueId name="UniqueId">66246e18517cfac9062d7bfb000081f7</UniqueId>
+			</Properties>
+		</Item>
 	</Item>
 	<Item class="LodDataService" referent="RBX4D2082AE48044C0DBA16AC536BA19A63">
 		<Properties>
