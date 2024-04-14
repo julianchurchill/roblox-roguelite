@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-32.7835159</X>
-					<Y>25.1696434</Y>
-					<Z>24.1258106</Z>
-					<R00>0.984918237</R00>
-					<R01>0.132157519</R01>
-					<R02>-0.111671448</R02>
-					<R10>-0</R10>
-					<R11>0.645422935</R11>
-					<R12>0.763825417</R12>
-					<R20>0.173020586</R20>
-					<R21>-0.752305567</R21>
-					<R22>0.635688782</R22>
+					<X>-43.0269966</X>
+					<Y>38.5667877</Y>
+					<Z>49.8861694</Z>
+					<R00>0.957535028</R00>
+					<R01>0.150658637</R01>
+					<R02>-0.245822757</R02>
+					<R10>-7.45058149e-09</R10>
+					<R11>0.852612078</R11>
+					<R12>0.522544563</R12>
+					<R20>0.288317293</R20>
+					<R21>-0.500354707</R21>
+					<R22>0.816405773</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-32.560173</X>
-					<Y>23.6419926</Y>
-					<Z>22.8544331</Z>
+					<X>-42.5353508</X>
+					<Y>37.521698</Y>
+					<Z>48.2533569</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -16256,6 +16256,49 @@ end
 							<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00003dd5</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBXAAF798649070440FAF18D1105B4755ED">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">66aa5bbfd634c83b062dbdec00003dd2</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -16534,6 +16577,49 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">66246e18517cfac9062d7bfb00003dd7</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBXFFA1FD0D0A534F24BA8A20CCDA407376">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">66aa5bbfd634c83b062dbdec00003dd4</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -17054,40 +17140,55 @@ end
 local char = script.Parent or game.Players.LocalPlayer.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
-local initialDistance = 20
-local distance = initialDistance
 
-local minDistance = 15
-local maxDistance = 30
+local function CameraWithFixedAngleAndDistance()
+	local fixedCameraDistance = 35;
+	local positionCameraOffset = Vector3.new(0, 0, 15);
+	local upCameraOffset = hrp.CFrame.UpVector * fixedCameraDistance;
+	local cameraAngle = CFrame.Angles(math.rad(-60), 0, 0);
+    camera.CFrame = CFrame.new(hrp.Position + upCameraOffset + positionCameraOffset) * cameraAngle
+end
 
-local minCameraAngleRadians = 65
-local maxCameraAngleRadians = 85
+-- local initialCameraDistance = 20
+-- local currentCameraDistanceForAdaptiveCamera = initialCameraDistance
 
+-- local minCameraDistanceForAdaptiveCamera = 15
+-- local maxCameraDistanceForAdaptiveCamera = 30
+
+-- local function CameraWithAngleChangeAsYouZoom()
+-- 	local minCameraAngleRadians = 65
+-- 	local maxCameraAngleRadians = 85
+
+-- 	local backCameraOffset = Vector3.new(0, 0, 5);
+-- 	local upCameraOffset = hrp.CFrame.UpVector * currentCameraDistanceForAdaptiveCamera;
+-- 	local distanceAsProportionOfFullDistance = (currentCameraDistanceForAdaptiveCamera - minCameraDistanceForAdaptiveCamera) / (maxCameraDistanceForAdaptiveCamera - minCameraDistanceForAdaptiveCamera);
+-- 	local cameraAngleRange = maxCameraAngleRadians - minCameraAngleRadians;
+-- 	local cameraAngleInRadians = minCameraAngleRadians + cameraAngleRange * distanceAsProportionOfFullDistance;
+-- 	local cameraAngle = CFrame.Angles(math.rad(-cameraAngleInRadians), 0, 0);
+--     camera.CFrame = CFrame.new(hrp.Position + upCameraOffset + backCameraOffset) * cameraAngle
+-- end
+
+-- -- Set mouse wheel behaviour
+-- local mouse = game.Players.LocalPlayer:GetMouse()
+
+-- mouse.WheelForward:Connect(function()
+-- 	if currentCameraDistanceForAdaptiveCamera > minCameraDistanceForAdaptiveCamera then
+-- 		currentCameraDistanceForAdaptiveCamera -= 1
+-- 	end
+-- end)
+
+-- mouse.WheelBackward:Connect(function()
+-- 	if currentCameraDistanceForAdaptiveCamera < maxCameraDistanceForAdaptiveCamera then
+-- 		currentCameraDistanceForAdaptiveCamera += 1
+-- 	end
+-- end)
+
+-- Set camera behaviour
 local RunService = game:GetService("RunService")
 
 camera.CameraType = Enum.CameraType.Scriptable
-RunService.RenderStepped:Connect(function()
-	local backCameraOffset = Vector3.new(0, 0, 5);
-	local upCameraOffset = hrp.CFrame.UpVector * distance;
-	local distanceAsProportionOfFullDistance = (distance - minDistance) / (maxDistance - minDistance);
-	local cameraAngleRange = maxCameraAngleRadians - minCameraAngleRadians;
-	local cameraAngleInRadians = minCameraAngleRadians + cameraAngleRange * distanceAsProportionOfFullDistance;
-	local cameraAngle = CFrame.Angles(math.rad(-cameraAngleInRadians), 0, 0);
-    camera.CFrame = CFrame.new(hrp.Position + upCameraOffset + backCameraOffset) * cameraAngle
-end)
-
-local mouse = game.Players.LocalPlayer:GetMouse()
-
-mouse.WheelForward:Connect(function()
-	if distance > minDistance then
-		distance -= 1
-	end
-end)
-mouse.WheelBackward:Connect(function()
-	if distance < maxDistance then
-		distance += 1
-	end
-end)]]></ProtectedString>
+-- RunService.RenderStepped:Connect(CameraWithAngleChangeAsYouZoom)
+RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">439ef2ea1fcb675e0619bec3000043ae</UniqueId>
