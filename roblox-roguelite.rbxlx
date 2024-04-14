@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-43.0269966</X>
-					<Y>38.5667877</Y>
-					<Z>49.8861694</Z>
-					<R00>0.957535028</R00>
-					<R01>0.150658637</R01>
-					<R02>-0.245822757</R02>
-					<R10>-7.45058149e-09</R10>
-					<R11>0.852612078</R11>
-					<R12>0.522544563</R12>
-					<R20>0.288317293</R20>
-					<R21>-0.500354707</R21>
-					<R22>0.816405773</R22>
+					<X>-23.5656662</X>
+					<Y>43.1277046</Y>
+					<Z>32.9709549</Z>
+					<R00>0.999364078</R00>
+					<R01>-0.0235818699</R01>
+					<R02>0.0267448295</R02>
+					<R10>-1.86264493e-09</R10>
+					<R11>0.750067472</R11>
+					<R12>0.661361396</R12>
+					<R20>-0.0356565602</R20>
+					<R21>-0.660940826</R21>
+					<R22>0.749590516</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-42.5353508</X>
-					<Y>37.521698</Y>
-					<Z>48.2533569</Z>
+					<X>-23.6191559</X>
+					<Y>41.8049812</Y>
+					<Z>31.4717731</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -2218,7 +2218,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<Item class="PointLight" referent="RBX3C3B4DD8F2B6487788EABBC3CC6AA2B6">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="Brightness">2.42000008</float>
+								<float name="Brightness">5</float>
 								<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 								<Color3 name="Color">
 									<R>0.850980401</R>
@@ -4559,7 +4559,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Item class="PointLight" referent="RBXF60618D1B7D6450EAAE29D80FAB506D3">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="Brightness">1</float>
+									<float name="Brightness">5</float>
 									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 									<Color3 name="Color">
 										<R>0.850980401</R>
@@ -4959,7 +4959,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Item class="PointLight" referent="RBXAAA6709AE6F14C0D80AAEF3BB2A4A584">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="Brightness">1</float>
+									<float name="Brightness">5</float>
 									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 									<Color3 name="Color">
 										<R>0.850980401</R>
@@ -5459,7 +5459,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Item class="PointLight" referent="RBX4DB44EECCA8A476EBE54369CB841D4EE">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="Brightness">1</float>
+									<float name="Brightness">5</float>
 									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 									<Color3 name="Color">
 										<R>0.850980401</R>
@@ -5859,7 +5859,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Item class="PointLight" referent="RBXF3668536513446D79B12E0F508992BFC">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="Brightness">1</float>
+									<float name="Brightness">5</float>
 									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 									<Color3 name="Color">
 										<R>0.850980401</R>
@@ -6259,7 +6259,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Item class="PointLight" referent="RBXFE1F9A3074114CFD9C5A6F2C0F439117">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="Brightness">1</float>
+									<float name="Brightness">5</float>
 									<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 									<Color3 name="Color">
 										<R>0.850980401</R>
@@ -7826,7 +7826,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<Item class="PointLight" referent="RBXD99289BB60734AA4953297C9E0E56A2A">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="Brightness">2.42000008</float>
+							<float name="Brightness">5</float>
 							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 							<Color3 name="Color">
 								<R>0.850980401</R>
@@ -8226,7 +8226,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<Item class="PointLight" referent="RBXE8EF5637CBA84920B9493D6D76C7E48A">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="Brightness">1</float>
+							<float name="Brightness">5</float>
 							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 							<Color3 name="Color">
 								<R>0.850980401</R>
@@ -17140,7 +17140,13 @@ end
 local char = script.Parent or game.Players.LocalPlayer.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
+-- Add a light for the player
+local light = Instance.new("PointLight")
+light.Range = 20
+light.Brightness = 3
+light.Parent = char:WaitForChild("HumanoidRootPart")
 
+-- Set up player camera
 local function CameraWithFixedAngleAndDistance()
 	local fixedCameraDistance = 35;
 	local positionCameraOffset = Vector3.new(0, 0, 15);
@@ -17582,7 +17588,7 @@ end]]></ProtectedString>
 					<B>0.0549000017</B>
 				</Color3>
 				<bool name="DefinesCapabilities">false</bool>
-				<float name="Density">0.43900001</float>
+				<float name="Density">0.273000002</float>
 				<float name="Glare">0</float>
 				<float name="Haze">0</float>
 				<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>

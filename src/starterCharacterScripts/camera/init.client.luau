@@ -2,7 +2,13 @@ local camera = game.Workspace:WaitForChild("Camera")
 local char = script.Parent or game.Players.LocalPlayer.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
+-- Add a light for the player
+local light = Instance.new("PointLight")
+light.Range = 20
+light.Brightness = 3
+light.Parent = char:WaitForChild("HumanoidRootPart")
 
+-- Set up player camera
 local function CameraWithFixedAngleAndDistance()
 	local fixedCameraDistance = 35;
 	local positionCameraOffset = Vector3.new(0, 0, 15);
