@@ -1,4 +1,5 @@
-- [ ] wall torches, fire
+- [ ] ... wall torches, fire
+- [ ] make camera higher so player can see a wider area
 - [ ] general darkness/fog, player has single point light
 - [ ] pick things up from floor, coins
 - [ ] track coins and show in UI, save between games

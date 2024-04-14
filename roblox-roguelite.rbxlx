@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-24.0263233</X>
-					<Y>25.3005238</Y>
-					<Z>20.963995</Z>
-					<R00>0.988127768</R00>
-					<R01>-0.0782086179</R01>
-					<R02>0.132238403</R02>
-					<R10>-7.4505806e-09</R10>
-					<R11>0.86073339</R11>
-					<R12>0.509056151</R12>
-					<R20>-0.153634578</R20>
-					<R21>-0.503012538</R21>
-					<R22>0.850514531</R22>
+					<X>-20.928915</X>
+					<Y>53.1384583</Y>
+					<Z>17.2763176</Z>
+					<R00>0.647659421</R00>
+					<R01>-0.729414642</R01>
+					<R02>0.220208168</R02>
+					<R10>-0</R10>
+					<R11>0.289013654</R11>
+					<R12>0.957324982</R12>
+					<R20>-0.761929989</R20>
+					<R21>-0.620020568</R21>
+					<R22>0.187182426</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-24.2908001</X>
-					<Y>24.2824116</Y>
-					<Z>19.2629662</Z>
+					<X>-21.3693314</X>
+					<Y>51.2238083</Y>
+					<Z>16.9019527</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -852,7 +852,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-37.875</X>
-							<Y>1.5</Y>
+							<Y>3.5</Y>
 							<Z>-14.75</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -890,7 +890,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall1</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -933,7 +933,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>19.75</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -952,9 +952,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-48.25</X>
-							<Y>1.5</Y>
+							<Y>3.5</Y>
 							<Z>7.75</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -962,7 +962,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -990,7 +990,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall2</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -1033,7 +1033,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>46</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -1052,9 +1052,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-1.25</X>
-							<Y>1.49999714</Y>
+							<Y>3.5</Y>
 							<Z>7.75</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -1062,7 +1062,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -1090,7 +1090,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall4</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -1133,7 +1133,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>46</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -1152,7 +1152,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-11.25</X>
-							<Y>1.49999714</Y>
+							<Y>3.5</Y>
 							<Z>-14.75</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -1190,7 +1190,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall5</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -1233,7 +1233,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>19</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -1252,7 +1252,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-24.75</X>
-							<Y>1.5</Y>
+							<Y>3.5</Y>
 							<Z>30.25</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -1290,7 +1290,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall3</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -1333,7 +1333,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>46</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -2596,9 +2596,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-79.75</X>
-							<Y>1.49914169</Y>
+							<Y>3.5</Y>
 							<Z>-67.125</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -2606,7 +2606,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -2634,7 +2634,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall1</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -2677,7 +2677,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>45.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -2696,9 +2696,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-52.4985352</X>
-							<Y>1.49905348</Y>
+							<Y>3.5</Y>
 							<Z>-52.8752441</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -2706,7 +2706,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -2734,7 +2734,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall2</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -2777,7 +2777,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>16.75</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -2796,7 +2796,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-66.125</X>
-							<Y>1.5</Y>
+							<Y>3.5</Y>
 							<Z>-44.0010986</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -2834,7 +2834,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall3</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -2877,7 +2877,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>28.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -2896,9 +2896,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-52.5</X>
-							<Y>1.49941158</Y>
+							<Y>3.5</Y>
 							<Z>-79.1257935</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -2906,7 +2906,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -2934,7 +2934,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall4</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -2977,7 +2977,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>21.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -2996,7 +2996,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-66.125</X>
-							<Y>1.49902821</Y>
+							<Y>3.5</Y>
 							<Z>-90.2501221</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -3034,7 +3034,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall5</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3077,7 +3077,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>28.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3461,7 +3461,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>18.125</X>
-							<Y>1.49914408</Y>
+							<Y>3.5</Y>
 							<Z>-44.0009766</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -3499,7 +3499,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall5</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3542,7 +3542,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>28.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3561,9 +3561,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>4.5</X>
-							<Y>1.49905348</Y>
+							<Y>3.5</Y>
 							<Z>-52.8752441</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -3571,7 +3571,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -3599,7 +3599,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall1</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3642,7 +3642,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>16.75</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3661,7 +3661,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>18.125</X>
-							<Y>1.49920082</Y>
+							<Y>3.5</Y>
 							<Z>-90.2491455</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -3699,7 +3699,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall2</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3742,7 +3742,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>28.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3761,9 +3761,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>4.5</X>
-							<Y>1.5</Y>
+							<Y>3.5</Y>
 							<Z>-79.124939</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -3771,7 +3771,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -3799,7 +3799,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall4</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3842,7 +3842,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>21.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3861,9 +3861,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>31.75</X>
-							<Y>1.49914169</Y>
+							<Y>3.5</Y>
 							<Z>-67.125</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -3871,7 +3871,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -3899,7 +3899,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall3</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -3942,7 +3942,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>45.25</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -3973,9 +3973,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-20.25</X>
-							<Y>1.49901724</Y>
+							<Y>3.5</Y>
 							<Z>-38.2490845</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -3983,7 +3983,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -4011,7 +4011,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall1</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -4054,7 +4054,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>46</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -4073,9 +4073,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-28.5</X>
-							<Y>1.49940395</Y>
+							<Y>3.5</Y>
 							<Z>-38.2490845</Z>
-							<R00>0</R00>
+							<R00>-4.37113883e-08</R00>
 							<R01>0</R01>
 							<R02>1</R02>
 							<R10>0</R10>
@@ -4083,7 +4083,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R12>0</R12>
 							<R20>-1</R20>
 							<R21>0</R21>
-							<R22>0</R22>
+							<R22>-4.37113883e-08</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CanQuery">true</bool>
@@ -4111,7 +4111,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall3</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -4154,7 +4154,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>46</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -4173,7 +4173,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-23.9999981</X>
-							<Y>1.50001895</Y>
+							<Y>3.5</Y>
 							<Z>-68.9985352</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -4211,7 +4211,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall5</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -4254,7 +4254,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>56</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -4273,7 +4273,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-7.87546444</X>
-							<Y>1.50002599</Y>
+							<Y>3.5</Y>
 							<Z>-60.7485352</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -4311,7 +4311,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall2</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -4354,7 +4354,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>23.7494678</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -4373,7 +4373,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-40.4994011</X>
-							<Y>1.50002193</Y>
+							<Y>3.5</Y>
 							<Z>-60.7485352</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -4411,7 +4411,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Massless">false</bool>
 						<token name="Material">816</token>
 						<string name="MaterialVariantSerialized"></string>
-						<string name="Name">Part</string>
+						<string name="Name">Wall4</string>
 						<CoordinateFrame name="PivotOffset">
 							<X>0</X>
 							<Y>0</Y>
@@ -4454,7 +4454,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>23</X>
-							<Y>3</Y>
+							<Y>7</Y>
 							<Z>1</Z>
 						</Vector3>
 					</Properties>
@@ -4839,7 +4839,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>64.375</X>
-						<Y>1.5</Y>
+						<Y>3.5</Y>
 						<Z>8.5</Z>
 						<R00>1</R00>
 						<R01>0</R01>
@@ -4920,7 +4920,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>17.25</X>
-						<Y>3</Y>
+						<Y>7</Y>
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
@@ -5842,9 +5842,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<UniqueId name="UniqueId">7a5f1ded2539ccf3062d2fbb00004742</UniqueId>
 				<OptionalCoordinateFrame name="WorldPivotData">
 					<CFrame>
-						<X>87.29039</X>
-						<Y>0</Y>
-						<Z>-1.13899314</Z>
+						<X>67.0362473</X>
+						<Y>2.38418579e-07</Y>
+						<Z>3.37018847</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -5870,9 +5870,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">4</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.29039</X>
-						<Y>2.97122812</Y>
-						<Z>-1.13899314</Z>
+						<X>67.0362473</X>
+						<Y>2.97122836</Y>
+						<Z>3.37018847</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -6076,9 +6076,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.29039</X>
-						<Y>4.4712286</Y>
-						<Z>-1.13872099</Z>
+						<X>67.0362473</X>
+						<Y>4.47122908</Y>
+						<Z>3.37046099</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -8353,9 +8353,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.29039</X>
-						<Y>3.11533976</Y>
-						<Z>-1.18327224</Z>
+						<X>67.0362473</X>
+						<Y>3.11534023</Y>
+						<Z>3.32590961</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -8989,9 +8989,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.29039</X>
-						<Y>2.10164833</Y>
-						<Z>-1.238976</Z>
+						<X>67.0362473</X>
+						<Y>2.10164857</Y>
+						<Z>3.27020574</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -9555,9 +9555,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>88.4829788</X>
-						<Y>3.2720952</Y>
-						<Z>-1.11996961</Z>
+						<X>68.2288361</X>
+						<Y>3.27209568</Y>
+						<Z>3.38921237</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -9927,9 +9927,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>88.6004944</X>
-						<Y>2.72509789</Y>
-						<Z>-1.03688335</Z>
+						<X>68.3463516</X>
+						<Y>2.72509837</Y>
+						<Z>3.47229862</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -10255,9 +10255,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>88.6733093</X>
-						<Y>2.02977753</Y>
-						<Z>-1.13701737</Z>
+						<X>68.4191666</X>
+						<Y>2.029778</Y>
+						<Z>3.37216449</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -10601,9 +10601,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>86.0978012</X>
-						<Y>3.2720952</Y>
-						<Z>-1.11996901</Z>
+						<X>65.8436584</X>
+						<Y>3.27209568</Y>
+						<Z>3.38921285</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -10973,9 +10973,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>85.9802856</X>
-						<Y>2.72509789</Y>
-						<Z>-1.03688323</Z>
+						<X>65.7261429</X>
+						<Y>2.72509837</Y>
+						<Z>3.47229862</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -11301,9 +11301,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>85.9074707</X>
-						<Y>2.02977753</Y>
-						<Z>-1.13701701</Z>
+						<X>65.6533279</X>
+						<Y>2.029778</Y>
+						<Z>3.37216496</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -11629,9 +11629,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>86.865921</X>
-						<Y>1.53217864</Y>
-						<Z>-1.19684684</Z>
+						<X>66.6117783</X>
+						<Y>1.53217888</Y>
+						<Z>3.31233478</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -11957,9 +11957,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>86.8447189</X>
-						<Y>0.71622777</Y>
-						<Z>-1.09412086</Z>
+						<X>66.5905762</X>
+						<Y>0.716228008</Y>
+						<Z>3.41506076</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -12285,9 +12285,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>86.8378372</X>
-						<Y>0.314087927</Y>
-						<Z>-1.27843177</Z>
+						<X>66.5836945</X>
+						<Y>0.314088166</Y>
+						<Z>3.23074985</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -12613,9 +12613,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.714859</X>
-						<Y>1.53217864</Y>
-						<Z>-1.19684684</Z>
+						<X>67.4607162</X>
+						<Y>1.53217888</Y>
+						<Z>3.31233501</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -12941,9 +12941,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.7360611</X>
-						<Y>0.71622777</Y>
-						<Z>-1.09412086</Z>
+						<X>67.4819183</X>
+						<Y>0.716228008</Y>
+						<Z>3.415061</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -13269,9 +13269,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>87.7429428</X>
-						<Y>0.314087927</Y>
-						<Z>-1.27843177</Z>
+						<X>67.4888</X>
+						<Y>0.314088166</Y>
+						<Z>3.23075008</Z>
 						<R00>1.00000048</R00>
 						<R01>-7.45058326e-09</R01>
 						<R02>2.98023259e-08</R02>
@@ -13623,9 +13623,9 @@ end
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>87.29039</X>
-							<Y>4.9712286</Y>
-							<Z>-1.03872097</Z>
+							<X>67.0362473</X>
+							<Y>4.97122955</Y>
+							<Z>3.47046089</Z>
 							<R00>1.00000048</R00>
 							<R01>-7.45058326e-09</R01>
 							<R02>2.98023295e-08</R02>
@@ -13903,9 +13903,9 @@ end
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>87.29039</X>
-							<Y>4.67122841</Y>
-							<Z>-1.34872103</Z>
+							<X>67.0362473</X>
+							<Y>4.67122889</Y>
+							<Z>3.16046095</Z>
 							<R00>1.00000048</R00>
 							<R01>-7.45058326e-09</R01>
 							<R02>2.98023295e-08</R02>
