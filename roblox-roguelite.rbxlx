@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-36.3388519</X>
-					<Y>25.3788147</Y>
-					<Z>-37.8102493</Z>
-					<R00>0.886197329</R00>
-					<R01>-0.248262092</R01>
-					<R02>0.391178071</R02>
+					<X>65.053215</X>
+					<Y>5.3580265</Y>
+					<Z>5.23098135</Z>
+					<R00>-0.653399765</R00>
+					<R01>-2.16582557e-05</R01>
+					<R02>0.757013083</R02>
 					<R10>-0</R10>
-					<R11>0.84431535</R11>
-					<R12>0.535846651</R12>
-					<R20>-0.463308096</R20>
-					<R21>-0.474865884</R21>
-					<R22>0.748229921</R22>
+					<R11>1</R11>
+					<R12>2.86101476e-05</R12>
+					<R20>-0.757013083</R20>
+					<R21>1.86938632e-05</R21>
+					<R22>-0.653399765</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-37.1212082</X>
-					<Y>24.3071213</Y>
-					<Z>-39.3067093</Z>
+					<X>63.5391846</X>
+					<Y>5.35796928</Y>
+					<Z>6.53778458</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -6782,14 +6782,14 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<UniqueId name="UniqueId">36afc1a250da2f29061c71b2000077d3</UniqueId>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
-							<X>62.8740234</X>
-							<Y>4.12406063</Y>
-							<Z>-14.75</Z>
-							<R00>0</R00>
+							<X>63</X>
+							<Y>7.74900007</Y>
+							<Z>-14.5</Z>
+							<R00>-4.37113883e-08</R00>
 							<R01>1</R01>
-							<R02>-0</R02>
+							<R02>0</R02>
 							<R10>-1</R10>
-							<R11>0</R11>
+							<R11>-4.37113883e-08</R11>
 							<R12>0</R12>
 							<R20>0</R20>
 							<R21>0</R21>
@@ -6810,13 +6810,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>59.6240234</X>
-							<Y>3.62404728</Y>
-							<Z>-14.75</Z>
+							<X>59.75</X>
+							<Y>3.62399149</Y>
+							<Z>-14.5</Z>
 							<R00>1</R00>
-							<R01>0</R01>
+							<R01>4.37113883e-08</R01>
 							<R02>0</R02>
-							<R10>0</R10>
+							<R10>-4.37113883e-08</R10>
 							<R11>1</R11>
 							<R12>0</R12>
 							<R20>0</R20>
@@ -6910,13 +6910,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>66.1259766</X>
-							<Y>3.62405586</Y>
-							<Z>-14.75</Z>
+							<X>66.2519531</X>
+							<Y>3.62400007</Y>
+							<Z>-14.5</Z>
 							<R00>1</R00>
-							<R01>0</R01>
+							<R01>4.37113883e-08</R01>
 							<R02>0</R02>
-							<R10>0</R10>
+							<R10>-4.37113883e-08</R10>
 							<R11>1</R11>
 							<R12>0</R12>
 							<R20>0</R20>
@@ -7010,14 +7010,14 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>62.8740234</X>
-							<Y>7.74905586</Y>
-							<Z>-14.75</Z>
-							<R00>0</R00>
+							<X>63</X>
+							<Y>7.74900007</Y>
+							<Z>-14.5</Z>
+							<R00>-4.37113883e-08</R00>
 							<R01>1</R01>
-							<R02>-0</R02>
+							<R02>0</R02>
 							<R10>-1</R10>
-							<R11>0</R11>
+							<R11>-4.37113883e-08</R11>
 							<R12>0</R12>
 							<R20>0</R20>
 							<R21>0</R21>
@@ -7111,7 +7111,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>64.375</X>
+						<X>64</X>
 						<Y>3.5</Y>
 						<Z>8.5</Z>
 						<R00>1</R00>
@@ -7192,7 +7192,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
-						<X>17.25</X>
+						<X>17</X>
 						<Y>7</Y>
 						<Z>1</Z>
 					</Vector3>
@@ -7236,8 +7236,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
 							<X>86.5</X>
-							<Y>1.39054537</Y>
-							<Z>-19.25</Z>
+							<Y>0.5</Y>
+							<Z>-19</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -7264,8 +7264,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>86.5</X>
-							<Y>1.39054537</Y>
-							<Z>-18.4395828</Z>
+							<Y>1.43728113</Y>
+							<Z>-18.1895828</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -7364,8 +7364,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>87.1506882</X>
-							<Y>1.0928607</Y>
-							<Z>-19.6599655</Z>
+							<Y>1.13959646</Y>
+							<Z>-19.4099655</Z>
 							<R00>-0.482962906</R00>
 							<R01>-0.129409552</R01>
 							<R02>0.866025448</R02>
@@ -7464,8 +7464,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>85.7482758</X>
-							<Y>0.985354304</Y>
-							<Z>-19.9522266</Z>
+							<Y>1.03209007</Y>
+							<Z>-19.7022266</Z>
 							<R00>0.45769769</R00>
 							<R01>-0.256614327</R01>
 							<R02>0.851270735</R02>
@@ -7564,8 +7564,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>85.48172</X>
-							<Y>0.925105095</Y>
-							<Z>-18.6857986</Z>
+							<Y>0.971840858</Y>
+							<Z>-18.4357986</Z>
 							<R00>0.505094826</R00>
 							<R01>0.142187431</R01>
 							<R02>0.851270854</R02>
@@ -7664,8 +7664,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>85.8261337</X>
-							<Y>1.01290298</Y>
-							<Z>-18.299242</Z>
+							<Y>1.05963874</Y>
+							<Z>-18.049242</Z>
 							<R00>0.428841799</R00>
 							<R01>0.394530416</R01>
 							<R02>0.812674999</R02>
@@ -7764,8 +7764,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>87.4653854</X>
-							<Y>0.891085863</Y>
-							<Z>-18.8125095</Z>
+							<Y>0.937821627</Y>
+							<Z>-18.5625095</Z>
 							<R00>-0.498750448</R00>
 							<R01>0.319699109</R01>
 							<R02>0.805630505</R02>
@@ -7864,8 +7864,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>86.5</X>
-							<Y>0.125</Y>
-							<Z>-19.25</Z>
+							<Y>0.171735764</Y>
+							<Z>-19</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -7964,8 +7964,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>86.5</X>
-							<Y>0.453264236</Y>
-							<Z>-19.25</Z>
+							<Y>0.5</Y>
+							<Z>-19</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -8136,17 +8136,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
 							<X>59.5</X>
-							<Y>4.45804977</Y>
-							<Z>7.85217428</Z>
-							<R00>0</R00>
+							<Y>5.5</Y>
+							<Z>7.25</Z>
+							<R00>1</R00>
 							<R01>0</R01>
-							<R02>1</R02>
-							<R10>0.866025388</R10>
-							<R11>0.5</R11>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
 							<R12>0</R12>
-							<R20>-0.5</R20>
-							<R21>0.866025388</R21>
-							<R22>0</R22>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
 						</CFrame>
 					</OptionalCoordinateFrame>
 				</Properties>
@@ -8163,9 +8163,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>59.5025139</X>
-							<Y>4.73540354</Y>
-							<Z>7.5842557</Z>
+							<X>59.4941292</X>
+							<Y>4.99035788</Y>
+							<Z>7.89417458</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -8263,9 +8263,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>59.5025139</X>
-							<Y>4.55801535</Y>
-							<Z>7.34275675</Z>
+							<X>59.4941292</X>
+							<Y>4.81296968</Y>
+							<Z>7.65267563</Z>
 							<R00>0</R00>
 							<R01>0</R01>
 							<R02>1</R02>
@@ -8363,9 +8363,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>59.5083847</X>
-							<Y>5.24504566</Y>
-							<Z>6.94008112</Z>
+							<X>59.5</X>
+							<Y>5.5</Y>
+							<Z>7.25</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -8688,17 +8688,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<UniqueId name="UniqueId">7a5f1ded2539ccf3062d2fbb00004742</UniqueId>
 				<OptionalCoordinateFrame name="WorldPivotData">
 					<CFrame>
-						<X>67.0362473</X>
-						<Y>2.38418579e-07</Y>
-						<Z>3.37018847</Z>
+						<X>67</X>
+						<Y>0</Y>
+						<Z>3.5</Z>
 						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
+						<R01>7.45057971e-09</R01>
+						<R02>2.98023259e-08</R02>
+						<R10>-7.45057926e-09</R10>
 						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
+						<R12>-7.45058149e-09</R12>
+						<R20>-2.98023259e-08</R20>
+						<R21>7.45058149e-09</R21>
 						<R22>1</R22>
 					</CFrame>
 				</OptionalCoordinateFrame>
@@ -8716,17 +8716,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">4</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.0362473</X>
-						<Y>2.97122836</Y>
-						<Z>3.37018847</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67</X>
+						<Y>2.97122955</Y>
+						<Z>3.5</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">true</bool>
@@ -8922,17 +8922,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.0362473</X>
-						<Y>4.47122908</Y>
-						<Z>3.37046099</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67</X>
+						<Y>4.47123051</Y>
+						<Z>3.50027251</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -11199,17 +11199,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.0362473</X>
-						<Y>3.11534023</Y>
-						<Z>3.32590961</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67</X>
+						<Y>3.11534119</Y>
+						<Z>3.45572114</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">true</bool>
@@ -11835,17 +11835,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.0362473</X>
-						<Y>2.10164857</Y>
-						<Z>3.27020574</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67</X>
+						<Y>2.10164928</Y>
+						<Z>3.40001726</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">true</bool>
@@ -12401,17 +12401,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>68.2288361</X>
-						<Y>3.27209568</Y>
-						<Z>3.38921237</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>68.1925888</X>
+						<Y>3.27209663</Y>
+						<Z>3.5190239</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -12773,17 +12773,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>68.3463516</X>
-						<Y>2.72509837</Y>
-						<Z>3.47229862</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>68.3101044</X>
+						<Y>2.72509909</Y>
+						<Z>3.60211015</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -13101,17 +13101,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>68.4191666</X>
-						<Y>2.029778</Y>
-						<Z>3.37216449</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>68.3829193</X>
+						<Y>2.02977824</Y>
+						<Z>3.50197601</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -13447,17 +13447,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>65.8436584</X>
-						<Y>3.27209568</Y>
-						<Z>3.38921285</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>65.8074112</X>
+						<Y>3.27209663</Y>
+						<Z>3.51902437</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -13819,17 +13819,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>65.7261429</X>
-						<Y>2.72509837</Y>
-						<Z>3.47229862</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>65.6898956</X>
+						<Y>2.72509909</Y>
+						<Z>3.60211015</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -14147,17 +14147,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>65.6533279</X>
-						<Y>2.029778</Y>
-						<Z>3.37216496</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>65.6170807</X>
+						<Y>2.02977824</Y>
+						<Z>3.50197649</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -14475,17 +14475,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>66.6117783</X>
-						<Y>1.53217888</Y>
-						<Z>3.31233478</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>66.575531</X>
+						<Y>1.53217936</Y>
+						<Z>3.4421463</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -14803,17 +14803,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>66.5905762</X>
-						<Y>0.716228008</Y>
-						<Z>3.41506076</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>66.5543289</X>
+						<Y>0.716228127</Y>
+						<Z>3.54487228</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -15131,17 +15131,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>66.5836945</X>
-						<Y>0.314088166</Y>
-						<Z>3.23074985</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>66.5474472</X>
+						<Y>0.314088076</Y>
+						<Z>3.36056137</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -15459,17 +15459,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.4607162</X>
-						<Y>1.53217888</Y>
-						<Z>3.31233501</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67.424469</X>
+						<Y>1.53217936</Y>
+						<Z>3.44214654</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -15787,17 +15787,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.4819183</X>
-						<Y>0.716228008</Y>
-						<Z>3.415061</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67.4456711</X>
+						<Y>0.716228127</Y>
+						<Z>3.54487252</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -16115,17 +16115,17 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>67.4888</X>
-						<Y>0.314088166</Y>
-						<Z>3.23075008</Z>
-						<R00>1.00000048</R00>
-						<R01>-7.45058326e-09</R01>
-						<R02>2.98023259e-08</R02>
-						<R10>-7.45058326e-09</R10>
-						<R11>1.00000048</R11>
-						<R12>-7.45058149e-09</R12>
-						<R20>2.98023259e-08</R20>
-						<R21>-7.45058149e-09</R21>
+						<X>67.4525528</X>
+						<Y>0.314088076</Y>
+						<Z>3.36056161</Z>
+						<R00>1.00000095</R00>
+						<R01>-7.4505877e-09</R01>
+						<R02>8.94069956e-08</R02>
+						<R10>-2.23517596e-08</R10>
+						<R11>1.00000095</R11>
+						<R12>-2.23517489e-08</R12>
+						<R20>2.98023117e-08</R20>
+						<R21>-7.45057704e-09</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
@@ -16469,17 +16469,17 @@ end
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>67.0362473</X>
-							<Y>4.97122955</Y>
-							<Z>3.47046089</Z>
-							<R00>1.00000048</R00>
-							<R01>-7.45058326e-09</R01>
-							<R02>2.98023295e-08</R02>
-							<R10>-7.45058326e-09</R10>
-							<R11>1.00000048</R11>
-							<R12>-7.45058149e-09</R12>
-							<R20>2.98023224e-08</R20>
-							<R21>-7.45058149e-09</R21>
+							<X>67</X>
+							<Y>4.97123098</Y>
+							<Z>3.60027242</Z>
+							<R00>1.00000095</R00>
+							<R01>-7.4505877e-09</R01>
+							<R02>8.94069956e-08</R02>
+							<R10>-2.23517596e-08</R10>
+							<R11>1.00000095</R11>
+							<R12>-2.23517489e-08</R12>
+							<R20>2.98023082e-08</R20>
+							<R21>-7.45057704e-09</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
@@ -16835,17 +16835,17 @@ end
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>67.0362473</X>
-							<Y>4.67122889</Y>
-							<Z>3.16046095</Z>
-							<R00>1.00000048</R00>
-							<R01>-7.45058326e-09</R01>
-							<R02>2.98023295e-08</R02>
-							<R10>-7.45058326e-09</R10>
-							<R11>1.00000048</R11>
-							<R12>-7.45058149e-09</R12>
-							<R20>2.98023224e-08</R20>
-							<R21>-7.45058149e-09</R21>
+							<X>67</X>
+							<Y>4.67123032</Y>
+							<Z>3.29027247</Z>
+							<R00>1.00000095</R00>
+							<R01>-7.4505877e-09</R01>
+							<R02>8.94069956e-08</R02>
+							<R10>-2.23517596e-08</R10>
+							<R11>1.00000095</R11>
+							<R12>-2.23517489e-08</R12>
+							<R20>2.98023082e-08</R20>
+							<R21>-7.45057704e-09</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">false</bool>
