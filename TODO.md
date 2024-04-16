@@ -1,7 +1,7 @@
+- [ ] ... doors that can open and close - consider using an opaque roof for rooms to make dark until touched/door opened
 - [ ] ... general darkness/fog
 - [ ] ... pick things up from floor, coins
 - [ ] ... track coins and show in UI, save between games
-- [ ] doors that can open and close
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
 - [ ] teleport to any reached dungeon level
