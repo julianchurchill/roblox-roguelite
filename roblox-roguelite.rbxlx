@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-28.6938953</X>
-					<Y>24.3925934</Y>
-					<Z>30.9782867</Z>
-					<R00>0.977972209</R00>
-					<R01>-0.0809069499</R01>
-					<R02>0.192417279</R02>
-					<R10>-7.45057971e-09</R10>
-					<R11>0.92182523</R11>
-					<R12>0.387605935</R12>
-					<R20>-0.208735079</R20>
-					<R21>-0.379067838</R21>
-					<R22>0.901519477</R22>
+					<X>-27.5276413</X>
+					<Y>31.3764</Y>
+					<Z>27.2419186</Z>
+					<R00>0.999417901</R00>
+					<R01>0.0221563242</R01>
+					<R02>-0.0259418432</R02>
+					<R10>1.86264537e-09</R10>
+					<R11>0.760407388</R11>
+					<R12>0.649446309</R12>
+					<R20>0.0341157168</R20>
+					<R21>-0.649068296</R21>
+					<R22>0.759964764</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-29.0787296</X>
-					<Y>23.617382</Y>
-					<Z>29.1752491</Z>
+					<X>-27.4757576</X>
+					<Y>30.077507</Y>
+					<Z>25.7219887</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -17497,11 +17497,53 @@ end
 					<string name="Name">Client</string>
 					<token name="RunContext">0</token>
 					<string name="ScriptGuid">{F4A631BE-B289-4CE0-81A7-E2D84C1AFEB4}</string>
-					<ProtectedString name="Source">print(&quot;Hello world, from client!&quot;)</ProtectedString>
+					<ProtectedString name="Source">print(&quot;Hello world, from init.client.luau!&quot;)</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cda</UniqueId>
 				</Properties>
+				<Item class="LocalScript" referent="RBX82C5B557BF9845BE967CAC72FB3BE59B">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Disabled">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">CollectCoins</string>
+						<token name="RunContext">0</token>
+						<string name="ScriptGuid">{2FA41359-EA5E-4D3F-AF99-3433BDDE719F}</string>
+						<ProtectedString name="Source"><![CDATA[local debounce = false
+
+function TouchCoin(touchee, target)
+	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
+	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
+		debounce = true
+		local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
+		local playerStats = player:FindFirstChild("PlayerStats")
+		local coins = playerStats:FindFirstChild("Coins")
+		coins.Value += 1
+		target:Destroy()
+		debounce = false
+	end
+end
+
+function SetupTouchedConnection(target, touchedFunction)
+	local connection = nil
+	connection = target.Touched:Connect(function(touchee)
+		local result = touchedFunction(touchee, target)
+		if result then
+			connection:Disconnect()
+		end
+	end)
+end
+
+SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f79</UniqueId>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 		<Item class="StarterCharacterScripts" referent="RBX0B518A61E1444903B227E233A218FDFD">
@@ -17831,11 +17873,35 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 				<string name="Name">Server</string>
 				<token name="RunContext">0</token>
 				<string name="ScriptGuid">{64A2963A-BA27-4CF1-AF88-634B7CFED073}</string>
-				<ProtectedString name="Source">print(&quot;Hello world, from server!&quot;)</ProtectedString>
+				<ProtectedString name="Source">print(&quot;Hello world, from init.server.luau!&quot;)</ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd7</UniqueId>
 			</Properties>
+			<Item class="Script" referent="RBX5C9ED1E0ADDE4B69946E2875FBC26E8E">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<bool name="Disabled">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">PlayerStats</string>
+					<token name="RunContext">0</token>
+					<string name="ScriptGuid">{36FA8F05-C1CA-490C-B7BB-52B98E4FA000}</string>
+					<ProtectedString name="Source"><![CDATA[game.Players.PlayerAdded:Connect(function(Player)
+	local playerStats = Instance.new("Folder", Player)
+	playerStats.Name = "PlayerStats"
+
+	local coins = Instance.new("NumberValue", playerStats)
+	coins.Name = "Coins"
+	coins.Value = 0
+end)]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f77</UniqueId>
+				</Properties>
+			</Item>
 		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX6B5D2B73CAE049A89A0BFE74B5C316CE">

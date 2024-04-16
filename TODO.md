@@ -1,6 +1,6 @@
-- [ ] general darkness/fog
-- [ ] pick things up from floor, coins
-- [ ] track coins and show in UI, save between games
+- [ ] ... general darkness/fog
+- [ ] ... pick things up from floor, coins
+- [ ] ... track coins and show in UI, save between games
 - [ ] doors that can open and close
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
