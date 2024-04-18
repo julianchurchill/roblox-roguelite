@@ -18452,7 +18452,9 @@ end
 						<string name="Name">CollectCoins</string>
 						<token name="RunContext">0</token>
 						<string name="ScriptGuid">{2FA41359-EA5E-4D3F-AF99-3433BDDE719F}</string>
-						<ProtectedString name="Source"><![CDATA[local debounce = false
+						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
+
+local debounce = false
 
 function TouchCoin(touchee, target)
 	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
@@ -18467,7 +18469,65 @@ function TouchCoin(touchee, target)
 	end
 end
 
-function SetupTouchedConnection(target, touchedFunction)
+connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f79</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="LocalScript" referent="RBX95D83AF51DC04B4884CBF5778C3F35A6">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Disabled">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Doorway</string>
+						<token name="RunContext">0</token>
+						<string name="ScriptGuid">{BA7E2DE9-4A1F-4F5D-8057-8EEDCB8ADD7A}</string>
+						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
+
+local debounce = false
+
+function TouchDoor(touchee, target)
+	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
+	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
+		debounce = true
+        target:Destroy()
+		debounce = false
+	end
+end
+
+connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, TouchDoor)]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">589f92463d0fd57806330bb000007a2e</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="Folder" referent="RBXEE193D71E1D04D1CA96F990C11627C58">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<string name="Name">Modules</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">589f92463d0fd57806330bb00000807e</UniqueId>
+					</Properties>
+					<Item class="ModuleScript" referent="RBXF72BB4CC50E340AEB4B775C4D7E84B16">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">Connections</string>
+							<string name="ScriptGuid">{884F6FAF-7ACF-4857-AC9E-0E9192F9058A}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+function module.SetupTouchedConnection(target, touchedFunction)
 	local connection = nil
 	connection = target.Touched:Connect(function(touchee)
 		local result = touchedFunction(touchee, target)
@@ -18477,11 +18537,12 @@ function SetupTouchedConnection(target, touchedFunction)
 	end)
 end
 
-SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f79</UniqueId>
-					</Properties>
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">589f92463d0fd57806330bb00000807f</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 		</Item>

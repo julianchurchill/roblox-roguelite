@@ -1,3 +1,5 @@
+local connections = require(script.Parent.Modules.Connections)
+
 local debounce = false
 
 function TouchDoor(touchee, target)
@@ -9,14 +11,4 @@ function TouchDoor(touchee, target)
 	end
 end
 
-function SetupTouchedConnection(target, touchedFunction)
-	local connection = nil
-	connection = target.Touched:Connect(function(touchee)
-		local result = touchedFunction(touchee, target)
-		if result then
-			connection:Disconnect()
-		end
-	end)
-end
-
-SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, TouchDoor)
+connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, TouchDoor)

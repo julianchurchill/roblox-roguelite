@@ -1,3 +1,5 @@
+local connections = require(script.Parent.Modules.Connections)
+
 local debounce = false
 
 function TouchCoin(touchee, target)
@@ -13,14 +15,4 @@ function TouchCoin(touchee, target)
 	end
 end
 
-function SetupTouchedConnection(target, touchedFunction)
-	local connection = nil
-	connection = target.Touched:Connect(function(touchee)
-		local result = touchedFunction(touchee, target)
-		if result then
-			connection:Disconnect()
-		end
-	end)
-end
-
-SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)
+connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)
