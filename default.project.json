@@ -15,10 +15,6 @@
       }
     },
 
-    "StarterGui": {
-      "$path": "src/starterGui"
-    },
-
     "StarterPlayer": {
       "StarterPlayerScripts": {
         "Client": {
