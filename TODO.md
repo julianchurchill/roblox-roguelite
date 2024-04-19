@@ -1,7 +1,6 @@
 - [ ] ... doors that can open and close - consider using an opaque roof for rooms to make dark until touched/door opened
-- [ ] ... general darkness/fog
-- [ ] ... pick things up from floor, coins
-- [ ] ... track coins and show in UI, save between games
+- [ ] save coins between games
+- [ ] space to dash
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
 - [ ] teleport to any reached dungeon level
@@ -11,6 +10,9 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] track coins and show in UI
+- [x] pick things up from floor - coins
+- [x] general darkness/fog
 - [x] add single point light to player
 - [x] make camera higher so player can see a wider area
 - [x] wall torches, fire
