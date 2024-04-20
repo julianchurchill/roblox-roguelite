@@ -1,4 +1,3 @@
-- [ ] ... doors that can open - use an opaque roof for rooms to make dark until touched/door opened
 - [ ] space to dash
 - [ ] save coins between games
 - [ ] starting location - town
@@ -10,6 +9,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] doors that can open - use an opaque roof for rooms to make dark until touched/door opened
 - [x] track coins and show in UI
 - [x] pick things up from floor - coins
 - [x] general darkness/fog
