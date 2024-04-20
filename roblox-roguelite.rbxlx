@@ -18608,7 +18608,17 @@ end
 					<string name="Name">Client</string>
 					<token name="RunContext">0</token>
 					<string name="ScriptGuid">{F4A631BE-B289-4CE0-81A7-E2D84C1AFEB4}</string>
-					<ProtectedString name="Source">print(&quot;Hello world, from init.client.luau!&quot;)</ProtectedString>
+					<ProtectedString name="Source"><![CDATA[print("Hello world, from init.client.luau!")
+
+local connections = require(script.Modules.Connections)
+local collectCoins = require(script.Modules.CollectCoins)
+local doorway = require(script.Modules.Doorway)
+local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
+
+connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
+connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)
+
+GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cda</UniqueId>
@@ -18723,51 +18733,33 @@ return module]]></ProtectedString>
 						<BinaryString name="Tags"></BinaryString>
 						<UniqueId name="UniqueId">084573327c679c8b0634229f0000c6a5</UniqueId>
 					</Properties>
-					<Item class="LocalScript" referent="RBX4FEC6CE7385E4C4B8FE1BEA4BF3DE6AD">
+					<Item class="ModuleScript" referent="RBX5F17501CDDA6451AABFE9776DB5AA297">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 							<bool name="DefinesCapabilities">false</bool>
-							<bool name="Disabled">false</bool>
 							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
 							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">CoinsDisplay</string>
-							<token name="RunContext">0</token>
-							<string name="ScriptGuid">{DB74C299-48A4-4E3C-8527-273C26AE67A5}</string>
-							<ProtectedString name="Source"><![CDATA[local Player = game.Players.LocalPlayer
-local PlayerGui = Player:WaitForChild("PlayerGui")
-local CoinsLabel = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("CoinsLabel")
+							<string name="Name">GUIUpdateLoop</string>
+							<string name="ScriptGuid">{1F53A545-5849-4386-AFBB-7A67E125E30E}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
 
-while task.wait() do
-	CoinsLabel.Text = " Coins: " .. Player.PlayerStats.Coins.Value
-end]]></ProtectedString>
+function module.StartGUIUpdateLoop()
+	local Player = game.Players.LocalPlayer
+	local PlayerGui = Player:WaitForChild("PlayerGui")
+	local CoinsLabel = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("CoinsLabel")
+
+	while task.wait() do
+		CoinsLabel.Text = " Coins: " .. Player.PlayerStats.Coins.Value
+	end
+end
+
+return module]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
-							<UniqueId name="UniqueId">084573327c679c8b0634229f0000c6a6</UniqueId>
+							<UniqueId name="UniqueId">0260393084c77b140634fe690000417f</UniqueId>
 						</Properties>
 					</Item>
-				</Item>
-				<Item class="LocalScript" referent="RBX76A2A46B0FD44ADA9E1018016903267A">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<bool name="Disabled">false</bool>
-						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">OnStart</string>
-						<token name="RunContext">0</token>
-						<string name="ScriptGuid">{83A04897-9926-4238-8C14-DC62FB2B98FD}</string>
-						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
-local collectCoins = require(script.Parent.Modules.CollectCoins)
-local doorway = require(script.Parent.Modules.Doorway)
-
-connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
-connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<UniqueId name="UniqueId">0260393084c77b140634fe6900004031</UniqueId>
-					</Properties>
 				</Item>
 			</Item>
 		</Item>
