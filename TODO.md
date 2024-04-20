@@ -1,4 +1,3 @@
-- [ ] space to dash
 - [ ] save coins between games
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
@@ -9,6 +8,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] space to dash
 - [x] doors that can open - use an opaque roof for rooms to make dark until touched/door opened
 - [x] track coins and show in UI
 - [x] pick things up from floor - coins

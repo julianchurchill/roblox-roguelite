@@ -18613,11 +18613,14 @@ end
 local connections = require(script.Modules.Connections)
 local collectCoins = require(script.Modules.CollectCoins)
 local doorway = require(script.Modules.Doorway)
+local keyboard = require(script.Modules.Keyboard)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
 connections.SetupTouchedConnectionWithHRPCheckAndDebounce(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
 
 doorway.InitializeDoorway(game.Workspace.Dungeon.LeftRoom.WoodenDoorway, game.Workspace.Dungeon.LeftRoom.Darkness)
+
+keyboard.RegisterKeyActions()
 
 GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
@@ -18646,9 +18649,8 @@ GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 							<string name="ScriptGuid">{884F6FAF-7ACF-4857-AC9E-0E9192F9058A}</string>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
-local debounce = false
-
 function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFunction)
+	local debounce = false
 	local connection = nil
 	connection = target.Touched:Connect(function(touchee)
 		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
@@ -18725,6 +18727,51 @@ return module]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">0260393084c77b140634fe6900004039</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX5945E3728A2B4F30A86B49E5BAD02F70">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">Keyboard</string>
+							<string name="ScriptGuid">{2403F4A8-71C0-481B-B629-D2CC607161F7}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+function module.RegisterKeyActions()
+    local uis = game:GetService("UserInputService")
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+    local debounce = false
+
+    local dashSpeedIncrease = 16
+    local dashDurationSeconds = 0.5
+    local dashCooldownSeconds = 1
+
+    uis.InputBegan:Connect(function(key, processed)
+        if debounce or processed then
+            return
+        end
+
+        if key.KeyCode == Enum.KeyCode.Space then
+            debounce = true
+            humanoid.WalkSpeed += dashSpeedIncrease
+            task.wait(dashDurationSeconds)
+            humanoid.WalkSpeed -= dashSpeedIncrease
+        end
+
+        task.wait(dashCooldownSeconds)
+        debounce = false
+    end)
+end
+
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">0260393084c77b140634fe6900004e50</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
