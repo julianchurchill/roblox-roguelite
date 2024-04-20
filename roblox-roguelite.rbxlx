@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-27.2821503</X>
-					<Y>34.3438225</Y>
-					<Z>34.719101</Z>
-					<R00>0.999782562</R00>
-					<R01>0.0137133123</R01>
-					<R02>-0.0157108437</R02>
-					<R10>-9.31322575e-10</R10>
-					<R11>0.753376484</R11>
-					<R12>0.657589495</R12>
-					<R20>0.0208539087</R20>
-					<R21>-0.657446504</R21>
-					<R22>0.753212631</R22>
+					<X>-18.6031666</X>
+					<Y>34.857666</Y>
+					<Z>28.1981125</Z>
+					<R00>0.996498346</R00>
+					<R01>0.0495184213</R01>
+					<R02>-0.0673715621</R02>
+					<R10>-0</R10>
+					<R11>0.805762231</R11>
+					<R12>0.592239141</R12>
+					<R20>0.0836122036</R20>
+					<R21>-0.590165317</R21>
+					<R22>0.802940786</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-27.2507286</X>
-					<Y>33.0286446</Y>
-					<Z>33.212677</Z>
+					<X>-18.4684238</X>
+					<Y>33.6731911</Y>
+					<Z>26.5922356</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -17628,6 +17628,49 @@ end
 							<UniqueId name="UniqueId">0260393084c77b140634fe6900003ccd</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX7429D63B45E44DD58123F35DC58F97CB">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">267d5ef2625c911a0635408600003ccd</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -18121,6 +18164,49 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">0260393084c77b140634fe6900003ccf</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBX2C748E157C1D4D7F965840BC0363E208">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">267d5ef2625c911a0635408600003ccf</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -18682,11 +18768,10 @@ return module]]></ProtectedString>
 							<string name="ScriptGuid">{EB549238-FF4C-446C-AAA1-AFDB4271C22B}</string>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.TouchCoin(touchee, target)
-	local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
-	local playerStats = player:FindFirstChild("PlayerStats")
-	local coins = playerStats:FindFirstChild("Coins")
-	coins.Value += 1
+local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
+
+function module.TouchCoin(_, target)
+	addCoinsEvent:FireServer(1)
 	target:Destroy()
 end
 
@@ -19289,6 +19374,14 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
     coins.Parent = playerStats;
 	coins.Name = "Coins"
 	coins.Value = 0
+end)
+
+local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
+
+addCoinsEvent.OnServerEvent:Connect(function(player, numberOfCoinsToAdd)
+	local playerStats = player:FindFirstChild("PlayerStats")
+	local coins = playerStats:FindFirstChild("Coins")
+	coins.Value += numberOfCoinsToAdd
 end)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -19346,6 +19439,18 @@ end]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd6</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="RemoteEvent" referent="RBX7A6A1AC87B714FB8AF43709CEB628BA1">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">AddCoins</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">267d5ef2625c911a0635408600004168</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
