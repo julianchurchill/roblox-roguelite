@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-23.2933178</X>
-					<Y>27.0829697</Y>
-					<Z>-28.1521778</Z>
-					<R00>0.770473123</R00>
-					<R01>-0.393476605</R01>
-					<R02>0.501545012</R02>
-					<R10>-0</R10>
-					<R11>0.786771178</R11>
-					<R12>0.61724478</R12>
-					<R20>-0.63747257</R20>
-					<R21>-0.4755705</R21>
-					<R22>0.606185973</R22>
+					<X>-32.5250244</X>
+					<Y>27.9690037</Y>
+					<Z>-41.5599251</Z>
+					<R00>0.91632098</R00>
+					<R01>-0.24882476</R01>
+					<R02>0.313754946</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.783516467</R11>
+					<R12>0.62137115</R12>
+					<R20>-0.400444627</R20>
+					<R21>-0.569375396</R21>
+					<R22>0.717952549</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-24.2964077</X>
-					<Y>25.8484802</Y>
-					<Z>-29.3645496</Z>
+					<X>-33.1525345</X>
+					<Y>26.7262611</Y>
+					<Z>-42.9958305</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -18615,8 +18615,9 @@ local collectCoins = require(script.Modules.CollectCoins)
 local doorway = require(script.Modules.Doorway)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
-connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
-connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)
+connections.SetupTouchedConnectionWithHRPCheckAndDebounce(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
+
+doorway.InitializeDoorway(game.Workspace.Dungeon.LeftRoom.WoodenDoorway, game.Workspace.Dungeon.LeftRoom.Darkness)
 
 GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
@@ -18645,12 +18646,19 @@ GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 							<string name="ScriptGuid">{884F6FAF-7ACF-4857-AC9E-0E9192F9058A}</string>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.SetupTouchedConnection(target, touchedFunction)
+local debounce = false
+
+function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFunction)
 	local connection = nil
 	connection = target.Touched:Connect(function(touchee)
-		local result = touchedFunction(touchee, target)
-		if result then
-			connection:Disconnect()
+		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
+		if touchee.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
+			debounce = true
+			local result = touchedFunction(touchee, target)
+			if result then
+				connection:Disconnect()
+			end
+			debounce = false
 		end
 	end)
 end
@@ -18672,19 +18680,12 @@ return module]]></ProtectedString>
 							<string name="ScriptGuid">{EB549238-FF4C-446C-AAA1-AFDB4271C22B}</string>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
-local debounce = false
-
 function module.TouchCoin(touchee, target)
-	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
-	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
-		debounce = true
-		local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
-		local playerStats = player:FindFirstChild("PlayerStats")
-		local coins = playerStats:FindFirstChild("Coins")
-		coins.Value += 1
-		target:Destroy()
-		debounce = false
-	end
+	local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
+	local playerStats = player:FindFirstChild("PlayerStats")
+	local coins = playerStats:FindFirstChild("Coins")
+	coins.Value += 1
+	target:Destroy()
 end
 
 return module]]></ProtectedString>
@@ -18702,17 +18703,22 @@ return module]]></ProtectedString>
 							<Content name="LinkedSource"><null></null></Content>
 							<string name="Name">Doorway</string>
 							<string name="ScriptGuid">{D1B1768D-8A20-4C04-A56E-93D9672E6A00}</string>
-							<ProtectedString name="Source"><![CDATA[local module = {}
+							<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Connections)
 
-local debounce = false
+local module = {}
 
-function module.TouchDoor(touchee, target)
-	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
-	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
-		debounce = true
-        target:Destroy()
-		debounce = false
-	end
+function module.InitializeDoorway(doorway, darknessPart)
+	connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
+		doorway.door,
+		function(touchee, target)
+			TouchDoor(touchee, target, darknessPart)
+		end
+	)
+end
+
+function TouchDoor(_, door, darknessPart)
+	darknessPart.Transparency = 1
+	door:Destroy()
 end
 
 return module]]></ProtectedString>
