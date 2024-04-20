@@ -1,8 +1,7 @@
 local module = {}
 
-local debounce = false
-
 function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFunction)
+	local debounce = false
 	local connection = nil
 	connection = target.Touched:Connect(function(touchee)
 		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
