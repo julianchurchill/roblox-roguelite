@@ -5,7 +5,7 @@ local collectCoins = require(script.Modules.CollectCoins)
 local doorway = require(script.Modules.Doorway)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
-connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
-connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)
+connections.SetupTouchedConnectionWithHRPCheckAndDebounce(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
+connections.SetupTouchedConnectionWithHRPCheckAndDebounce(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)
 
 GUIUpdateLoop.StartGUIUpdateLoop()
