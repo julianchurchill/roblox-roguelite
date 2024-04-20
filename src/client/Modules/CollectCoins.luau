@@ -1,8 +1,8 @@
-local connections = require(script.Parent.Modules.Connections)
+local module = {}
 
 local debounce = false
 
-function TouchCoin(touchee, target)
+function module.TouchCoin(touchee, target)
 	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
 	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
 		debounce = true
@@ -15,4 +15,4 @@ function TouchCoin(touchee, target)
 	end
 end
 
-connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)
+return module

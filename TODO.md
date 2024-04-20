@@ -1,6 +1,6 @@
-- [ ] ... doors that can open and close - consider using an opaque roof for rooms to make dark until touched/door opened
-- [ ] save coins between games
+- [ ] ... doors that can open - use an opaque roof for rooms to make dark until touched/door opened
 - [ ] space to dash
+- [ ] save coins between games
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
 - [ ] teleport to any reached dungeon level

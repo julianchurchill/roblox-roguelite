@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-39.8202629</X>
-					<Y>12.3128939</Y>
-					<Z>-61.6870918</Z>
-					<R00>0.493926227</R00>
-					<R01>-0.407068342</R01>
-					<R02>0.768330872</R02>
-					<R10>-1.49011594e-08</R10>
-					<R11>0.883642912</R11>
-					<R12>0.468161672</R12>
-					<R20>-0.869503796</R20>
-					<R21>-0.231237337</R21>
-					<R22>0.436454415</R22>
+					<X>-23.2933178</X>
+					<Y>27.0829697</Y>
+					<Z>-28.1521778</Z>
+					<R00>0.770473123</R00>
+					<R01>-0.393476605</R01>
+					<R02>0.501545012</R02>
+					<R10>-0</R10>
+					<R11>0.786771178</R11>
+					<R12>0.61724478</R12>
+					<R20>-0.63747257</R20>
+					<R21>-0.4755705</R21>
+					<R22>0.606185973</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-41.356926</X>
-					<Y>11.3765697</Y>
-					<Z>-62.5600014</Z>
+					<X>-24.2964077</X>
+					<Y>25.8484802</Y>
+					<Z>-29.3645496</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -17585,6 +17585,49 @@ end
 							<UniqueId name="UniqueId">084573327c679c8b0634229f0000c219</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX478B88FC4471428887D50C0E196A4C7B">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">0260393084c77b140634fe6900003ccd</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -18035,6 +18078,49 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">084573327c679c8b0634229f0000c21b</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBXBA6567C5AF2243A7A9C4C0149CD789E8">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">0260393084c77b140634fe6900003ccf</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -18527,70 +18613,6 @@ end
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cda</UniqueId>
 				</Properties>
-				<Item class="LocalScript" referent="RBX82C5B557BF9845BE967CAC72FB3BE59B">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<bool name="Disabled">false</bool>
-						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">CollectCoins</string>
-						<token name="RunContext">0</token>
-						<string name="ScriptGuid">{2FA41359-EA5E-4D3F-AF99-3433BDDE719F}</string>
-						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
-
-local debounce = false
-
-function TouchCoin(touchee, target)
-	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
-	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
-		debounce = true
-		local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
-		local playerStats = player:FindFirstChild("PlayerStats")
-		local coins = playerStats:FindFirstChild("Coins")
-		coins.Value += 1
-		target:Destroy()
-		debounce = false
-	end
-end
-
-connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, TouchCoin)]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f79</UniqueId>
-					</Properties>
-				</Item>
-				<Item class="LocalScript" referent="RBX95D83AF51DC04B4884CBF5778C3F35A6">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-						<bool name="DefinesCapabilities">false</bool>
-						<bool name="Disabled">false</bool>
-						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Doorway</string>
-						<token name="RunContext">0</token>
-						<string name="ScriptGuid">{BA7E2DE9-4A1F-4F5D-8057-8EEDCB8ADD7A}</string>
-						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
-
-local debounce = false
-
-function TouchDoor(touchee, target)
-	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
-	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
-		debounce = true
-        target:Destroy()
-		debounce = false
-	end
-end
-
-connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, TouchDoor)]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<UniqueId name="UniqueId">589f92463d0fd57806330bb000007a2e</UniqueId>
-					</Properties>
-				</Item>
 				<Item class="Folder" referent="RBXEE193D71E1D04D1CA96F990C11627C58">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18629,6 +18651,66 @@ return module]]></ProtectedString>
 							<UniqueId name="UniqueId">589f92463d0fd57806330bb00000807f</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="ModuleScript" referent="RBXC04939F54B974D379073C3B92B55368D">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">CollectCoins</string>
+							<string name="ScriptGuid">{EB549238-FF4C-446C-AAA1-AFDB4271C22B}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+local debounce = false
+
+function module.TouchCoin(touchee, target)
+	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
+	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
+		debounce = true
+		local player = game.Players:GetPlayerFromCharacter(touchee.Parent)
+		local playerStats = player:FindFirstChild("PlayerStats")
+		local coins = playerStats:FindFirstChild("Coins")
+		coins.Value += 1
+		target:Destroy()
+		debounce = false
+	end
+end
+
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">0260393084c77b140634fe6900004035</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBXB4DC48528A714801894B18FE09604576">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">Doorway</string>
+							<string name="ScriptGuid">{D1B1768D-8A20-4C04-A56E-93D9672E6A00}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+local debounce = false
+
+function module.TouchDoor(touchee, target)
+	local hrp = touchee.Parent:FindFirstChild("HumanoidRootPart")
+	if touchee.Parent:FindFirstChild("Humanoid") and hrp and debounce == false then
+		debounce = true
+        target:Destroy()
+		debounce = false
+	end
+end
+
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">0260393084c77b140634fe6900004039</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX50949A3ACA28481883506938B1835613">
 					<Properties>
@@ -18664,6 +18746,28 @@ end]]></ProtectedString>
 							<UniqueId name="UniqueId">084573327c679c8b0634229f0000c6a6</UniqueId>
 						</Properties>
 					</Item>
+				</Item>
+				<Item class="LocalScript" referent="RBX76A2A46B0FD44ADA9E1018016903267A">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Disabled">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">OnStart</string>
+						<token name="RunContext">0</token>
+						<string name="ScriptGuid">{83A04897-9926-4238-8C14-DC62FB2B98FD}</string>
+						<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Modules.Connections)
+local collectCoins = require(script.Parent.Modules.CollectCoins)
+local doorway = require(script.Parent.Modules.Doorway)
+
+connections.SetupTouchedConnection(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
+connections.SetupTouchedConnection(game.Workspace.Dungeon.LeftRoom.WoodenDoorway.door, doorway.TouchDoor)]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">0260393084c77b140634fe6900004031</UniqueId>
+					</Properties>
 				</Item>
 			</Item>
 		</Item>
