@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-32.5250244</X>
-					<Y>27.9690037</Y>
-					<Z>-41.5599251</Z>
-					<R00>0.91632098</R00>
-					<R01>-0.24882476</R01>
-					<R02>0.313754946</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.783516467</R11>
-					<R12>0.62137115</R12>
-					<R20>-0.400444627</R20>
-					<R21>-0.569375396</R21>
-					<R22>0.717952549</R22>
+					<X>-27.2821503</X>
+					<Y>34.3438225</Y>
+					<Z>34.719101</Z>
+					<R00>0.999782562</R00>
+					<R01>0.0137133123</R01>
+					<R02>-0.0157108437</R02>
+					<R10>-9.31322575e-10</R10>
+					<R11>0.753376484</R11>
+					<R12>0.657589495</R12>
+					<R20>0.0208539087</R20>
+					<R21>-0.657446504</R21>
+					<R22>0.753212631</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-33.1525345</X>
-					<Y>26.7262611</Y>
-					<Z>-42.9958305</Z>
+					<X>-27.2507286</X>
+					<Y>33.0286446</Y>
+					<Z>33.212677</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -18707,6 +18707,11 @@ return module]]></ProtectedString>
 
 local module = {}
 
+local function TouchDoor(_, door, darknessPart)
+	darknessPart.Transparency = 1
+	door:Destroy()
+end
+
 function module.InitializeDoorway(doorway, darknessPart)
 	connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
 		doorway.door,
@@ -18714,11 +18719,6 @@ function module.InitializeDoorway(doorway, darknessPart)
 			TouchDoor(touchee, target, darknessPart)
 		end
 	)
-end
-
-function TouchDoor(_, door, darknessPart)
-	darknessPart.Transparency = 1
-	door:Destroy()
 end
 
 return module]]></ProtectedString>
