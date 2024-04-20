@@ -18745,26 +18745,25 @@ function module.RegisterKeyActions()
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local humanoid = character:WaitForChild("Humanoid")
-    local debounce = false
+    local dashDebounce = false
 
-    local dashSpeedIncrease = 16
+    local dashSpeedIncrease = 24
     local dashDurationSeconds = 0.5
-    local dashCooldownSeconds = 1
+    local dashCooldownSeconds = 0.3
 
     uis.InputBegan:Connect(function(key, processed)
-        if debounce or processed then
+        if processed then
             return
         end
 
-        if key.KeyCode == Enum.KeyCode.Space then
-            debounce = true
+        if dashDebounce == false and key.KeyCode == Enum.KeyCode.Space then
+            dashDebounce = true
             humanoid.WalkSpeed += dashSpeedIncrease
             task.wait(dashDurationSeconds)
             humanoid.WalkSpeed -= dashSpeedIncrease
+            task.wait(dashCooldownSeconds)
+            dashDebounce = false
         end
-
-        task.wait(dashCooldownSeconds)
-        debounce = false
     end)
 end
 

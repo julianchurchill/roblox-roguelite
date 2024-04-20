@@ -7,9 +7,9 @@ function module.RegisterKeyActions()
     local humanoid = character:WaitForChild("Humanoid")
     local dashDebounce = false
 
-    local dashSpeedIncrease = 16
+    local dashSpeedIncrease = 24
     local dashDurationSeconds = 0.5
-    local dashCooldownSeconds = 1
+    local dashCooldownSeconds = 0.3
 
     uis.InputBegan:Connect(function(key, processed)
         if processed then
