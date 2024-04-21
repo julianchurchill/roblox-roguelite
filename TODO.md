@@ -1,4 +1,3 @@
-- [ ] ... create attackable training dummy
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] save coins between games
 - [ ] starting location - town
@@ -11,6 +10,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] create attackable training dummy
 - [x] space to dash
 - [x] doors that can open - use an opaque roof for rooms to make dark until touched/door opened
 - [x] track coins and show in UI
