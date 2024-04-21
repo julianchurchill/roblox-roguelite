@@ -1,3 +1,4 @@
+- [ ] create attackable test dummy
 - [ ] save coins between games
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration
