@@ -1,4 +1,5 @@
-- [ ] create attackable training dummy
+- [ ] ... create attackable training dummy
+- [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] save coins between games
 - [ ] starting location - town
 - [ ] reveal dungeon by exploration

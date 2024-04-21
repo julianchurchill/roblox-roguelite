@@ -5,6 +5,7 @@ local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
 function module.TouchCoin(_, target)
 	addCoinsEvent:FireServer(1)
 	target:Destroy()
+	return true
 end
 
 return module

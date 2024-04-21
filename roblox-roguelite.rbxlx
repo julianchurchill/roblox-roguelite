@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-20.1354446</X>
-					<Y>14.0686827</Y>
-					<Z>20.1696987</Z>
-					<R00>0.998788536</R00>
-					<R01>-0.0190348029</R01>
-					<R02>0.0453776866</R02>
+					<X>-17.6704063</X>
+					<Y>15.0238552</Y>
+					<Z>15.20432</Z>
+					<R00>0.972079754</R00>
+					<R01>0.132915139</R01>
+					<R02>-0.193376496</R02>
 					<R10>-0</R10>
-					<R11>0.922154903</R11>
-					<R12>0.386820912</R12>
-					<R20>-0.0492083095</R20>
-					<R21>-0.386352301</R21>
-					<R22>0.921037734</R22>
+					<R11>0.824103951</R11>
+					<R12>0.566438556</R12>
+					<R20>0.234650597</R20>
+					<R21>-0.550623477</R21>
+					<R22>0.80109483</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-20.2262001</X>
-					<Y>13.2950401</Y>
-					<Z>18.3276215</Z>
+					<X>-17.2836533</X>
+					<Y>13.8909779</Y>
+					<Z>13.6021299</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -2266,7 +2266,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Z>0</Z>
 						</Vector3>
 						<token name="ModelStreamingMode">0</token>
-						<string name="Name">Training Dummy</string>
+						<string name="Name">TrainingDummy</string>
 						<bool name="NeedsPivotMigration">false</bool>
 						<Ref name="PrimaryPart">null</Ref>
 						<float name="ScaleFactor">1</float>
@@ -11129,7 +11129,7 @@ end
 						<Z>0</Z>
 					</Vector3>
 					<token name="ModelStreamingMode">0</token>
-					<string name="Name">Training Dummy</string>
+					<string name="Name">TrainingDummy</string>
 					<bool name="NeedsPivotMigration">false</bool>
 					<Ref name="PrimaryPart">null</Ref>
 					<float name="ScaleFactor">1</float>
@@ -22224,8 +22224,8 @@ function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFun
 		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
 		if touchee.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
 			debounce = true
-			local result = touchedFunction(touchee, target)
-			if result then
+			local targetDestroyed = touchedFunction(touchee, target)
+			if targetDestroyed then
 				connection:Disconnect()
 			end
 			debounce = false
@@ -22255,6 +22255,7 @@ local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
 function module.TouchCoin(_, target)
 	addCoinsEvent:FireServer(1)
 	target:Destroy()
+	return true
 end
 
 return module]]></ProtectedString>
@@ -22279,13 +22280,14 @@ local module = {}
 local function TouchDoor(_, door, darknessPart)
 	darknessPart.Transparency = 1
 	door:Destroy()
+	return true
 end
 
 function module.InitializeDoorway(doorway, darknessPart)
 	connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
 		doorway.door,
 		function(touchee, target)
-			TouchDoor(touchee, target, darknessPart)
+			return TouchDoor(touchee, target, darknessPart)
 		end
 	)
 end
