@@ -5100,6 +5100,19 @@ end
 							</Properties>
 						</Item>
 					</Item>
+					<Item class="ObjectValue" referent="RBXA0FAFFCACB1840BDA02ABB8311F6A966">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">DarknessPart</string>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00004a81</UniqueId>
+							<Ref name="Value">RBX0AECB6629FB0416292F837B2F66AA238</Ref>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Folder" referent="RBXD40B61729E774772A83AE88ED790A763">
@@ -10746,6 +10759,19 @@ end
 							</Vector3>
 						</Properties>
 					</Item>
+				</Item>
+				<Item class="ObjectValue" referent="RBX9078F95250014DFD9DA58A0966DE38DD">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<string name="Name">DarknessPart</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00004a84</UniqueId>
+						<Ref name="Value">null</Ref>
+					</Properties>
 				</Item>
 			</Item>
 			<Item class="Model" referent="RBXB4DB9631DF324F6185986CC347F56E04">
@@ -22359,8 +22385,7 @@ local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
 behaviour.SetupBehaviour("CollectableCoin", collectCoins.AddCollectBehaviourTo)
 behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
-
-doorway.InitializeDoorway(game.Workspace.Dungeon.LeftRoom.WoodenDoorway, game.Workspace.Dungeon.LeftRoom.Darkness)
+behaviour.SetupBehaviour("OpenableDoorway", doorway.AddRemoveDarknessBehaviourTo)
 
 keyboard.RegisterKeyActions()
 
@@ -22452,9 +22477,9 @@ return module]]></ProtectedString>
 							<Content name="LinkedSource"><null></null></Content>
 							<string name="Name">Doorway</string>
 							<string name="ScriptGuid">{D1B1768D-8A20-4C04-A56E-93D9672E6A00}</string>
-							<ProtectedString name="Source"><![CDATA[local connections = require(script.Parent.Connections)
+							<ProtectedString name="Source"><![CDATA[local module = {}
 
-local module = {}
+local connections = require(script.Parent.Connections)
 
 local function TouchDoor(_, door, darknessPart)
 	darknessPart.Transparency = 1
@@ -22462,7 +22487,8 @@ local function TouchDoor(_, door, darknessPart)
 	return 'TARGET_DESTROYED'
 end
 
-function module.InitializeDoorway(doorway, darknessPart)
+function module.AddRemoveDarknessBehaviourTo(doorway)
+	local darknessPart = doorway.DarknessPart.Value
 	connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
 		doorway.door,
 		function(touchee, target)

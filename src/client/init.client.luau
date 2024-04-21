@@ -9,8 +9,7 @@ local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
 behaviour.SetupBehaviour("CollectableCoin", collectCoins.AddCollectBehaviourTo)
 behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
-
-doorway.InitializeDoorway(game.Workspace.Dungeon.LeftRoom.WoodenDoorway, game.Workspace.Dungeon.LeftRoom.Darkness)
+behaviour.SetupBehaviour("OpenableDoorway", doorway.AddRemoveDarknessBehaviourTo)
 
 keyboard.RegisterKeyActions()
 

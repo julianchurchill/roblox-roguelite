@@ -1,6 +1,6 @@
-local connections = require(script.Parent.Connections)
-
 local module = {}
+
+local connections = require(script.Parent.Connections)
 
 local function TouchDoor(_, door, darknessPart)
 	darknessPart.Transparency = 1
@@ -8,7 +8,8 @@ local function TouchDoor(_, door, darknessPart)
 	return 'TARGET_DESTROYED'
 end
 
-function module.InitializeDoorway(doorway, darknessPart)
+function module.AddRemoveDarknessBehaviourTo(doorway)
+	local darknessPart = doorway.DarknessPart.Value
 	connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
 		doorway.door,
 		function(touchee, target)
