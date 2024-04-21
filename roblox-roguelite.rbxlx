@@ -22313,8 +22313,8 @@ function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFun
 		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
 		if touchee.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
 			debounce = true
-			local targetDestroyed = touchedFunction(touchee, target)
-			if targetDestroyed then
+			local status = touchedFunction(touchee, target)
+			if status == 'TARGET_DESTROYED' then
 				connection:Disconnect()
 			end
 			debounce = false
@@ -22344,7 +22344,7 @@ local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
 function module.TouchCoin(_, target)
 	addCoinsEvent:FireServer(1)
 	target:Destroy()
-	return true
+	return 'TARGET_DESTROYED'
 end
 
 return module]]></ProtectedString>
@@ -22369,7 +22369,7 @@ local module = {}
 local function TouchDoor(_, door, darknessPart)
 	darknessPart.Transparency = 1
 	door:Destroy()
-	return true
+	return 'DESTROY_TARGET'
 end
 
 function module.InitializeDoorway(doorway, darknessPart)
@@ -22473,7 +22473,7 @@ function module.AddAttackableBehaviourTo(attackableTarget)
         function(toucheePart, targetHumanoid)
             -- possibility of already attacking is dealt with by debounce in 'connections' event handling
             AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, toucheePart.Parent)
-            return false
+            return 'TARGET_NOT_DESTROYED'
         end
     )
 end

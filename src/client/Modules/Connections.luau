@@ -7,8 +7,8 @@ function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFun
 		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
 		if touchee.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
 			debounce = true
-			local targetDestroyed = touchedFunction(touchee, target)
-			if targetDestroyed then
+			local status = touchedFunction(touchee, target)
+			if status == 'TARGET_DESTROYED' then
 				connection:Disconnect()
 			end
 			debounce = false

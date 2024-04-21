@@ -5,7 +5,7 @@ local module = {}
 local function TouchDoor(_, door, darknessPart)
 	darknessPart.Transparency = 1
 	door:Destroy()
-	return true
+	return 'TARGET_DESTROYED'
 end
 
 function module.InitializeDoorway(doorway, darknessPart)

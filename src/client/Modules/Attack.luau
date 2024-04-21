@@ -31,7 +31,7 @@ function module.AddAttackableBehaviourTo(attackableTarget)
         function(toucheePart, targetHumanoid)
             -- possibility of already attacking is dealt with by debounce in 'connections' event handling
             AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, toucheePart.Parent)
-            return false
+            return 'TARGET_NOT_DESTROYED'
         end
     )
 end
