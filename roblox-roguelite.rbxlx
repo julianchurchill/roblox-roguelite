@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-17.6704063</X>
-					<Y>15.0238552</Y>
-					<Z>15.20432</Z>
-					<R00>0.972079754</R00>
-					<R01>0.132915139</R01>
-					<R02>-0.193376496</R02>
-					<R10>-0</R10>
-					<R11>0.824103951</R11>
-					<R12>0.566438556</R12>
-					<R20>0.234650597</R20>
-					<R21>-0.550623477</R21>
-					<R22>0.80109483</R22>
+					<X>-21.3119888</X>
+					<Y>27.1745338</Y>
+					<Z>22.1061153</Z>
+					<R00>0.999895215</R00>
+					<R01>-0.0041133957</R01>
+					<R02>0.0138845444</R02>
+					<R10>4.65661343e-10</R10>
+					<R11>0.958808422</R11>
+					<R12>0.284053802</R12>
+					<R20>-0.0144810434</R20>
+					<R21>-0.28402403</R21>
+					<R22>0.958707809</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-17.2836533</X>
-					<Y>13.8909779</Y>
-					<Z>13.6021299</Z>
+					<X>-21.3397579</X>
+					<Y>26.6064262</Y>
+					<Z>20.1886997</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -2271,7 +2271,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<Ref name="PrimaryPart">null</Ref>
 						<float name="ScaleFactor">1</float>
 						<int64 name="SourceAssetId">8767186735</int64>
-						<BinaryString name="Tags"></BinaryString>
+						<BinaryString name="Tags">QXR0YWNrYWJsZQ==</BinaryString>
 						<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d0000478b</UniqueId>
 						<OptionalCoordinateFrame name="WorldPivotData">
 							<CFrame>
@@ -4581,7 +4581,7 @@ end
 						<Ref name="PrimaryPart">RBX4BABF9834264446D957B07618C29ABBF</Ref>
 						<float name="ScaleFactor">1</float>
 						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
+						<BinaryString name="Tags">T3BlbmFibGVEb29yd2F5</BinaryString>
 						<UniqueId name="UniqueId">589f92463d0fd57806330bb000007117</UniqueId>
 						<OptionalCoordinateFrame name="WorldPivotData">
 							<CFrame>
@@ -5692,7 +5692,7 @@ end
 							<Z>0</Z>
 						</Vector3>
 						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
+						<BinaryString name="Tags">Q29sbGVjdGFibGVDb2lu</BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
 						<token name="TopSurface">0</token>
@@ -10122,7 +10122,7 @@ end
 						<Z>0</Z>
 					</Vector3>
 					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
+					<BinaryString name="Tags">Q29sbGVjdGFibGVDb2lu</BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
 					<token name="TopSurface">0</token>
@@ -10228,7 +10228,7 @@ end
 					<Ref name="PrimaryPart">RBX8CCF6132316940CCB3ACEA2D8AD53749</Ref>
 					<float name="ScaleFactor">1</float>
 					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
+					<BinaryString name="Tags">T3BlbmFibGVEb29yd2F5</BinaryString>
 					<UniqueId name="UniqueId">589f92463d0fd57806330bb000004c31</UniqueId>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
@@ -11134,7 +11134,7 @@ end
 					<Ref name="PrimaryPart">null</Ref>
 					<float name="ScaleFactor">1</float>
 					<int64 name="SourceAssetId">8767186735</int64>
-					<BinaryString name="Tags"></BinaryString>
+					<BinaryString name="Tags">QXR0YWNrYWJsZQ==</BinaryString>
 					<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d0000449c</UniqueId>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
@@ -21153,6 +21153,49 @@ end
 							<UniqueId name="UniqueId">1494f326ebc3bfb80636885600003ccd</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX81A5A0911A0149C9A49A5834C1F3F992">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00003ccd</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -21775,6 +21818,49 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">1494f326ebc3bfb80636885600003ccf</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBX4EA12ED9B9D942EE9D911BBA6D82EC7B">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00003ccf</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -23342,6 +23428,60 @@ end)]]></ProtectedString>
 			<BinaryString name="Tags"></BinaryString>
 			<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df0000034f</UniqueId>
 		</Properties>
+		<Item class="Folder" referent="RBX03487B61693A4EF69D67165571B43BAD">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="DefinesCapabilities">false</bool>
+				<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+				<string name="Name">TagList</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags">VGFnRWRpdG9yVGFnQ29udGFpbmVy</BinaryString>
+				<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00004030</UniqueId>
+			</Properties>
+			<Item class="Configuration" referent="RBX2D8498770D054A559D3EF2602F53182A">
+				<Properties>
+					<BinaryString name="AttributesSerialize"><![CDATA[BgAAAAsAAABBbHdheXNPblRvcAMABQAAAENvbG9yD0+CNT85yZ09TaMwPwgAAABEcmF3VHlw
+ZQIDAAAAQm94BQAAAEdyb3VwAgAAAAAEAAAASWNvbgIlAAAAcmJ4YXNzZXQ6Ly90ZXh0dXJl
+cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">Attackable</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00004031</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="Configuration" referent="RBXCAAFFA36863F42C5836C26426B03D491">
+				<Properties>
+					<BinaryString name="AttributesSerialize"><![CDATA[BgAAAAsAAABBbHdheXNPblRvcAMABQAAAENvbG9yDz1UATuXlhY/alnwOggAAABEcmF3VHlw
+ZQIDAAAAQm94BQAAAEdyb3VwAgAAAAAEAAAASWNvbgIlAAAAcmJ4YXNzZXQ6Ly90ZXh0dXJl
+cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">CollectableCoin</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae0000404d</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="Configuration" referent="RBXA3849E3880EB4031A4D5DFB3A05BB23F">
+				<Properties>
+					<BinaryString name="AttributesSerialize"><![CDATA[BgAAAAsAAABBbHdheXNPblRvcAMABQAAAENvbG9yD30WsD7VOBI9Ql4kPggAAABEcmF3VHlw
+ZQIDAAAAQm94BQAAAEdyb3VwAgAAAAAEAAAASWNvbgIlAAAAcmJ4YXNzZXQ6Ly90ZXh0dXJl
+cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">OpenableDoorway</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae000040a0</UniqueId>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="ReplicatedStorage" referent="RBX11796B44D1954BD8B12557623FB46DB4">
 		<Properties>
