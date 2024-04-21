@@ -1,18 +1,17 @@
 print("Hello world, from init.client.luau!")
 
-local connections = require(script.Modules.Connections)
+local behaviour = require(script.Modules.Behaviour)
 local collectCoins = require(script.Modules.CollectCoins)
+local attack = require(script.Modules.Attack)
 local doorway = require(script.Modules.Doorway)
 local keyboard = require(script.Modules.Keyboard)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
-local attack = require(script.Modules.Attack)
 
-connections.SetupTouchedConnectionWithHRPCheckAndDebounce(game.Workspace.Dungeon.RightRoom.Coin, collectCoins.TouchCoin)
+behaviour.SetupBehaviour("CollectableCoin", collectCoins.AddCollectBehaviourTo)
+behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
 
 doorway.InitializeDoorway(game.Workspace.Dungeon.LeftRoom.WoodenDoorway, game.Workspace.Dungeon.LeftRoom.Darkness)
 
 keyboard.RegisterKeyActions()
 
 GUIUpdateLoop.StartGUIUpdateLoop()
-
-attack.AddAttackableBehaviourTo(game.Workspace.Dungeon.StartRoom.TrainingDummy)
