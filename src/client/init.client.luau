@@ -15,4 +15,4 @@ keyboard.RegisterKeyActions()
 
 GUIUpdateLoop.StartGUIUpdateLoop()
 
-attack.AddAttackableBehaviour(game.Workspace.Dungeon.StartRoom.TrainingDummy.Humanoid)
+attack.AddAttackableBehaviourTo(game.Workspace.Dungeon.StartRoom.TrainingDummy)

@@ -21110,6 +21110,49 @@ end
 							<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d00003ccd</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX240BB7BD74624A7AB85117036499F883">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">1494f326ebc3bfb80636885600003ccd</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -21691,6 +21734,49 @@ end
 							<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d00003ccf</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX0DCFCE54B050433484E0BC753E83B686">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">1494f326ebc3bfb80636885600003ccf</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="BodyColors" referent="RBX8B50A5CC7A934D6E92091473FB4AF610">
@@ -22193,7 +22279,7 @@ keyboard.RegisterKeyActions()
 
 GUIUpdateLoop.StartGUIUpdateLoop()
 
-attack.AddAttackableBehaviour(game.Workspace.Dungeon.StartRoom.TrainingDummy.Humanoid)]]></ProtectedString>
+attack.AddAttackableBehaviourTo(game.Workspace.Dungeon.StartRoom.TrainingDummy)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cda</UniqueId>
@@ -22357,12 +22443,19 @@ return module]]></ProtectedString>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
 local connections = require(script.Parent.Connections)
+local damageIndicators = require(script.Parent.DamageIndicators)
 
-function module.AddAttackableBehaviour(attackableTarget)
+function module.AddAttackableBehaviourTo(attackableTarget)
+    local humanoid = attackableTarget:FindFirstChildWhichIsA("Humanoid")
+    local humanoidRootPart = attackableTarget:WaitForChild("HumanoidRootPart")
     connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
-        attackableTarget,
-        function(touchee, target)
-            print(touchee.Parent.Name .. " hit " .. target.Parent.Name)
+        humanoid,
+        function(_, targetHumanoid)
+            -- attack speed
+            local damage = 1
+            targetHumanoid:TakeDamage(damage)
+            damageIndicators.ShowEnemyDamageIndicatorAsync(humanoidRootPart.CFrame, damage)
+            -- auto attack based on proximity rather than having to hold a direction key
         end
     )
 end
@@ -22371,6 +22464,89 @@ return module]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d000052bc</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBXF3A528B06144424C86F63135A58CAED0">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">DamageIndicators</string>
+							<string name="ScriptGuid">{83C1F5F5-2442-44C0-A02A-1B81B4767A66}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+local Player = game.Players.LocalPlayer
+local EnemyDamageIndicatorsScreenGui = Player.PlayerGui:WaitForChild("EnemyDamageIndicators")
+local currentCamera = game.Workspace.CurrentCamera
+
+local maxX = (EnemyDamageIndicatorsScreenGui.AbsoluteSize.X / 6)
+local maxY = (EnemyDamageIndicatorsScreenGui.AbsoluteSize.Y / 6)
+
+function ClampPositionToPlayersScreen(targetCFrame)
+    local screenPosition = currentCamera:WorldToViewportPoint(targetCFrame.Position)
+    local indicatorX = math.clamp(screenPosition.X, maxX, (EnemyDamageIndicatorsScreenGui.AbsoluteSize.X - maxX))
+    local indicatorY = math.clamp(screenPosition.Y, maxY, (EnemyDamageIndicatorsScreenGui.AbsoluteSize.Y - maxY))
+    return indicatorX, indicatorY
+end
+
+local fadeAmountX = 0
+local fadeAmountY = 8
+local fadeOutTween = Enum.EasingStyle.Quart
+local fadeOutDurationSeconds = 0.4
+
+function AnimateOutAndDestroy(element)
+    element:TweenSizeAndPosition(
+        element.Size,
+        element.Position + UDim2.fromOffset(fadeAmountX, -fadeAmountY),
+        Enum.EasingDirection.In,
+        fadeOutTween,
+        fadeOutDurationSeconds,
+        true,
+        function()
+            element:Destroy()
+        end
+    )
+end
+
+local EnemyDamageIndicatorTemplate = EnemyDamageIndicatorsScreenGui.IndicatorTemplate
+local EnemyDamageIndicatorsHome = EnemyDamageIndicatorsScreenGui.Indicators
+
+local indicatorOffsetX = 10;
+local indicatorOffsetY = -120;
+local indicatorOffsetVariation = 20;
+local indicatorShowForSeconds = 0.25
+
+-- Based on https://devforum.roblox.com/t/how-to-implement-a-damage-indication-system/483161
+function module.ShowEnemyDamageIndicatorAsync(targetCFrame, number)
+    task.spawn(
+        function()
+            local indicatorX, indicatorY = ClampPositionToPlayersScreen(targetCFrame)
+
+            local numberIndicator = EnemyDamageIndicatorTemplate:Clone()
+            numberIndicator.Name = "Indicator"
+            numberIndicator.Visible = true
+            numberIndicator.Shadow.Visible = true
+
+            numberIndicator.Position = UDim2.new(
+                0, indicatorX + indicatorOffsetX + math.random(-indicatorOffsetVariation, indicatorOffsetVariation),
+                0, (indicatorY + indicatorOffsetY + math.random(-indicatorOffsetVariation, indicatorOffsetVariation)))
+            numberIndicator.Parent = EnemyDamageIndicatorsHome
+
+            numberIndicator.Text = tostring(number)
+            numberIndicator.Shadow.Text = numberIndicator.Text
+
+            task.wait(indicatorShowForSeconds)
+            AnimateOutAndDestroy(numberIndicator)
+        end
+    )
+end
+
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">1494f326ebc3bfb80636885600006335</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -22653,6 +22829,236 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 					<bool name="Visible">true</bool>
 					<int name="ZIndex">1</int>
 				</Properties>
+			</Item>
+		</Item>
+		<Item class="ScreenGui" referent="RBX78F2EA0CF7884B8D878F0CB1BE6D1921">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="AutoLocalize">true</bool>
+				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+				<bool name="ClipToDeviceSafeArea">true</bool>
+				<bool name="DefinesCapabilities">false</bool>
+				<int name="DisplayOrder">0</int>
+				<bool name="Enabled">true</bool>
+				<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+				<string name="Name">EnemyDamageIndicators</string>
+				<bool name="ResetOnSpawn">true</bool>
+				<Ref name="RootLocalizationTable">null</Ref>
+				<token name="SafeAreaCompatibility">1</token>
+				<token name="ScreenInsets">2</token>
+				<token name="SelectionBehaviorDown">0</token>
+				<token name="SelectionBehaviorLeft">0</token>
+				<token name="SelectionBehaviorRight">0</token>
+				<token name="SelectionBehaviorUp">0</token>
+				<bool name="SelectionGroup">false</bool>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<UniqueId name="UniqueId">1494f326ebc3bfb806368856000045a3</UniqueId>
+				<token name="ZIndexBehavior">0</token>
+			</Properties>
+			<Item class="Folder" referent="RBX4D2D5BF99C5C4C47BA95701C7F78479D">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">Indicators</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">1494f326ebc3bfb806368856000045c4</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="TextLabel" referent="RBX385A3ECFC5AF44979EED81139CFD75D7">
+				<Properties>
+					<bool name="Active">false</bool>
+					<Vector2 name="AnchorPoint">
+						<X>0</X>
+						<Y>0</Y>
+					</Vector2>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<token name="AutomaticSize">0</token>
+					<Color3 name="BackgroundColor3">
+						<R>1</R>
+						<G>1</G>
+						<B>1</B>
+					</Color3>
+					<float name="BackgroundTransparency">1</float>
+					<Color3 name="BorderColor3">
+						<R>0</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<token name="BorderMode">0</token>
+					<int name="BorderSizePixel">0</int>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="ClipsDescendants">false</bool>
+					<bool name="DefinesCapabilities">false</bool>
+					<bool name="Draggable">false</bool>
+					<Font name="FontFace">
+						<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
+						<Weight>400</Weight>
+						<Style>Normal</Style>
+						<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
+					</Font>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<bool name="Interactable">true</bool>
+					<int name="LayoutOrder">0</int>
+					<float name="LineHeight">1</float>
+					<string name="LocalizationMatchIdentifier"></string>
+					<string name="LocalizationMatchedSourceText"></string>
+					<int name="MaxVisibleGraphemes">-1</int>
+					<string name="Name">IndicatorTemplate</string>
+					<Ref name="NextSelectionDown">null</Ref>
+					<Ref name="NextSelectionLeft">null</Ref>
+					<Ref name="NextSelectionRight">null</Ref>
+					<Ref name="NextSelectionUp">null</Ref>
+					<UDim2 name="Position">
+						<XS>0</XS>
+						<XO>0</XO>
+						<YS>0</YS>
+						<YO>0</YO>
+					</UDim2>
+					<bool name="RichText">false</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<float name="Rotation">0</float>
+					<bool name="Selectable">false</bool>
+					<token name="SelectionBehaviorDown">0</token>
+					<token name="SelectionBehaviorLeft">0</token>
+					<token name="SelectionBehaviorRight">0</token>
+					<token name="SelectionBehaviorUp">0</token>
+					<bool name="SelectionGroup">false</bool>
+					<Ref name="SelectionImageObject">null</Ref>
+					<int name="SelectionOrder">0</int>
+					<UDim2 name="Size">
+						<XS>0</XS>
+						<XO>70</XO>
+						<YS>0</YS>
+						<YO>39</YO>
+					</UDim2>
+					<token name="SizeConstraint">0</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<string name="Text">Label</string>
+					<Color3 name="TextColor3">
+						<R>1</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<token name="TextDirection">0</token>
+					<bool name="TextScaled">true</bool>
+					<float name="TextSize">14</float>
+					<Color3 name="TextStrokeColor3">
+						<R>0</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<float name="TextStrokeTransparency">1</float>
+					<float name="TextTransparency">0</float>
+					<token name="TextTruncate">0</token>
+					<bool name="TextWrapped">true</bool>
+					<token name="TextXAlignment">2</token>
+					<token name="TextYAlignment">1</token>
+					<UniqueId name="UniqueId">1494f326ebc3bfb806368856000045e5</UniqueId>
+					<bool name="Visible">false</bool>
+					<int name="ZIndex">2</int>
+				</Properties>
+				<Item class="TextLabel" referent="RBX4BF8B73D18DF40AF98F011D00C94E904">
+					<Properties>
+						<bool name="Active">false</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<float name="BackgroundTransparency">1</float>
+						<Color3 name="BorderColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">0</int>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Draggable">false</bool>
+						<Font name="FontFace">
+							<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
+							<Weight>400</Weight>
+							<Style>Normal</Style>
+							<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
+						</Font>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<bool name="Interactable">true</bool>
+						<int name="LayoutOrder">0</int>
+						<float name="LineHeight">1</float>
+						<string name="LocalizationMatchIdentifier"></string>
+						<string name="LocalizationMatchedSourceText"></string>
+						<int name="MaxVisibleGraphemes">-1</int>
+						<string name="Name">Shadow</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>-1</XO>
+							<YS>0</YS>
+							<YO>1</YO>
+						</UDim2>
+						<bool name="RichText">false</bool>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<bool name="Selectable">false</bool>
+						<token name="SelectionBehaviorDown">0</token>
+						<token name="SelectionBehaviorLeft">0</token>
+						<token name="SelectionBehaviorRight">0</token>
+						<token name="SelectionBehaviorUp">0</token>
+						<bool name="SelectionGroup">false</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<int name="SelectionOrder">0</int>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>70</XO>
+							<YS>0</YS>
+							<YO>39</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Text">Label</string>
+						<Color3 name="TextColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<token name="TextDirection">0</token>
+						<bool name="TextScaled">true</bool>
+						<float name="TextSize">14</float>
+						<Color3 name="TextStrokeColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<token name="TextTruncate">0</token>
+						<bool name="TextWrapped">true</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<UniqueId name="UniqueId">1494f326ebc3bfb80636885600004606</UniqueId>
+						<bool name="Visible">false</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>

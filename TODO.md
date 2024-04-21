@@ -2,6 +2,7 @@
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] save coins between games
 - [ ] starting location - town
+- [ ] tick lists (e.g. monster type discovered/killed)
 - [ ] reveal dungeon by exploration
 - [ ] teleport to any reached dungeon level
 - [ ] portal back to town when not fighting
