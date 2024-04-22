@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-21.3119888</X>
-					<Y>27.1745338</Y>
-					<Z>22.1061153</Z>
-					<R00>0.999895215</R00>
-					<R01>-0.0041133957</R01>
-					<R02>0.0138845444</R02>
-					<R10>4.65661343e-10</R10>
-					<R11>0.958808422</R11>
-					<R12>0.284053802</R12>
-					<R20>-0.0144810434</R20>
-					<R21>-0.28402403</R21>
-					<R22>0.958707809</R22>
+					<X>-25.9414692</X>
+					<Y>27.2626953</Y>
+					<Z>33.893322</Z>
+					<R00>0.999101937</R00>
+					<R01>-0.031637121</R01>
+					<R02>0.0281849112</R02>
+					<R10>-1.86264493e-09</R10>
+					<R11>0.665194452</R11>
+					<R12>0.746670306</R12>
+					<R20>-0.0423709378</R20>
+					<R21>-0.745999753</R21>
+					<R22>0.664597034</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-21.3397579</X>
-					<Y>26.6064262</Y>
-					<Z>20.1886997</Z>
+					<X>-25.997839</X>
+					<Y>25.7693558</Y>
+					<Z>32.5641289</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -22539,9 +22539,11 @@ local connections = require(script.Parent.Connections)
 local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
 
 local function TouchCoin(_, target)
-    addCoinsFn:InvokeServer(1)
-    target:Destroy()
-    return 'TARGET_DESTROYED'
+    if addCoinsFn:InvokeServer(1, target) == 'SUCCESS' then
+        target:Destroy()
+        return 'TARGET_DESTROYED'
+    end
+    return "TARGET_NOT_DESTROYED"
 end
 
 function module.AddCollectBehaviourTo(object)
@@ -23569,10 +23571,21 @@ end)]]></ProtectedString>
 					<string name="ScriptGuid">{E0ED2127-FCA3-4A52-A41A-665487D4F32B}</string>
 					<ProtectedString name="Source"><![CDATA[local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
 
-addCoinsFn.OnServerInvoke = function(player, numberOfCoinsToAdd)
-	local playerStats = player:FindFirstChild("PlayerStats")
-	local coins = playerStats:FindFirstChild("Coins")
-	coins.Value += numberOfCoinsToAdd
+local function InRange(part1, part2, maxDistance)
+    local distance = (part1.Position - part2.Position).Magnitude
+    return distance <= maxDistance
+end
+
+local maxDistanceToCoins = 5
+
+addCoinsFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
+    if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
+        local playerStats = player:FindFirstChild("PlayerStats")
+        local coins = playerStats:FindFirstChild("Coins")
+        coins.Value += numberOfCoinsToAdd
+        return "SUCCESS"
+    end
+    return "FAILURE"
 end]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
