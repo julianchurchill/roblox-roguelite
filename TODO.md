@@ -1,3 +1,4 @@
+- [ ] worm - 1hp, dies when health is 0, gives 1 xp
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] save coins between games
 - [ ] starting location - town
