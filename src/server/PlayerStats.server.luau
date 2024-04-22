@@ -8,11 +8,3 @@ game.Players.PlayerAdded:Connect(function(Player)
 	coins.Name = "Coins"
 	coins.Value = 0
 end)
-
-local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
-
-addCoinsEvent.OnServerEvent:Connect(function(player, numberOfCoinsToAdd)
-	local playerStats = player:FindFirstChild("PlayerStats")
-	local coins = playerStats:FindFirstChild("Coins")
-	coins.Value += numberOfCoinsToAdd
-end)

@@ -1,10 +1,10 @@
 local module = {}
 
 local connections = require(script.Parent.Connections)
-local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
+local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
 
 local function TouchCoin(_, target)
-    addCoinsEvent:FireServer(1)
+    addCoinsFn:InvokeServer(1)
     target:Destroy()
     return 'TARGET_DESTROYED'
 end

@@ -21222,6 +21222,49 @@ end
 							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00003ccd</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX6623B4189FBC4C4DB150987059AF5EE6">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">577518ecf07f89e306384e9d00003ccd</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -21889,6 +21932,49 @@ end
 							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae00003ccf</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX8DAE65A0A0684A488807BD234748A20F">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">577518ecf07f89e306384e9d00003ccf</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="BodyColors" referent="RBX8B50A5CC7A934D6E92091473FB4AF610">
@@ -21934,18 +22020,6 @@ end
 				</Properties>
 			</Item>
 		</Item>
-	</Item>
-	<Item class="TimerService" referent="RBX7BDA3E49FE8F4D139BF17C2A9249B589">
-		<Properties>
-			<BinaryString name="AttributesSerialize"></BinaryString>
-			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-			<bool name="DefinesCapabilities">false</bool>
-			<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-			<string name="Name">TimerService</string>
-			<int64 name="SourceAssetId">-1</int64>
-			<BinaryString name="Tags"></BinaryString>
-			<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df0000030f</UniqueId>
-		</Properties>
 	</Item>
 	<Item class="SoundService" referent="RBX8A8443FBADC44AF79FF00DA9A698C52E">
 		<Properties>
@@ -22013,6 +22087,18 @@ end
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 			<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00000318</UniqueId>
+		</Properties>
+	</Item>
+	<Item class="TimerService" referent="RBX7BDA3E49FE8F4D139BF17C2A9249B589">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+			<bool name="DefinesCapabilities">false</bool>
+			<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+			<string name="Name">TimerService</string>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+			<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df0000030f</UniqueId>
 		</Properties>
 	</Item>
 	<Item class="Players" referent="RBX963B2B04102F45CA85AB36D07951CD15">
@@ -22450,10 +22536,10 @@ return module]]></ProtectedString>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
 local connections = require(script.Parent.Connections)
-local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
+local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
 
 local function TouchCoin(_, target)
-    addCoinsEvent:FireServer(1)
+    addCoinsFn:InvokeServer(1)
     target:Destroy()
     return 'TARGET_DESTROYED'
 end
@@ -23464,18 +23550,33 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
     coins.Parent = playerStats;
 	coins.Name = "Coins"
 	coins.Value = 0
-end)
-
-local addCoinsEvent = game.ReplicatedStorage.Shared.AddCoins
-
-addCoinsEvent.OnServerEvent:Connect(function(player, numberOfCoinsToAdd)
-	local playerStats = player:FindFirstChild("PlayerStats")
-	local coins = playerStats:FindFirstChild("Coins")
-	coins.Value += numberOfCoinsToAdd
 end)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f77</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBX24ACDAD22CBF4303B2E707FECAC46AC3">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<bool name="Disabled">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Coins</string>
+					<token name="RunContext">0</token>
+					<string name="ScriptGuid">{E0ED2127-FCA3-4A52-A41A-665487D4F32B}</string>
+					<ProtectedString name="Source"><![CDATA[local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
+
+addCoinsFn.OnServerInvoke = function(player, numberOfCoinsToAdd)
+	local playerStats = player:FindFirstChild("PlayerStats")
+	local coins = playerStats:FindFirstChild("Coins")
+	coins.Value += numberOfCoinsToAdd
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">577518ecf07f89e306384e9d000041b0</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
@@ -23568,16 +23669,16 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd5</UniqueId>
 			</Properties>
-			<Item class="RemoteEvent" referent="RBX7A6A1AC87B714FB8AF43709CEB628BA1">
+			<Item class="RemoteFunction" referent="RBXD0183CDF1221422C9089034CE6617374">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
 					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-					<string name="Name">AddCoins</string>
+					<string name="Name">AddCoinsFn</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
-					<UniqueId name="UniqueId">267d5ef2625c911a0635408600004168</UniqueId>
+					<UniqueId name="UniqueId">577518ecf07f89e306384e9d0000406e</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
