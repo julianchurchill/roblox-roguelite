@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-24.3199387</X>
-					<Y>33.1013412</Y>
-					<Z>47.6454239</Z>
-					<R00>0.942202806</R00>
-					<R01>0.176567465</R01>
-					<R02>-0.284741729</R02>
-					<R10>-0</R10>
-					<R11>0.849865854</R11>
-					<R12>0.526999176</R12>
-					<R20>0.335043162</R20>
-					<R21>-0.496540099</R21>
-					<R22>0.800745964</R22>
+					<X>-16.575489</X>
+					<Y>26.8227596</Y>
+					<Z>35.704731</Z>
+					<R00>0.993015647</R00>
+					<R01>0.0821111426</R01>
+					<R02>-0.0847224519</R02>
+					<R10>-3.72529074e-09</R10>
+					<R11>0.718086779</R11>
+					<R12>0.695953727</R12>
+					<R20>0.117983624</R20>
+					<R21>-0.691092968</R21>
+					<R22>0.713071227</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -98,9 +98,9 @@
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-23.7504559</X>
-					<Y>32.0473442</Y>
-					<Z>46.0439339</Z>
+					<X>-16.406044</X>
+					<Y>25.430851</Y>
+					<Z>34.2785873</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -4121,7 +4121,7 @@ end
 						<Ref name="PrimaryPart">null</Ref>
 						<float name="ScaleFactor">1</float>
 						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags">QXR0YWNrYWJsZQ==</BinaryString>
+						<BinaryString name="Tags">QXR0YWNrYWJsZQBLaWxsYWJsZQ==</BinaryString>
 						<UniqueId name="UniqueId">3a5c5ab8953b9e45063aed9a0000474d</UniqueId>
 						<OptionalCoordinateFrame name="WorldPivotData">
 							<CFrame>
@@ -4355,7 +4355,7 @@ end
 							<bool name="EvaluateStateMachine">true</bool>
 							<float name="HealthDisplayDistance">100</float>
 							<token name="HealthDisplayType">0</token>
-							<float name="Health_XML">1</float>
+							<float name="Health_XML">2</float>
 							<float name="HipHeight">0</float>
 							<UniqueId name="HistoryId">3a5c5ab8953b9e45063aed9a00004737</UniqueId>
 							<Vector3 name="InternalBodyScale">
@@ -4366,7 +4366,7 @@ end
 							<float name="InternalHeadScale">1</float>
 							<float name="JumpHeight">7.19999981</float>
 							<float name="JumpPower">1</float>
-							<float name="MaxHealth">1</float>
+							<float name="MaxHealth">2</float>
 							<float name="MaxSlopeAngle">87</float>
 							<string name="Name">Humanoid</string>
 							<float name="NameDisplayDistance">100</float>
@@ -13303,7 +13303,7 @@ end
 					<Ref name="PrimaryPart">null</Ref>
 					<float name="ScaleFactor">1</float>
 					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags">QXR0YWNrYWJsZQ==</BinaryString>
+					<BinaryString name="Tags">QXR0YWNrYWJsZQBLaWxsYWJsZQ==</BinaryString>
 					<UniqueId name="UniqueId">3a5c5ab8953b9e45063aed9a00004721</UniqueId>
 					<OptionalCoordinateFrame name="WorldPivotData">
 						<CFrame>
@@ -13537,7 +13537,7 @@ end
 						<bool name="EvaluateStateMachine">true</bool>
 						<float name="HealthDisplayDistance">100</float>
 						<token name="HealthDisplayType">0</token>
-						<float name="Health_XML">1</float>
+						<float name="Health_XML">2</float>
 						<float name="HipHeight">0</float>
 						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
 						<Vector3 name="InternalBodyScale">
@@ -13548,7 +13548,7 @@ end
 						<float name="InternalHeadScale">1</float>
 						<float name="JumpHeight">7.19999981</float>
 						<float name="JumpPower">1</float>
-						<float name="MaxHealth">1</float>
+						<float name="MaxHealth">2</float>
 						<float name="MaxSlopeAngle">87</float>
 						<string name="Name">Humanoid</string>
 						<float name="NameDisplayDistance">100</float>
@@ -23290,12 +23290,14 @@ local behaviour = require(script.Modules.Behaviour)
 local collectCoins = require(script.Modules.CollectCoins)
 local attack = require(script.Modules.Attack)
 local doorway = require(script.Modules.Doorway)
+local kill = require(script.Modules.Kill)
 local keyboard = require(script.Modules.Keyboard)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
 
 behaviour.SetupBehaviour("CollectableCoin", collectCoins.AddCollectBehaviourTo)
 behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
 behaviour.SetupBehaviour("OpenableDoorway", doorway.AddRemoveDarknessBehaviourTo)
+behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)
 
 keyboard.RegisterKeyActions()
 
@@ -23326,14 +23328,30 @@ GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
 							<string name="ScriptGuid">{884F6FAF-7ACF-4857-AC9E-0E9192F9058A}</string>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.SetupTouchedConnectionWithHRPCheckAndDebounce(target, touchedFunction)
+function module.SetupTouchedConnectionWithHRPCheckAndDebounce(targetHumanoidOrPart, touchedFunction)
 	local debounce = false
 	local connection = nil
-	connection = target.Touched:Connect(function(touchee)
-		local humanoidRootPart = touchee.Parent:FindFirstChild("HumanoidRootPart")
-		if touchee.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
+	connection = targetHumanoidOrPart.Touched:Connect(function(toucheePart)
+		local humanoidRootPart = toucheePart.Parent:FindFirstChild("HumanoidRootPart")
+		if toucheePart.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
 			debounce = true
-			local status = touchedFunction(touchee, target)
+			local status = touchedFunction(toucheePart, targetHumanoidOrPart)
+			if status == 'TARGET_DESTROYED' then
+				connection:Disconnect()
+			end
+			debounce = false
+		end
+	end)
+end
+
+function module.SetupDiedConnectionWithHRPCheckAndDebounce(killedHumanoid, diedFunction)
+	local debounce = false
+	local connection = nil
+	connection = killedHumanoid.Died:Connect(function()
+		local humanoidRootPart = killedHumanoid.Parent:FindFirstChild("HumanoidRootPart")
+		if killedHumanoid.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
+			debounce = true
+			local status = diedFunction(killedHumanoid)
 			if status == 'TARGET_DESTROYED' then
 				connection:Disconnect()
 			end
@@ -23482,12 +23500,21 @@ local attackRange = 6
 local attackDamage = 1
 local attacksPerSecond = 1
 
-local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attacker)
-    local attackerHumanoidRootPart = attacker:WaitForChild("HumanoidRootPart")
+local function TagAttackedHumanoid(targetHumanoid, attackerPlayer)
+    local tag = Instance.new("ObjectValue")
+    tag.Value = attackerPlayer
+    tag.Name = "AttackerPlayer"
+    tag.Parent = targetHumanoid
+    game:GetService("Debris"):AddItem(tag, 0.5)
+end
+
+local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayer)
+    local attackerHumanoidRootPart = attackerPlayer:WaitForChild("HumanoidRootPart")
     while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) do
         local damage = attackDamage
         targetHumanoid:TakeDamage(damage)
         damageIndicators.ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
+        TagAttackedHumanoid(targetHumanoid, attackerPlayer)
         -- delay completion of attack to account for attack speed
         task.wait(1/attacksPerSecond)
     end
@@ -23608,17 +23635,17 @@ return module]]></ProtectedString>
 
 local collectionService = game:GetService("CollectionService")
 
-function module.SetupBehaviour(tag, behaviourFunction)
+function module.SetupBehaviour(tag, addBehaviourFunction)
     -- add behaviour to new objects that get the tag added
-    local function onAttackableInstanceAdded(object)
-        behaviourFunction(object)
+    local function onTaggedInstanceAdded(object)
+        addBehaviourFunction(object)
     end
 
-    collectionService:GetInstanceAddedSignal(tag):Connect(onAttackableInstanceAdded)
+    collectionService:GetInstanceAddedSignal(tag):Connect(onTaggedInstanceAdded)
 
     -- ensure any pre-existing objects with the tag have the behaviour added too
     for _, object in pairs(collectionService:GetTagged(tag)) do
-        onAttackableInstanceAdded(object)
+        onTaggedInstanceAdded(object)
     end
 end
 
@@ -23626,6 +23653,45 @@ return module]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae0000457d</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="ModuleScript" referent="RBX431BC651738C490DABD59B80D2B3D087">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">Kill</string>
+							<string name="ScriptGuid">{BBAC51F7-DD12-4361-BAD3-76C3157DC5C3}</string>
+							<ProtectedString name="Source"><![CDATA[local module = {}
+
+local connections = require(script.Parent.Connections)
+
+function module.AddKillableBehaviourTo(killableTarget)
+    local killableHumanoid = killableTarget:FindFirstChildWhichIsA("Humanoid")
+    connections.SetupDiedConnectionWithHRPCheckAndDebounce(
+        killableHumanoid,
+        function(killedHumanoid)
+            local attackerPlayer = killableHumanoid:FindFirstChild("AttackerPlayer")
+            if attackerPlayer then
+                local killer = attackerPlayer.Value
+                print(killedHumanoid.Name .. ' was killed by ' .. killer)
+            else
+                print(killedHumanoid.Name .. ' was killed by an unknown force')
+            end
+            -- Destroy animation?
+            killedHumanoid.Parent:Destroy()
+            return 'TARGET_DESTROYED'
+            -- return 'TARGET_NOT_DESTROYED'
+        end
+    )
+end
+
+return module]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">3a5c5ab8953b9e45063aed9a000049e0</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -24351,7 +24417,22 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 				<string name="Name">Server</string>
 				<token name="RunContext">0</token>
 				<string name="ScriptGuid">{64A2963A-BA27-4CF1-AF88-634B7CFED073}</string>
-				<ProtectedString name="Source">print(&quot;Hello world, from init.server.luau!&quot;)</ProtectedString>
+				<ProtectedString name="Source"><![CDATA[print("Hello world, from init.server.luau!")
+
+local worm = game.Workspace.Dungeon.StartRoom:WaitForChild("Worm")
+local wormHumanoid = worm:WaitForChild("Humanoid")
+
+wormHumanoid.Died:Connect(function()
+    print('Humanoid killed!')
+end)
+
+wormHumanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    print('Humanoid health changed to ' .. wormHumanoid)
+end)
+
+wormHumanoid.Touched:Connect(function()
+    print('The worm was touched')
+end)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd7</UniqueId>
@@ -24480,6 +24561,20 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae000040a0</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="Configuration" referent="RBXAF5D433E5D1646148B204A77A66B22B3">
+				<Properties>
+					<BinaryString name="AttributesSerialize"><![CDATA[BgAAAAsAAABBbHdheXNPblRvcAMABQAAAENvbG9yDzKYfj8bX0E/bL+lPggAAABEcmF3VHlw
+ZQIDAAAAQm94BQAAAEdyb3VwAgAAAAAEAAAASWNvbgIlAAAAcmJ4YXNzZXQ6Ly90ZXh0dXJl
+cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">Killable</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">3a5c5ab8953b9e45063aed9a00004a09</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
