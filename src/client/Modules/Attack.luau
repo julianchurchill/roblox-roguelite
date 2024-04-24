@@ -12,12 +12,21 @@ local attackRange = 6
 local attackDamage = 1
 local attacksPerSecond = 1
 
-local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attacker)
-    local attackerHumanoidRootPart = attacker:WaitForChild("HumanoidRootPart")
+local function TagAttackedHumanoid(targetHumanoid, attackerPlayer)
+    local tag = Instance.new("ObjectValue")
+    tag.Value = attackerPlayer
+    tag.Name = "AttackerPlayer"
+    tag.Parent = targetHumanoid
+    game:GetService("Debris"):AddItem(tag, 0.5)
+end
+
+local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayer)
+    local attackerHumanoidRootPart = attackerPlayer:WaitForChild("HumanoidRootPart")
     while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) do
         local damage = attackDamage
         targetHumanoid:TakeDamage(damage)
         damageIndicators.ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
+        TagAttackedHumanoid(targetHumanoid, attackerPlayer)
         -- delay completion of attack to account for attack speed
         task.wait(1/attacksPerSecond)
     end
