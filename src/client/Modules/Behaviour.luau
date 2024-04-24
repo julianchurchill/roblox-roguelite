@@ -2,17 +2,17 @@ local module = {}
 
 local collectionService = game:GetService("CollectionService")
 
-function module.SetupBehaviour(tag, behaviourFunction)
+function module.SetupBehaviour(tag, addBehaviourFunction)
     -- add behaviour to new objects that get the tag added
-    local function onAttackableInstanceAdded(object)
-        behaviourFunction(object)
+    local function onTaggedInstanceAdded(object)
+        addBehaviourFunction(object)
     end
 
-    collectionService:GetInstanceAddedSignal(tag):Connect(onAttackableInstanceAdded)
+    collectionService:GetInstanceAddedSignal(tag):Connect(onTaggedInstanceAdded)
 
     -- ensure any pre-existing objects with the tag have the behaviour added too
     for _, object in pairs(collectionService:GetTagged(tag)) do
-        onAttackableInstanceAdded(object)
+        onTaggedInstanceAdded(object)
     end
 end
 
