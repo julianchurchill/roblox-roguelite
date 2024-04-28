@@ -18,3 +18,7 @@ rojo serve
 ```
 
 For more help, check out [the Rojo documentation](https://rojo.space/docs).
+
+# Notes
+
+Using https://github.com/buildthomas/MockDataStoreService for DataStore local emulation.
