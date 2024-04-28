@@ -61,7 +61,7 @@ function SetCurrentCoins(Player, coins)
         return PlayerInventory:SetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
     end)
     if success then
-        CoinsChangedEvent:Fire(result)
+        CoinsChangedEvent:Fire(coins)
     else
         print("Error setting coins: " .. result)
     end
