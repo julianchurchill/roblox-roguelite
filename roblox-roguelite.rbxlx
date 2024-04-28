@@ -22089,6 +22089,49 @@ end
 							<UniqueId name="UniqueId">7b71823e2b3ec430063e514200003d3a</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX9192C65A21DF4D9EB9942FEB82E1DA48">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">2a5028586c6038c1063fd6e70000824b</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -22885,6 +22928,49 @@ end
 							<UniqueId name="UniqueId">7b71823e2b3ec430063e514200003d3c</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX566538E08D9A4688AC1F2BB8503D196E">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">2a5028586c6038c1063fd6e70000824d</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="BodyColors" referent="RBX8B50A5CC7A934D6E92091473FB4AF610">
@@ -23464,10 +23550,10 @@ return module]]></ProtectedString>
 							<ProtectedString name="Source"><![CDATA[local module = {}
 
 local connections = require(script.Parent.Connections)
-local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
+local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 
 local function TouchCoin(_, target)
-    if addCoinsFn:InvokeServer(1, target) == 'SUCCESS' then
+    if addCoinsRemoteFn:InvokeServer(1, target) == 'SUCCESS' then
         target:Destroy()
         return 'TARGET_DESTROYED'
     end
@@ -24505,7 +24591,11 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 				<string name="Name">Server</string>
 				<token name="RunContext">0</token>
 				<string name="ScriptGuid">{64A2963A-BA27-4CF1-AF88-634B7CFED073}</string>
-				<ProtectedString name="Source"><![CDATA[print("Hello world, from init.server.luau!")
+				<ProtectedString name="Source"><![CDATA[local Inventory = require(script.PlayerInventory.Inventory)
+
+print("Hello world, from init.server.luau!")
+
+Inventory.Initialize()
 
 local worm = game.Workspace.Dungeon.StartRoom:WaitForChild("Worm")
 local wormHumanoid = worm:WaitForChild("Humanoid")
@@ -24536,54 +24626,160 @@ end)]]></ProtectedString>
 					<string name="Name">PlayerStats</string>
 					<token name="RunContext">0</token>
 					<string name="ScriptGuid">{36FA8F05-C1CA-490C-B7BB-52B98E4FA000}</string>
-					<ProtectedString name="Source"><![CDATA[game.Players.PlayerAdded:Connect(function(Player)
-	local playerStats = Instance.new("Folder")
-    playerStats.Parent = Player;
-	playerStats.Name = "PlayerStats"
+					<ProtectedString name="Source"><![CDATA[local Coins = require(script.Parent.PlayerInventory.Coins)
+local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
 
-	local coins = Instance.new("NumberValue")
+game.Players.PlayerAdded:Connect(function(player)
+    local playerStats = Instance.new("Folder")
+    playerStats.Parent = player;
+    playerStats.Name = "PlayerStats"
+
+    local coins = Instance.new("NumberValue")
     coins.Parent = playerStats;
-	coins.Name = "Coins"
-	coins.Value = 0
+    coins.Name = "Coins"
+    local currentCoins = Coins.GetCurrentCoins(player)
+    if currentCoins == nil then
+        coins.Value = 0
+    else
+        coins.Value = currentCoins
+    end
+
+    CoinsChangedEvent.Event:Connect(function(newCoins)
+        coins.Value = newCoins
+    end)
 end)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">5ccb685bcbdf3ce10630461d00004f77</UniqueId>
 				</Properties>
 			</Item>
-			<Item class="Script" referent="RBX24ACDAD22CBF4303B2E707FECAC46AC3">
+			<Item class="Folder" referent="RBX4133FCDE6ABB4692B77CBE7AFC6AEC27">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
-					<bool name="Disabled">false</bool>
 					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Coins</string>
-					<token name="RunContext">0</token>
-					<string name="ScriptGuid">{E0ED2127-FCA3-4A52-A41A-665487D4F32B}</string>
-					<ProtectedString name="Source"><![CDATA[local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
+					<string name="Name">PlayerInventory</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e7000084c9</UniqueId>
+				</Properties>
+				<Item class="ModuleScript" referent="RBX4B96FEF723A149EBA61D98BA078E3534">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Coins</string>
+						<string name="ScriptGuid">{134F98DC-E472-4574-A1EF-505A6F470F50}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
+local DataStoreService = game:GetService("DataStoreService")
+local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
+local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
+
+local function MakeDataStoreKeyForPlayer(player, identifier)
+    return identifier .. "/" .. player.UserId
+end
+
+local coinsDataStoreKey = "Coins"
+local defaultCoins = 0
+
+function module.GetCurrentCoins(Player)
+    local success, result = pcall(function()
+        return PlayerInventory:GetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
+    end)
+    if success then
+        return result
+    else
+        print("Error getting coins: " .. result)
+        return defaultCoins
+    end
+end
 
 local function InRange(part1, part2, maxDistance)
     local distance = (part1.Position - part2.Position).Magnitude
     return distance <= maxDistance
 end
 
+local function UpdateCoins(Player, UpdateFunc)
+    local success, result = pcall(function()
+        return PlayerInventory:UpdateAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
+    end)
+    if success then
+        CoinsChangedEvent:Fire(result)
+        return result
+    else
+        print("Error updating coins: " .. result)
+        return module.GetCurrentCoins(Player)
+    end
+end
+
 local maxDistanceToCoins = 5
 
-addCoinsFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
-    if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
-        local playerStats = player:FindFirstChild("PlayerStats")
-        local coins = playerStats:FindFirstChild("Coins")
-        coins.Value += numberOfCoinsToAdd
-        return "SUCCESS"
+function AddCoinsServerInvoke()
+    addCoinsRemoteFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
+        if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
+            UpdateCoins(player, function(currentCoins)
+                return currentCoins + numberOfCoinsToAdd
+            end)
+            return "SUCCESS"
+        end
+        return "FAILURE"
     end
-    return "FAILURE"
-end]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<UniqueId name="UniqueId">577518ecf07f89e306384e9d000041b0</UniqueId>
-				</Properties>
+end
+
+function SetCurrentCoins(Player, coins)
+    local success, result = pcall(function()
+        return PlayerInventory:SetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
+    end)
+    if success then
+        CoinsChangedEvent:Fire(result)
+    else
+        print("Error setting coins: " .. result)
+    end
+end
+
+function module.Initialize(Player)
+    if module.GetCurrentCoins(Player) == nil then
+        SetCurrentCoins(Player, defaultCoins)
+    end
+    AddCoinsServerInvoke()
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e7000084ca</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXEE8F17D8256345D4B0AF293D67FDAC31">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Inventory</string>
+						<string name="ScriptGuid">{B712A9AA-2813-40C0-987C-26B1FF87D64A}</string>
+						<ProtectedString name="Source"><![CDATA[local Coins = require(script.Parent.Coins)
+
+local module = {}
+
+function module.Initialize()
+    game.Players.PlayerAdded:Connect(function(player)
+        Coins.Initialize(player)
+    end)
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e7000084cb</UniqueId>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>
