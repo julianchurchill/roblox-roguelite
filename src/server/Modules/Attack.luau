@@ -1,7 +1,9 @@
 local module = {}
 
 local connections = require(script.Parent.Connections)
-local damageIndicators = require(script.Parent.DamageIndicators)
+local HumanoidDamagedRemoteEvent = game.ReplicatedStorage.Shared:WaitForChild("HumanoidDamagedRemoteEvent")
+local debrisService = game:GetService("Debris")
+local playerService = game:GetService("Players")
 
 local function InRange(part1, part2, maxDistance)
     local distance = (part1.Position - part2.Position).Magnitude
@@ -17,15 +19,16 @@ local function TagAttackedHumanoid(targetHumanoid, attackerPlayer)
     tag.Value = attackerPlayer
     tag.Name = "AttackerPlayer"
     tag.Parent = targetHumanoid
-    game:GetService("Debris"):AddItem(tag, 0.5)
+    debrisService:AddItem(tag, 0.5)
 end
 
-local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayer)
-    local attackerHumanoidRootPart = attackerPlayer:WaitForChild("HumanoidRootPart")
+local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayerCharacter)
+    local attackerPlayer = playerService:GetPlayerFromCharacter(attackerPlayerCharacter)
+    local attackerHumanoidRootPart = attackerPlayerCharacter:WaitForChild("HumanoidRootPart")
     while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) do
         local damage = attackDamage
         targetHumanoid:TakeDamage(damage)
-        damageIndicators.ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
+        HumanoidDamagedRemoteEvent:FireClient(attackerPlayer, targetHumanoidRootPart, damage)
         TagAttackedHumanoid(targetHumanoid, attackerPlayer)
         -- delay completion of attack to account for attack speed
         task.wait(1/attacksPerSecond)

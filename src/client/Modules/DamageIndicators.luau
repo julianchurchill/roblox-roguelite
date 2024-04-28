@@ -42,7 +42,7 @@ local indicatorOffsetVariation = 20;
 local indicatorShowForSeconds = 0.25
 
 -- Based on https://devforum.roblox.com/t/how-to-implement-a-damage-indication-system/483161
-function module.ShowEnemyDamageIndicatorAsync(targetCFrame, number)
+function ShowEnemyDamageIndicatorAsync(targetCFrame, number)
     task.spawn(
         function()
             local indicatorX, indicatorY = ClampPositionToPlayersScreen(targetCFrame)
@@ -64,6 +64,14 @@ function module.ShowEnemyDamageIndicatorAsync(targetCFrame, number)
             AnimateOutAndDestroy(numberIndicator)
         end
     )
+end
+
+local HumanoidDamagedRemoteEvent = game.ReplicatedStorage.Shared:WaitForChild("HumanoidDamagedRemoteEvent")
+
+function module.SetupHumanoidDamageIndicators()
+    HumanoidDamagedRemoteEvent.OnClientEvent:Connect(function(targetHumanoidRootPart, damage)
+        ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
+    end)
 end
 
 return module
