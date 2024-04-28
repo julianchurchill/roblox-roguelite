@@ -1,10 +1,10 @@
 local module = {}
 
 local connections = require(script.Parent.Connections)
-local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
+local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 
 local function TouchCoin(_, target)
-    if addCoinsFn:InvokeServer(1, target) == 'SUCCESS' then
+    if addCoinsRemoteFn:InvokeServer(1, target) == 'SUCCESS' then
         target:Destroy()
         return 'TARGET_DESTROYED'
     end

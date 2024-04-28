@@ -1,6 +1,6 @@
 local module = {}
 
-local addCoinsFn = game.ReplicatedStorage.Shared.AddCoinsFn
+local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 local DataStoreService = game:GetService("DataStoreService")
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 
@@ -44,7 +44,7 @@ end
 local maxDistanceToCoins = 5
 
 function AddCoinsServerInvoke()
-    addCoinsFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
+    addCoinsRemoteFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
         if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
             -- TODO: use a bindable event from SetCurrentCoins and UpdateCoins instead of setting PlayerStats directly
             local playerStats = player:FindFirstChild("PlayerStats")
