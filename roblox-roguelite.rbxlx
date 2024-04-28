@@ -23632,20 +23632,20 @@ end
 
 local behaviour = require(script.Modules.Behaviour)
 local collectCoins = require(script.Modules.CollectCoins)
-local attack = require(script.Modules.Attack)
 local doorway = require(script.Modules.Doorway)
-local kill = require(script.Modules.Kill)
 local keyboard = require(script.Modules.Keyboard)
 local GUIUpdateLoop = require(script.GUI.GUIUpdateLoop)
+local damageIndicators = require(script.Modules.DamageIndicators)
 
+-- Should these behaviours be on the server?
 behaviour.SetupBehaviour("CollectableCoin", collectCoins.AddCollectBehaviourTo)
-behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
 behaviour.SetupBehaviour("OpenableDoorway", doorway.AddRemoveDarknessBehaviourTo)
-behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)
 
 keyboard.RegisterKeyActions()
 
-GUIUpdateLoop.StartGUIUpdateLoop()]]></ProtectedString>
+GUIUpdateLoop.StartGUIUpdateLoop()
+
+damageIndicators.SetupHumanoidDamageIndicators()]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cda</UniqueId>
@@ -23821,68 +23821,6 @@ return module]]></ProtectedString>
 							<UniqueId name="UniqueId">0260393084c77b140634fe6900004e50</UniqueId>
 						</Properties>
 					</Item>
-					<Item class="ModuleScript" referent="RBXCE62392CB569482FAB87D1CB09D88D8B">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">Attack</string>
-							<string name="ScriptGuid">{D3990BDE-8D16-48C7-B04D-11910CE3C577}</string>
-							<ProtectedString name="Source"><![CDATA[local module = {}
-
-local connections = require(script.Parent.Connections)
-local damageIndicators = require(script.Parent.DamageIndicators)
-
-local function InRange(part1, part2, maxDistance)
-    local distance = (part1.Position - part2.Position).Magnitude
-    return distance <= maxDistance
-end
-
-local attackRange = 6
-local attackDamage = 1
-local attacksPerSecond = 1
-
-local function TagAttackedHumanoid(targetHumanoid, attackerPlayer)
-    local tag = Instance.new("ObjectValue")
-    tag.Value = attackerPlayer
-    tag.Name = "AttackerPlayer"
-    tag.Parent = targetHumanoid
-    game:GetService("Debris"):AddItem(tag, 0.5)
-end
-
-local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayer)
-    local attackerHumanoidRootPart = attackerPlayer:WaitForChild("HumanoidRootPart")
-    while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) do
-        local damage = attackDamage
-        targetHumanoid:TakeDamage(damage)
-        damageIndicators.ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
-        TagAttackedHumanoid(targetHumanoid, attackerPlayer)
-        -- delay completion of attack to account for attack speed
-        task.wait(1/attacksPerSecond)
-    end
-end
-
-function module.AddAttackableBehaviourTo(attackableTarget)
-    local humanoid = attackableTarget:FindFirstChildWhichIsA("Humanoid")
-    local targetHumanoidRootPart = attackableTarget:WaitForChild("HumanoidRootPart")
-    connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
-        humanoid,
-        function(toucheePart, targetHumanoid)
-            -- possibility of already attacking is dealt with by debounce in 'connections' event handling
-            AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, toucheePart.Parent)
-            return 'TARGET_NOT_DESTROYED'
-        end
-    )
-end
-
-return module]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<UniqueId name="UniqueId">0aa3ef6c2639581f0636675d000052bc</UniqueId>
-						</Properties>
-					</Item>
 					<Item class="ModuleScript" referent="RBXF3A528B06144424C86F63135A58CAED0">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -23936,7 +23874,7 @@ local indicatorOffsetVariation = 20;
 local indicatorShowForSeconds = 0.25
 
 -- Based on https://devforum.roblox.com/t/how-to-implement-a-damage-indication-system/483161
-function module.ShowEnemyDamageIndicatorAsync(targetCFrame, number)
+function ShowEnemyDamageIndicatorAsync(targetCFrame, number)
     task.spawn(
         function()
             local indicatorX, indicatorY = ClampPositionToPlayersScreen(targetCFrame)
@@ -23958,6 +23896,14 @@ function module.ShowEnemyDamageIndicatorAsync(targetCFrame, number)
             AnimateOutAndDestroy(numberIndicator)
         end
     )
+end
+
+local HumanoidDamagedRemoteEvent = game.ReplicatedStorage.Shared:WaitForChild("HumanoidDamagedRemoteEvent")
+
+function module.SetupHumanoidDamageIndicators()
+    HumanoidDamagedRemoteEvent.OnClientEvent:Connect(function(targetHumanoidRootPartCFrame, damage)
+        ShowEnemyDamageIndicatorAsync(targetHumanoidRootPartCFrame, damage)
+    end)
 end
 
 return module]]></ProtectedString>
@@ -23997,45 +23943,6 @@ return module]]></ProtectedString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">2b71f873bceb9e5d0636c7ae0000457d</UniqueId>
-						</Properties>
-					</Item>
-					<Item class="ModuleScript" referent="RBX431BC651738C490DABD59B80D2B3D087">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-							<bool name="DefinesCapabilities">false</bool>
-							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">Kill</string>
-							<string name="ScriptGuid">{BBAC51F7-DD12-4361-BAD3-76C3157DC5C3}</string>
-							<ProtectedString name="Source"><![CDATA[local module = {}
-
-local connections = require(script.Parent.Connections)
-
-function module.AddKillableBehaviourTo(killableTarget)
-    local killableHumanoid = killableTarget:FindFirstChildWhichIsA("Humanoid")
-    connections.SetupDiedConnectionWithHRPCheckAndDebounce(
-        killableHumanoid,
-        function(killedHumanoid)
-            local attackerPlayer = killableHumanoid:FindFirstChild("AttackerPlayer")
-            if attackerPlayer then
-                local killer = attackerPlayer.Value
-                print(killedHumanoid.Name .. ' was killed by ' .. killer)
-            else
-                print(killedHumanoid.Name .. ' was killed by an unknown force')
-            end
-            -- Destroy animation?
-            killedHumanoid.Parent:Destroy()
-            return 'TARGET_DESTROYED'
-            -- return 'TARGET_NOT_DESTROYED'
-        end
-    )
-end
-
-return module]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<UniqueId name="UniqueId">3a5c5ab8953b9e45063aed9a000049e0</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -24769,6 +24676,16 @@ print("Hello world, from init.server.luau!")
 
 Inventory.Initialize()
 
+local behaviour = require(script.Modules.Behaviour)
+local attack = require(script.Modules.Attack)
+local kill = require(script.Modules.Kill)
+
+behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
+behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)
+
+
+
+
 local worm = game.Workspace.Dungeon.StartRoom:WaitForChild("Worm")
 local wormHumanoid = worm:WaitForChild("Humanoid")
 
@@ -24777,12 +24694,14 @@ wormHumanoid.Died:Connect(function()
 end)
 
 wormHumanoid:GetPropertyChangedSignal("Health"):Connect(function()
-    print('Humanoid health changed to ' .. wormHumanoid)
+    print('Humanoid health changed to ' .. wormHumanoid.Health)
 end)
 
 wormHumanoid.Touched:Connect(function()
     print('The worm was touched')
-end)]]></ProtectedString>
+end)
+
+-- wormHumanoid:TakeDamage(99)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd7</UniqueId>
@@ -27087,6 +27006,205 @@ return MockOrderedDataStore]]></ProtectedString>
 					</Item>
 				</Item>
 			</Item>
+			<Item class="Folder" referent="RBXFC203EB38D7F43D1A7165B3E250E4894">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">Modules</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018cdb</UniqueId>
+				</Properties>
+				<Item class="ModuleScript" referent="RBX2357AA0B28514D09B9FAF1034A54B356">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Behaviour</string>
+						<string name="ScriptGuid">{3F9DCE8A-4986-4218-9285-ADFB4FFA5994}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local collectionService = game:GetService("CollectionService")
+
+function module.SetupBehaviour(tag, addBehaviourFunction)
+    -- add behaviour to new objects that get the tag added
+    local function onTaggedInstanceAdded(object)
+        addBehaviourFunction(object)
+    end
+
+    collectionService:GetInstanceAddedSignal(tag):Connect(onTaggedInstanceAdded)
+
+    -- ensure any pre-existing objects with the tag have the behaviour added too
+    for _, object in pairs(collectionService:GetTagged(tag)) do
+        onTaggedInstanceAdded(object)
+    end
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018cdc</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX1C381CF3211944EB896E55F95808144C">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Attack</string>
+						<string name="ScriptGuid">{8239EBB4-C8EA-4CCC-B2E6-32635E9EC7C0}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local connections = require(script.Parent.Connections)
+local HumanoidDamagedRemoteEvent = game.ReplicatedStorage.Shared:WaitForChild("HumanoidDamagedRemoteEvent")
+local debrisService = game:GetService("Debris")
+local playerService = game:GetService("Players")
+
+local function InRange(part1, part2, maxDistance)
+    local distance = (part1.Position - part2.Position).Magnitude
+    return distance <= maxDistance
+end
+
+local attackRange = 6
+local attackDamage = 1
+local attacksPerSecond = 1
+
+local function TagAttackedHumanoid(targetHumanoid, attackerPlayer)
+    local tag = Instance.new("ObjectValue")
+    tag.Value = attackerPlayer
+    tag.Name = "AttackerPlayer"
+    tag.Parent = targetHumanoid
+    debrisService:AddItem(tag, 0.5)
+end
+
+local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayerCharacter)
+    local attackerPlayer = playerService:GetPlayerFromCharacter(attackerPlayerCharacter)
+    local attackerHumanoidRootPart = attackerPlayerCharacter:WaitForChild("HumanoidRootPart")
+    while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) and
+          targetHumanoid.Health > 0 do
+        local damage = attackDamage
+        targetHumanoid:TakeDamage(damage)
+        HumanoidDamagedRemoteEvent:FireClient(attackerPlayer, targetHumanoidRootPart.CFrame, damage)
+        TagAttackedHumanoid(targetHumanoid, attackerPlayer)
+        -- delay completion of attack to account for attack speed
+        task.wait(1/attacksPerSecond)
+    end
+end
+
+function module.AddAttackableBehaviourTo(attackableTarget)
+    local humanoid = attackableTarget:FindFirstChildWhichIsA("Humanoid")
+    local targetHumanoidRootPart = attackableTarget:WaitForChild("HumanoidRootPart")
+    connections.SetupTouchedConnectionWithHRPCheckAndDebounce(
+        humanoid,
+        function(toucheePart, targetHumanoid)
+            -- possibility of already attacking is dealt with by debounce in 'connections' event handling
+            AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, toucheePart.Parent)
+            return 'TARGET_NOT_DESTROYED'
+        end
+    )
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018cde</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXF9558BC83A1E4F75BA7263A31A6FF2E1">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Connections</string>
+						<string name="ScriptGuid">{6AD4FCE5-4CED-438D-8128-66FBE1CD4716}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function module.SetupTouchedConnectionWithHRPCheckAndDebounce(targetHumanoidOrPart, touchedFunction)
+	local debounce = false
+	local connection = nil
+	connection = targetHumanoidOrPart.Touched:Connect(function(toucheePart)
+		local humanoidRootPart = toucheePart.Parent:FindFirstChild("HumanoidRootPart")
+		if toucheePart.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
+			debounce = true
+			local status = touchedFunction(toucheePart, targetHumanoidOrPart)
+			if status == 'TARGET_DESTROYED' then
+				connection:Disconnect()
+			end
+			debounce = false
+		end
+	end)
+end
+
+function module.SetupDiedConnectionWithHRPCheckAndDebounce(killedHumanoid, diedFunction)
+	local debounce = false
+	local connection = nil
+	connection = killedHumanoid.Died:Connect(function()
+		local humanoidRootPart = killedHumanoid.Parent:FindFirstChild("HumanoidRootPart")
+		if killedHumanoid.Parent:FindFirstChild("Humanoid") and humanoidRootPart and debounce == false then
+			debounce = true
+			local status = diedFunction(killedHumanoid)
+			if status == 'TARGET_DESTROYED' then
+				connection:Disconnect()
+			end
+			debounce = false
+		end
+	end)
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018ce2</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXAE1CBBD898BE4603A056464A10BEF314">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Kill</string>
+						<string name="ScriptGuid">{C324FC78-95B1-4E9A-A326-362FF7F6A09F}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local connections = require(script.Parent.Connections)
+
+function module.AddKillableBehaviourTo(killableTarget)
+    local killableHumanoid = killableTarget:FindFirstChildWhichIsA("Humanoid")
+    connections.SetupDiedConnectionWithHRPCheckAndDebounce(
+        killableHumanoid,
+        function(killedHumanoid)
+            local attackerPlayer = killableHumanoid:FindFirstChild("AttackerPlayer")
+            if attackerPlayer then
+                local killer = attackerPlayer.Value
+                print(killedHumanoid.Name .. ' was killed by ' .. killer.Name)
+            else
+                print(killedHumanoid.Name .. ' was killed by an unknown force')
+            end
+            -- Destroy animation?
+            killedHumanoid.Parent:Destroy()
+            return 'TARGET_DESTROYED'
+            -- return 'TARGET_NOT_DESTROYED'
+        end
+    )
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018ea6</UniqueId>
+					</Properties>
+				</Item>
+			</Item>
 		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX6B5D2B73CAE049A89A0BFE74B5C316CE">
@@ -27213,6 +27331,18 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e70001068e</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="RemoteEvent" referent="RBX7E7C08035DAB455D8454350BEB1764A5">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">HumanoidDamagedRemoteEvent</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018dd9</UniqueId>
 				</Properties>
 			</Item>
 		</Item>

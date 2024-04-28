@@ -25,10 +25,11 @@ end
 local function AttackUntilOutOfRange(targetHumanoid, targetHumanoidRootPart, attackerPlayerCharacter)
     local attackerPlayer = playerService:GetPlayerFromCharacter(attackerPlayerCharacter)
     local attackerHumanoidRootPart = attackerPlayerCharacter:WaitForChild("HumanoidRootPart")
-    while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) do
+    while InRange(targetHumanoidRootPart, attackerHumanoidRootPart, attackRange) and
+          targetHumanoid.Health > 0 do
         local damage = attackDamage
         targetHumanoid:TakeDamage(damage)
-        HumanoidDamagedRemoteEvent:FireClient(attackerPlayer, targetHumanoidRootPart, damage)
+        HumanoidDamagedRemoteEvent:FireClient(attackerPlayer, targetHumanoidRootPart.CFrame, damage)
         TagAttackedHumanoid(targetHumanoid, attackerPlayer)
         -- delay completion of attack to account for attack speed
         task.wait(1/attacksPerSecond)

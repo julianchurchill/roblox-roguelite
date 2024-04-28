@@ -69,8 +69,8 @@ end
 local HumanoidDamagedRemoteEvent = game.ReplicatedStorage.Shared:WaitForChild("HumanoidDamagedRemoteEvent")
 
 function module.SetupHumanoidDamageIndicators()
-    HumanoidDamagedRemoteEvent.OnClientEvent:Connect(function(targetHumanoidRootPart, damage)
-        ShowEnemyDamageIndicatorAsync(targetHumanoidRootPart.CFrame, damage)
+    HumanoidDamagedRemoteEvent.OnClientEvent:Connect(function(targetHumanoidRootPartCFrame, damage)
+        ShowEnemyDamageIndicatorAsync(targetHumanoidRootPartCFrame, damage)
     end)
 end
 
