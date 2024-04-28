@@ -3,6 +3,7 @@ local module = {}
 local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 local DataStoreService = game:GetService("DataStoreService")
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
+local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
 
 local function MakeDataStoreKeyForPlayer(player, identifier)
     return identifier .. "/" .. player.UserId
@@ -33,7 +34,7 @@ local function UpdateCoins(Player, UpdateFunc)
         return PlayerInventory:UpdateAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
     end)
     if success then
-        -- TODO: make success call a bindable event, get PlayerStats script to bind to it for updates
+        CoinsChangedEvent:Fire(result)
         return result
     else
         print("Error updating coins: " .. result)
@@ -46,10 +47,7 @@ local maxDistanceToCoins = 5
 function AddCoinsServerInvoke()
     addCoinsRemoteFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
         if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
-            -- TODO: use a bindable event from SetCurrentCoins and UpdateCoins instead of setting PlayerStats directly
-            local playerStats = player:FindFirstChild("PlayerStats")
-            local coins = playerStats:FindFirstChild("Coins")
-            coins.Value = UpdateCoins(player, function(currentCoins)
+            UpdateCoins(player, function(currentCoins)
                 return currentCoins + numberOfCoinsToAdd
             end)
             return "SUCCESS"
@@ -62,8 +60,9 @@ function SetCurrentCoins(Player, coins)
     local success, result = pcall(function()
         return PlayerInventory:SetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
     end)
-    -- TODO: make success call a bindable event, get PlayerStats script to bind to it for updates
-    if not success then
+    if success then
+        CoinsChangedEvent:Fire(result)
+    else
         print("Error setting coins: " .. result)
     end
 end

@@ -1,4 +1,5 @@
 local Coins = require(script.Parent.PlayerInventory.Coins)
+local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
 
 game.Players.PlayerAdded:Connect(function(player)
     local playerStats = Instance.new("Folder")
@@ -15,5 +16,7 @@ game.Players.PlayerAdded:Connect(function(player)
         coins.Value = currentCoins
     end
 
-    -- TODO: use a bindable event from Coins.SetCurrentCoins and Coins.UpdateCoins to update coins.Value in playerStats
+    CoinsChangedEvent.Event:Connect(function(newCoins)
+        coins.Value = newCoins
+    end)
 end)
