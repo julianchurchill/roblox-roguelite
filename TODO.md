@@ -1,6 +1,5 @@
 - [ ] worm - 1hp, dies when health is 0, gives 1 xp
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
-- [ ] save coins between games
 - [ ] starting location - town
 - [ ] tick lists (e.g. monster type discovered/killed)
 - [ ] reveal dungeon by exploration
@@ -11,6 +10,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] save coins between games
 - [x] create attackable training dummy
 - [x] space to dash
 - [x] doors that can open - use an opaque roof for rooms to make dark until touched/door opened
