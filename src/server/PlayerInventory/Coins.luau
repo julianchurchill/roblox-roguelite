@@ -1,7 +1,7 @@
 local module = {}
 
 local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
-local DataStoreService = game:GetService("DataStoreService")
+local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
 
