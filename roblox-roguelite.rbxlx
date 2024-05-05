@@ -24788,40 +24788,29 @@ behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)]]></ProtectedS
 					<ProtectedString name="Source"><![CDATA[local Coins = require(script.Parent.PlayerInventory.Coins)
 local Experience = require(script.Parent.Stats.Experience)
 
+local function AddPlayerStat(playerStats, defaultValue, name, connectProvider, player)
+    local thing = Instance.new("NumberValue")
+    thing.Parent = playerStats;
+    thing.Name = name
+    local currentValue = connectProvider.GetCurrentValue(player)
+    if currentValue == nil then
+        thing.Value = defaultValue
+    else
+        thing.Value = currentValue
+    end
+
+    connectProvider.ChangedEventConnect(function(newValue)
+        thing.Value = newValue
+    end)
+end
+
 game.Players.PlayerAdded:Connect(function(player)
     local playerStats = Instance.new("Folder")
     playerStats.Parent = player;
     playerStats.Name = "PlayerStats"
 
-    local coinsDefault = 0
-    local coins = Instance.new("NumberValue")
-    coins.Parent = playerStats;
-    coins.Name = "Coins"
-    local currentCoins = Coins.GetCurrentCoins(player)
-    if currentCoins == nil then
-        coins.Value = coinsDefault
-    else
-        coins.Value = currentCoins
-    end
-
-    Coins.CoinsChangedEventConnect(function(newCoins)
-        coins.Value = newCoins
-    end)
-
-    local experienceDefault = 0
-    local experience = Instance.new("NumberValue")
-    experience.Parent = playerStats;
-    experience.Name = "Experience"
-    local currentExperience = Experience.GetCurrentExperience(player)
-    if currentExperience == nil then
-        experience.Value = experienceDefault
-    else
-        experience.Value = currentExperience
-    end
-
-    Experience.ExperienceChangedEventConnect(function(newExperience)
-        experience.Value = newExperience
-    end)
+    AddPlayerStat(playerStats, 0, "Coins", Coins, player)
+    AddPlayerStat(playerStats, 0, "Experience", Experience, player)
 end)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -24855,11 +24844,12 @@ local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
+local Range = require(script.Parent.Parent.Modules.Range)
 
 local coinsDataStoreKey = "Coins"
 local defaultCoins = 0
 
-function module.GetCurrentCoins(Player)
+function module.GetCurrentValue(Player)
     local success, result = pcall(function()
         return PlayerInventory:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
     end)
@@ -24869,11 +24859,6 @@ function module.GetCurrentCoins(Player)
         print("Error getting coins: " .. result)
         return defaultCoins
     end
-end
-
-local function InRange(part1, part2, maxDistance)
-    local distance = (part1.Position - part2.Position).Magnitude
-    return distance <= maxDistance
 end
 
 local function UpdateCoins(Player, UpdateFunc)
@@ -24886,7 +24871,7 @@ local function UpdateCoins(Player, UpdateFunc)
         return result
     else
         print("Error updating coins: " .. result)
-        return module.GetCurrentCoins(Player)
+        return module.GetCurrentValue(Player)
     end
 end
 
@@ -24894,7 +24879,7 @@ local maxDistanceToCoins = 5
 
 function AddCoinsServerInvoke()
     addCoinsRemoteFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
-        if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
+        if Range.InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
             UpdateCoins(player, function(currentCoins)
                 return currentCoins + numberOfCoinsToAdd
             end)
@@ -24916,12 +24901,12 @@ function SetCurrentCoins(Player, coins)
     end
 end
 
-function module.CoinsChangedEventConnect(func)
+function module.ChangedEventConnect(func)
     CoinsChangedEvent.Event:Connect(func)
 end
 
 function module.Initialize(Player)
-    if module.GetCurrentCoins(Player) == nil then
+    if module.GetCurrentValue(Player) == nil then
         SetCurrentCoins(Player, defaultCoins)
     end
     AddCoinsServerInvoke()
@@ -27312,6 +27297,28 @@ return module]]></ProtectedString>
 						<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040eb</UniqueId>
 					</Properties>
 				</Item>
+				<Item class="ModuleScript" referent="RBX0ED1621550F7492C8D7506402E6DEC85">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Range</string>
+						<string name="ScriptGuid">{C1070232-F216-4A15-AB17-6587834B7B30}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function module.InRange(part1, part2, maxDistance)
+    local distance = (part1.Position - part2.Position).Magnitude
+    return distance <= maxDistance
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5dc791d4e6af092306493ed60000418f</UniqueId>
+					</Properties>
+				</Item>
 			</Item>
 			<Item class="Folder" referent="RBX7C8ABACC6154402CB346E2061EBDDECD">
 				<Properties>
@@ -27340,11 +27347,12 @@ local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local StatsDataStore = DataStoreService:GetDataStore("Stats")
 local ExperienceChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("ExperienceChangedEvent")
+local Range = require(script.Parent.Parent.Modules.Range)
 
 local experienceDataStoreKey = "Experience"
 local defaultExperience = 0
 
-function module.GetCurrentExperience(Player)
+function module.GetCurrentValue(Player)
     local success, result = pcall(function()
         return StatsDataStore:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey))
     end)
@@ -27354,11 +27362,6 @@ function module.GetCurrentExperience(Player)
         print("Error getting experience: " .. result)
         return defaultExperience
     end
-end
-
-local function InRange(part1, part2, maxDistance)
-    local distance = (part1.Position - part2.Position).Magnitude
-    return distance <= maxDistance
 end
 
 local function UpdateExperience(Player, UpdateFunc)
@@ -27371,7 +27374,7 @@ local function UpdateExperience(Player, UpdateFunc)
         return result
     else
         print("Error updating experience: " .. result)
-        return module.GetCurrentExperience(Player)
+        return module.GetCurrentValue(Player)
     end
 end
 
@@ -27379,7 +27382,7 @@ local maxDistanceToExperienceGiver = 20
 
 function AddExperienceServerInvoke()
     addExperienceRemoteFn.OnServerInvoke = function(player, amountOfExperienceToAdd, experienceGiver)
-        if InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
+        if Range.InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
             UpdateExperience(player, function(currentExperience)
                 return currentExperience + amountOfExperienceToAdd
             end)
@@ -27401,12 +27404,12 @@ function SetCurrentExperience(Player, experience)
     end
 end
 
-function module.ExperienceChangedEventConnect(func)
+function module.ChangedEventConnect(func)
     ExperienceChangedEvent.Event:Connect(func)
 end
 
 function module.Initialize(Player)
-    if module.GetCurrentExperience(Player) == nil then
+    if module.GetCurrentValue(Player) == nil then
         SetCurrentExperience(Player, defaultExperience)
     end
     AddExperienceServerInvoke()

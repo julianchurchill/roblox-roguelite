@@ -10,7 +10,7 @@ local Range = require(script.Parent.Parent.Modules.Range)
 local experienceDataStoreKey = "Experience"
 local defaultExperience = 0
 
-function module.GetCurrentExperience(Player)
+function module.GetCurrentValue(Player)
     local success, result = pcall(function()
         return StatsDataStore:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey))
     end)
@@ -32,7 +32,7 @@ local function UpdateExperience(Player, UpdateFunc)
         return result
     else
         print("Error updating experience: " .. result)
-        return module.GetCurrentExperience(Player)
+        return module.GetCurrentValue(Player)
     end
 end
 
@@ -67,7 +67,7 @@ function module.ChangedEventConnect(func)
 end
 
 function module.Initialize(Player)
-    if module.GetCurrentExperience(Player) == nil then
+    if module.GetCurrentValue(Player) == nil then
         SetCurrentExperience(Player, defaultExperience)
     end
     AddExperienceServerInvoke()

@@ -10,7 +10,7 @@ local Range = require(script.Parent.Parent.Modules.Range)
 local coinsDataStoreKey = "Coins"
 local defaultCoins = 0
 
-function module.GetCurrentCoins(Player)
+function module.GetCurrentValue(Player)
     local success, result = pcall(function()
         return PlayerInventory:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
     end)
@@ -32,7 +32,7 @@ local function UpdateCoins(Player, UpdateFunc)
         return result
     else
         print("Error updating coins: " .. result)
-        return module.GetCurrentCoins(Player)
+        return module.GetCurrentValue(Player)
     end
 end
 
@@ -67,7 +67,7 @@ function module.ChangedEventConnect(func)
 end
 
 function module.Initialize(Player)
-    if module.GetCurrentCoins(Player) == nil then
+    if module.GetCurrentValue(Player) == nil then
         SetCurrentCoins(Player, defaultCoins)
     end
     AddCoinsServerInvoke()

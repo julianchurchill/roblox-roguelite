@@ -1,38 +1,27 @@
 local Coins = require(script.Parent.PlayerInventory.Coins)
 local Experience = require(script.Parent.Stats.Experience)
 
+local function AddPlayerStat(playerStats, defaultValue, name, connectProvider, player)
+    local thing = Instance.new("NumberValue")
+    thing.Parent = playerStats;
+    thing.Name = name
+    local currentValue = connectProvider.GetCurrentValue(player)
+    if currentValue == nil then
+        thing.Value = defaultValue
+    else
+        thing.Value = currentValue
+    end
+
+    connectProvider.ChangedEventConnect(function(newValue)
+        thing.Value = newValue
+    end)
+end
+
 game.Players.PlayerAdded:Connect(function(player)
     local playerStats = Instance.new("Folder")
     playerStats.Parent = player;
     playerStats.Name = "PlayerStats"
 
-    local coinsDefault = 0
-    local coins = Instance.new("NumberValue")
-    coins.Parent = playerStats;
-    coins.Name = "Coins"
-    local currentCoins = Coins.GetCurrentCoins(player)
-    if currentCoins == nil then
-        coins.Value = coinsDefault
-    else
-        coins.Value = currentCoins
-    end
-
-    Coins.ChangedEventConnect(function(newCoins)
-        coins.Value = newCoins
-    end)
-
-    local experienceDefault = 0
-    local experience = Instance.new("NumberValue")
-    experience.Parent = playerStats;
-    experience.Name = "Experience"
-    local currentExperience = Experience.GetCurrentExperience(player)
-    if currentExperience == nil then
-        experience.Value = experienceDefault
-    else
-        experience.Value = currentExperience
-    end
-
-    Experience.ChangedEventConnect(function(newExperience)
-        experience.Value = newExperience
-    end)
+    AddPlayerStat(playerStats, 0, "Coins", Coins, player)
+    AddPlayerStat(playerStats, 0, "Experience", Experience, player)
 end)
