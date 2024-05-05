@@ -5,6 +5,7 @@ local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local StatsDataStore = DataStoreService:GetDataStore("Stats")
 local ExperienceChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("ExperienceChangedEvent")
+local Range = require(script.Parent.Parent.Modules.Range)
 
 local experienceDataStoreKey = "Experience"
 local defaultExperience = 0
@@ -19,11 +20,6 @@ function module.GetCurrentExperience(Player)
         print("Error getting experience: " .. result)
         return defaultExperience
     end
-end
-
-local function InRange(part1, part2, maxDistance)
-    local distance = (part1.Position - part2.Position).Magnitude
-    return distance <= maxDistance
 end
 
 local function UpdateExperience(Player, UpdateFunc)
@@ -44,7 +40,7 @@ local maxDistanceToExperienceGiver = 20
 
 function AddExperienceServerInvoke()
     addExperienceRemoteFn.OnServerInvoke = function(player, amountOfExperienceToAdd, experienceGiver)
-        if InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
+        if Range.InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
             UpdateExperience(player, function(currentExperience)
                 return currentExperience + amountOfExperienceToAdd
             end)

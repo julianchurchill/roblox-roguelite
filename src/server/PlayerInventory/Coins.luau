@@ -5,6 +5,7 @@ local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
+local Range = require(script.Parent.Parent.Modules.Range)
 
 local coinsDataStoreKey = "Coins"
 local defaultCoins = 0
@@ -19,11 +20,6 @@ function module.GetCurrentCoins(Player)
         print("Error getting coins: " .. result)
         return defaultCoins
     end
-end
-
-local function InRange(part1, part2, maxDistance)
-    local distance = (part1.Position - part2.Position).Magnitude
-    return distance <= maxDistance
 end
 
 local function UpdateCoins(Player, UpdateFunc)
@@ -44,7 +40,7 @@ local maxDistanceToCoins = 5
 
 function AddCoinsServerInvoke()
     addCoinsRemoteFn.OnServerInvoke = function(player, numberOfCoinsToAdd, coin)
-        if InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
+        if Range.InRange(coin, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToCoins) then
             UpdateCoins(player, function(currentCoins)
                 return currentCoins + numberOfCoinsToAdd
             end)
