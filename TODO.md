@@ -1,4 +1,5 @@
-- [ ] graphic xp bar
+- [ ] add levels to player stats and leaderstats, show in UI, remove xp from leaderstats
+- [ ] function to populate monsters - takes list of parts where monsters can be spawned and a list of monsters with min, max amount and spawn rate 
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] starting location - town
 - [ ] tick lists (e.g. monster type discovered/killed)
@@ -10,6 +11,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] graphic xp bar
 - [x] worm - 1hp, dies when health is 0, gives 1 xp
 - [x] save coins between games
 - [x] create attackable training dummy
