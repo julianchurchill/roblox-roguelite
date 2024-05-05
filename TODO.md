@@ -1,4 +1,4 @@
-- [ ] worm - 1hp, dies when health is 0, gives 1 xp
+- [ ] graphic xp bar
 - [ ] for map exploration/reveals perhaps hide all of room (and content) until door opened rather than use darkness
 - [ ] starting location - town
 - [ ] tick lists (e.g. monster type discovered/killed)
@@ -10,6 +10,7 @@
 - [ ] can force regeneration of dungeon levels
 - [ ] show inventory
 
+- [x] worm - 1hp, dies when health is 0, gives 1 xp
 - [x] save coins between games
 - [x] create attackable training dummy
 - [x] space to dash
