@@ -24146,14 +24146,17 @@ function module.StartGUIUpdateLoop()
         local PlayerGui = Player:WaitForChild("PlayerGui")
         local CoinsLabel = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("CoinsLabel")
         local XPBarContainer = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("XPBarContainer")
+        local LevelLabel = PlayerGui:WaitForChild("ScreenGui"):WaitForChild("LevelLabel")
         local PlayerStats = Player:WaitForChild("PlayerStats")
         local Coins = PlayerStats:WaitForChild("Coins")
         local Experience = PlayerStats:WaitForChild("Experience")
+        local Level = PlayerStats:WaitForChild("Level")
 
         while task.wait() do
             CoinsLabel.Text = " Coins: " .. Coins.Value
             XPBarContainer.XPBar:TweenSize(UDim2.new(Experience.Value/10, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.15, true)
             XPBarContainer.XPLabel.Text = Experience.Value .. "/10"
+            LevelLabel.Text = Level.Value
         end
     end)
 end
@@ -24686,6 +24689,124 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 					</Item>
 				</Item>
 			</Item>
+			<Item class="TextLabel" referent="RBX496E3A0CFB3545C58CD5FA6BC80A0915">
+				<Properties>
+					<bool name="Active">false</bool>
+					<Vector2 name="AnchorPoint">
+						<X>0</X>
+						<Y>0</Y>
+					</Vector2>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<token name="AutomaticSize">0</token>
+					<Color3 name="BackgroundColor3">
+						<R>0.580392182</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<float name="BackgroundTransparency">0.349999994</float>
+					<Color3 name="BorderColor3">
+						<R>0</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<token name="BorderMode">0</token>
+					<int name="BorderSizePixel">0</int>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="ClipsDescendants">false</bool>
+					<bool name="DefinesCapabilities">false</bool>
+					<bool name="Draggable">false</bool>
+					<Font name="FontFace">
+						<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
+						<Weight>400</Weight>
+						<Style>Normal</Style>
+						<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
+					</Font>
+					<UniqueId name="HistoryId">589f92463d0fd57806330bb00000788d</UniqueId>
+					<bool name="Interactable">true</bool>
+					<int name="LayoutOrder">0</int>
+					<float name="LineHeight">1</float>
+					<string name="LocalizationMatchIdentifier"></string>
+					<string name="LocalizationMatchedSourceText"></string>
+					<int name="MaxVisibleGraphemes">-1</int>
+					<string name="Name">LevelLabel</string>
+					<Ref name="NextSelectionDown">null</Ref>
+					<Ref name="NextSelectionLeft">null</Ref>
+					<Ref name="NextSelectionRight">null</Ref>
+					<Ref name="NextSelectionUp">null</Ref>
+					<UDim2 name="Position">
+						<XS>0.250476688</XS>
+						<XO>0</XO>
+						<YS>0.908369362</YS>
+						<YO>0</YO>
+					</UDim2>
+					<bool name="RichText">false</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<float name="Rotation">0</float>
+					<bool name="Selectable">false</bool>
+					<token name="SelectionBehaviorDown">0</token>
+					<token name="SelectionBehaviorLeft">0</token>
+					<token name="SelectionBehaviorRight">0</token>
+					<token name="SelectionBehaviorUp">0</token>
+					<bool name="SelectionGroup">false</bool>
+					<Ref name="SelectionImageObject">null</Ref>
+					<int name="SelectionOrder">0</int>
+					<UDim2 name="Size">
+						<XS>0</XS>
+						<XO>69</XO>
+						<YS>0</YS>
+						<YO>46</YO>
+					</UDim2>
+					<token name="SizeConstraint">0</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<string name="Text">0</string>
+					<Color3 name="TextColor3">
+						<R>1</R>
+						<G>1</G>
+						<B>1</B>
+					</Color3>
+					<token name="TextDirection">0</token>
+					<bool name="TextScaled">true</bool>
+					<float name="TextSize">14</float>
+					<Color3 name="TextStrokeColor3">
+						<R>0</R>
+						<G>0</G>
+						<B>0</B>
+					</Color3>
+					<float name="TextStrokeTransparency">1</float>
+					<float name="TextTransparency">0.349999994</float>
+					<token name="TextTruncate">0</token>
+					<bool name="TextWrapped">true</bool>
+					<token name="TextXAlignment">2</token>
+					<token name="TextYAlignment">1</token>
+					<UniqueId name="UniqueId">3980657bcfe7bd83064974a600004377</UniqueId>
+					<bool name="Visible">true</bool>
+					<int name="ZIndex">1</int>
+				</Properties>
+				<Item class="UIStroke" referent="RBX2E934CA2324B4965A066BE89FD4E03EB">
+					<Properties>
+						<token name="ApplyStrokeMode">0</token>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<Color3 name="Color">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<bool name="DefinesCapabilities">false</bool>
+						<bool name="Enabled">true</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<token name="LineJoinMode">0</token>
+						<string name="Name">UIStroke</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<float name="Thickness">2</float>
+						<float name="Transparency">0.349999994</float>
+						<UniqueId name="UniqueId">3980657bcfe7bd83064974a6000043e5</UniqueId>
+					</Properties>
+				</Item>
+			</Item>
 		</Item>
 		<Item class="ScreenGui" referent="RBX78F2EA0CF7884B8D878F0CB1BE6D1921">
 			<Properties>
@@ -25159,6 +25280,7 @@ behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)]]></ProtectedS
 					<string name="ScriptGuid">{36FA8F05-C1CA-490C-B7BB-52B98E4FA000}</string>
 					<ProtectedString name="Source"><![CDATA[local Coins = require(script.Parent.PlayerInventory.Coins)
 local Experience = require(script.Parent.Stats.Experience)
+local Level = require(script.Parent.Stats.Level)
 
 local function AddStat(playerStats, defaultValue, name, connectProvider, player)
     local thing = Instance.new("NumberValue")
@@ -25176,13 +25298,18 @@ local function AddStat(playerStats, defaultValue, name, connectProvider, player)
     end)
 end
 
+local defaultCoins = 0
+local defaultExperience = 0
+local defaultLevel = 1
+
 local function AddPlayerStats(player)
     local playerStats = Instance.new("Folder")
     playerStats.Parent = player;
     playerStats.Name = "PlayerStats"
 
-    AddStat(playerStats, 0, "Coins", Coins, player)
-    AddStat(playerStats, 0, "Experience", Experience, player)
+    AddStat(playerStats, defaultCoins, "Coins", Coins, player)
+    AddStat(playerStats, defaultExperience, "Experience", Experience, player)
+    AddStat(playerStats, defaultLevel, "Level", Level, player)
 end
 
 local function AddLeaderStats(player)
@@ -25190,8 +25317,8 @@ local function AddLeaderStats(player)
     leaderStats.Parent = player;
     leaderStats.Name = "leaderstats"
 
-    AddStat(leaderStats, 0, "Coins", Coins, player)
-    AddStat(leaderStats, 0, "Experience", Experience, player)
+    AddStat(leaderStats, defaultCoins, "Coins", Coins, player)
+    AddStat(leaderStats, defaultLevel, "Level", Level, player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
@@ -27823,6 +27950,85 @@ return module]]></ProtectedString>
 						<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040e8</UniqueId>
 					</Properties>
 				</Item>
+				<Item class="ModuleScript" referent="RBX17FB3D9C8E69461386312DF8D21E2104">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Level</string>
+						<string name="ScriptGuid">{5CBD9935-FBE5-40AE-A33A-991628623A60}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
+local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
+local StatsDataStore = DataStoreService:GetDataStore("Stats")
+local LevelChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("LevelChangedEvent")
+
+local levelDataStoreKey = "Level"
+local defaultLevel = 1
+
+function module.GetCurrentValue(Player)
+    local success, result = pcall(function()
+        return StatsDataStore:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, levelDataStoreKey))
+    end)
+    if success then
+        return result
+    else
+        print("Error getting level: " .. result)
+        return defaultLevel
+    end
+end
+
+local function UpdateLevel(Player, UpdateFunc)
+    local success, result = pcall(function()
+        return StatsDataStore:UpdateAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, levelDataStoreKey), UpdateFunc)
+    end)
+    if success then
+        LevelChangedEvent:Fire(result)
+        print("Level updated to: " .. result)
+        return result
+    else
+        print("Error updating level: " .. result)
+        return module.GetCurrentValue(Player)
+    end
+end
+
+function module.AddLevels(player, numberOfLevelsToAdd)
+    UpdateLevel(player, function(currentLevel)
+        return currentLevel + numberOfLevelsToAdd
+    end)
+end
+
+function SetCurrentLevel(Player, level)
+    local success, result = pcall(function()
+        return StatsDataStore:SetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, levelDataStoreKey), level)
+    end)
+    if success then
+        LevelChangedEvent:Fire(level)
+        print("Level set to: " .. level)
+    else
+        print("Error setting level: " .. result)
+    end
+end
+
+function module.ChangedEventConnect(func)
+    LevelChangedEvent.Event:Connect(func)
+end
+
+function module.Initialize(Player)
+    if module.GetCurrentValue(Player) == nil then
+        SetCurrentLevel(Player, defaultLevel)
+    end
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">3980657bcfe7bd83064974a6000042ea</UniqueId>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>
@@ -27974,6 +28180,18 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">5dc791d4e6af092306493ed60000415a</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="BindableEvent" referent="RBXC6F58A0C4BBE45298FB36F14F944AB3B">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">LevelChangedEvent</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">3980657bcfe7bd83064974a6000042ec</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
