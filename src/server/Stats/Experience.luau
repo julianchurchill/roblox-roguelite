@@ -62,7 +62,7 @@ function SetCurrentExperience(Player, experience)
     end
 end
 
-function module.ExperienceChangedEventConnect(func)
+function module.ChangedEventConnect(func)
     ExperienceChangedEvent.Event:Connect(func)
 end
 

@@ -62,7 +62,7 @@ function SetCurrentCoins(Player, coins)
     end
 end
 
-function module.CoinsChangedEventConnect(func)
+function module.ChangedEventConnect(func)
     CoinsChangedEvent.Event:Connect(func)
 end
 

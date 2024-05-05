@@ -17,7 +17,7 @@ game.Players.PlayerAdded:Connect(function(player)
         coins.Value = currentCoins
     end
 
-    Coins.CoinsChangedEventConnect(function(newCoins)
+    Coins.ChangedEventConnect(function(newCoins)
         coins.Value = newCoins
     end)
 
@@ -32,7 +32,7 @@ game.Players.PlayerAdded:Connect(function(player)
         experience.Value = currentExperience
     end
 
-    Experience.ExperienceChangedEventConnect(function(newExperience)
+    Experience.ChangedEventConnect(function(newExperience)
         experience.Value = newExperience
     end)
 end)
