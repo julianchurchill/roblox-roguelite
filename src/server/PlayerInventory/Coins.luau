@@ -64,6 +64,10 @@ function SetCurrentCoins(Player, coins)
     end
 end
 
+function module.CoinsChangedEventConnect(func)
+    CoinsChangedEvent.Event:Connect(func)
+end
+
 function module.Initialize(Player)
     if module.GetCurrentCoins(Player) == nil then
         SetCurrentCoins(Player, defaultCoins)
