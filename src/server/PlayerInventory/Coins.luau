@@ -2,19 +2,16 @@ local module = {}
 
 local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
+local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
-
-local function MakeDataStoreKeyForPlayer(player, identifier)
-    return identifier .. "/" .. player.UserId
-end
 
 local coinsDataStoreKey = "Coins"
 local defaultCoins = 0
 
 function module.GetCurrentCoins(Player)
     local success, result = pcall(function()
-        return PlayerInventory:GetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
+        return PlayerInventory:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
     end)
     if success then
         return result
@@ -31,7 +28,7 @@ end
 
 local function UpdateCoins(Player, UpdateFunc)
     local success, result = pcall(function()
-        return PlayerInventory:UpdateAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
+        return PlayerInventory:UpdateAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
     end)
     if success then
         CoinsChangedEvent:Fire(result)
@@ -58,7 +55,7 @@ end
 
 function SetCurrentCoins(Player, coins)
     local success, result = pcall(function()
-        return PlayerInventory:SetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
+        return PlayerInventory:SetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
     end)
     if success then
         CoinsChangedEvent:Fire(coins)
