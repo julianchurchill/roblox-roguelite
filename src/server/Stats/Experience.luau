@@ -20,6 +20,12 @@ function module.GetCurrentExperience(Player)
         return defaultExperience
     end
 end
+
+local function InRange(part1, part2, maxDistance)
+    local distance = (part1.Position - part2.Position).Magnitude
+    return distance <= maxDistance
+end
+
 local function UpdateExperience(Player, UpdateFunc)
     local success, result = pcall(function()
         return StatsDataStore:UpdateAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey), UpdateFunc)
@@ -34,11 +40,17 @@ local function UpdateExperience(Player, UpdateFunc)
     end
 end
 
+local maxDistanceToExperienceGiver = 20
+
 function AddExperienceServerInvoke()
     addExperienceRemoteFn.OnServerInvoke = function(player, amountOfExperienceToAdd, experienceGiver)
+        if InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
+            UpdateExperience(player, function(currentExperience)
                 return currentExperience + amountOfExperienceToAdd
             end)
             return "SUCCESS"
+        end
+        return "FAILURE"
     end
 end
 
