@@ -22218,6 +22218,49 @@ end
 							<UniqueId name="UniqueId">2a5028586c6038c1063fd6e70001867a</UniqueId>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBXB957EA480DB44666AE6F884F6479D644">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>8.65748007e-09</X>
+								<Y>0.0999999046</Y>
+								<Z>-0.100272246</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8.65851391e-09</X>
+								<Y>0.599999905</Y>
+								<Z>-0.000272244215</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX502CBA5F81B043BC89B8CCE7C5EAF5EC</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">5dc791d4e6af092306493ed600003dac</UniqueId>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Accessory" referent="RBXBB9096100953453E8535DBAF5CC2FD05">
@@ -23141,6 +23184,49 @@ end
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<UniqueId name="UniqueId">2a5028586c6038c1063fd6e70001867c</UniqueId>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBXABCBAEDCE8B94CE29314CD17822D3E03">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>3.93629307e-09</X>
+								<Y>-0.199999809</Y>
+								<Z>-0.390272319</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>-3.26223034e-24</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444221e-16</R12>
+								<R20>0</R20>
+								<R21>4.1444221e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>3.93568866e-09</X>
+								<Y>0</Y>
+								<Z>-0.600272298</Z>
+								<R00>1</R00>
+								<R01>7.87137555e-09</R01>
+								<R02>3.02998127e-15</R02>
+								<R10>-7.87137555e-09</R10>
+								<R11>1</R11>
+								<R12>-4.1444258e-16</R12>
+								<R20>-3.02998127e-15</R20>
+								<R21>4.14442554e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+							<bool name="DefinesCapabilities">false</bool>
+							<bool name="Enabled">true</bool>
+							<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+							<string name="Name">AccessoryWeld</string>
+							<Ref name="Part0">RBX9B8DAED4556E486D879DC046938CE45A</Ref>
+							<Ref name="Part1">RBXEA1DF92A10A246179D3940FA5A105D8E</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<UniqueId name="UniqueId">5dc791d4e6af092306493ed600003dae</UniqueId>
 						</Properties>
 					</Item>
 				</Item>
@@ -24671,37 +24757,19 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 				<token name="RunContext">0</token>
 				<string name="ScriptGuid">{64A2963A-BA27-4CF1-AF88-634B7CFED073}</string>
 				<ProtectedString name="Source"><![CDATA[local Inventory = require(script.PlayerInventory.Inventory)
+local Stats = require(script.Stats.Stats)
 
 print("Hello world, from init.server.luau!")
 
 Inventory.Initialize()
+Stats.Initialize()
 
 local behaviour = require(script.Modules.Behaviour)
 local attack = require(script.Modules.Attack)
 local kill = require(script.Modules.Kill)
 
 behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
-behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)
-
-
-
-
-local worm = game.Workspace.Dungeon.StartRoom:WaitForChild("Worm")
-local wormHumanoid = worm:WaitForChild("Humanoid")
-
-wormHumanoid.Died:Connect(function()
-    print('Humanoid killed!')
-end)
-
-wormHumanoid:GetPropertyChangedSignal("Health"):Connect(function()
-    print('Humanoid health changed to ' .. wormHumanoid.Health)
-end)
-
-wormHumanoid.Touched:Connect(function()
-    print('The worm was touched')
-end)
-
--- wormHumanoid:TakeDamage(99)]]></ProtectedString>
+behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd7</UniqueId>
@@ -24718,25 +24786,41 @@ end)
 					<token name="RunContext">0</token>
 					<string name="ScriptGuid">{36FA8F05-C1CA-490C-B7BB-52B98E4FA000}</string>
 					<ProtectedString name="Source"><![CDATA[local Coins = require(script.Parent.PlayerInventory.Coins)
-local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
+local Experience = require(script.Parent.Stats.Experience)
 
 game.Players.PlayerAdded:Connect(function(player)
     local playerStats = Instance.new("Folder")
     playerStats.Parent = player;
     playerStats.Name = "PlayerStats"
 
+    local coinsDefault = 0
     local coins = Instance.new("NumberValue")
     coins.Parent = playerStats;
     coins.Name = "Coins"
     local currentCoins = Coins.GetCurrentCoins(player)
     if currentCoins == nil then
-        coins.Value = 0
+        coins.Value = coinsDefault
     else
         coins.Value = currentCoins
     end
 
-    CoinsChangedEvent.Event:Connect(function(newCoins)
+    Coins.CoinsChangedEventConnect(function(newCoins)
         coins.Value = newCoins
+    end)
+
+    local experienceDefault = 0
+    local experience = Instance.new("NumberValue")
+    experience.Parent = playerStats;
+    experience.Name = "Experience"
+    local currentExperience = Experience.GetCurrentExperience(player)
+    if currentExperience == nil then
+        experience.Value = experienceDefault
+    else
+        experience.Value = currentExperience
+    end
+
+    Experience.ExperienceChangedEventConnect(function(newExperience)
+        experience.Value = newExperience
     end)
 end)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
@@ -24768,19 +24852,16 @@ end)]]></ProtectedString>
 
 local addCoinsRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddCoinsRemoteFn")
 local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
+local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local PlayerInventory = DataStoreService:GetDataStore("PlayerInventory")
 local CoinsChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("CoinsChangedEvent")
-
-local function MakeDataStoreKeyForPlayer(player, identifier)
-    return identifier .. "/" .. player.UserId
-end
 
 local coinsDataStoreKey = "Coins"
 local defaultCoins = 0
 
 function module.GetCurrentCoins(Player)
     local success, result = pcall(function()
-        return PlayerInventory:GetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
+        return PlayerInventory:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey))
     end)
     if success then
         return result
@@ -24797,10 +24878,11 @@ end
 
 local function UpdateCoins(Player, UpdateFunc)
     local success, result = pcall(function()
-        return PlayerInventory:UpdateAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
+        return PlayerInventory:UpdateAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), UpdateFunc)
     end)
     if success then
         CoinsChangedEvent:Fire(result)
+        print("Coins updated to: " .. result)
         return result
     else
         print("Error updating coins: " .. result)
@@ -24824,13 +24906,18 @@ end
 
 function SetCurrentCoins(Player, coins)
     local success, result = pcall(function()
-        return PlayerInventory:SetAsync(MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
+        return PlayerInventory:SetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, coinsDataStoreKey), coins)
     end)
     if success then
         CoinsChangedEvent:Fire(coins)
+        print("Coins set to: " .. coins)
     else
         print("Error setting coins: " .. result)
     end
+end
+
+function module.CoinsChangedEventConnect(func)
+    CoinsChangedEvent.Event:Connect(func)
 end
 
 function module.Initialize(Player)
@@ -27204,6 +27291,158 @@ return module]]></ProtectedString>
 						<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018ea6</UniqueId>
 					</Properties>
 				</Item>
+				<Item class="ModuleScript" referent="RBX721868915CA4476B80ABBE6B9CC2EB48">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">DataStoreUtils</string>
+						<string name="ScriptGuid">{ABA69738-A7A5-4BAF-B2F5-9AA08F238AC8}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function module.MakeDataStoreKeyForPlayer(player, identifier)
+    return identifier .. "/" .. player.UserId
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040eb</UniqueId>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBX7C8ABACC6154402CB346E2061EBDDECD">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">Stats</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040e6</UniqueId>
+				</Properties>
+				<Item class="ModuleScript" referent="RBX724F96D8C16B4E71AFF53C6C9822C708">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Experience</string>
+						<string name="ScriptGuid">{2431310E-4B86-4EF7-B967-111A77F950EB}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local addExperienceRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddExperienceRemoteFn")
+local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
+local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
+local StatsDataStore = DataStoreService:GetDataStore("Stats")
+local ExperienceChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("ExperienceChangedEvent")
+
+local experienceDataStoreKey = "Experience"
+local defaultExperience = 0
+
+function module.GetCurrentExperience(Player)
+    local success, result = pcall(function()
+        return StatsDataStore:GetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey))
+    end)
+    if success then
+        return result
+    else
+        print("Error getting experience: " .. result)
+        return defaultExperience
+    end
+end
+
+local function InRange(part1, part2, maxDistance)
+    local distance = (part1.Position - part2.Position).Magnitude
+    return distance <= maxDistance
+end
+
+local function UpdateExperience(Player, UpdateFunc)
+    local success, result = pcall(function()
+        return StatsDataStore:UpdateAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey), UpdateFunc)
+    end)
+    if success then
+        ExperienceChangedEvent:Fire(result)
+        print("Experience updated to: " .. result)
+        return result
+    else
+        print("Error updating experience: " .. result)
+        return module.GetCurrentExperience(Player)
+    end
+end
+
+local maxDistanceToExperienceGiver = 20
+
+function AddExperienceServerInvoke()
+    addExperienceRemoteFn.OnServerInvoke = function(player, amountOfExperienceToAdd, experienceGiver)
+        if InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
+            UpdateExperience(player, function(currentExperience)
+                return currentExperience + amountOfExperienceToAdd
+            end)
+            return "SUCCESS"
+        end
+        return "FAILURE"
+    end
+end
+
+function SetCurrentExperience(Player, experience)
+    local success, result = pcall(function()
+        return StatsDataStore:SetAsync(DataStoreUtils.MakeDataStoreKeyForPlayer(Player, experienceDataStoreKey), experience)
+    end)
+    if success then
+        ExperienceChangedEvent:Fire(experience)
+        print("Experience set to: " .. experience)
+    else
+        print("Error setting experience: " .. result)
+    end
+end
+
+function module.ExperienceChangedEventConnect(func)
+    ExperienceChangedEvent.Event:Connect(func)
+end
+
+function module.Initialize(Player)
+    if module.GetCurrentExperience(Player) == nil then
+        SetCurrentExperience(Player, defaultExperience)
+    end
+    AddExperienceServerInvoke()
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040e7</UniqueId>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX25E48260951C4D25AD7412D124B1F8AD">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Stats</string>
+						<string name="ScriptGuid">{225BAD05-0C26-4B8B-A776-A50D2C704354}</string>
+						<ProtectedString name="Source"><![CDATA[local Experience = require(script.Parent.Experience)
+
+local module = {}
+
+function module.Initialize()
+    game.Players.PlayerAdded:Connect(function(player)
+        Experience.Initialize(player)
+    end)
+end
+
+return module]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<UniqueId name="UniqueId">5dc791d4e6af092306493ed6000040e8</UniqueId>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>
@@ -27343,6 +27582,30 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018dd9</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="RemoteFunction" referent="RBXBB0396A07347404CA9925DEBAB3A6632">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">AddExperienceRemoteFn</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">5dc791d4e6af092306493ed600004159</UniqueId>
+				</Properties>
+			</Item>
+			<Item class="BindableEvent" referent="RBXAEEBD28D7B79411E9E3D7A00ED167C79">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+					<string name="Name">ExperienceChangedEvent</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<UniqueId name="UniqueId">5dc791d4e6af092306493ed60000415a</UniqueId>
 				</Properties>
 			</Item>
 		</Item>
