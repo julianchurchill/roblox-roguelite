@@ -1,6 +1,7 @@
 local module = {}
 
 local connections = require(script.Parent.Connections)
+local Experience = require(script.Parent.Parent.Stats.Experience)
 
 function module.AddKillableBehaviourTo(killableTarget)
     local killableHumanoid = killableTarget:FindFirstChildWhichIsA("Humanoid")
@@ -11,6 +12,7 @@ function module.AddKillableBehaviourTo(killableTarget)
             if attackerPlayer then
                 local killer = attackerPlayer.Value
                 print(killedHumanoid.Name .. ' was killed by ' .. killer.Name)
+                Experience.AddExperience(killer, 1)
             else
                 print(killedHumanoid.Name .. ' was killed by an unknown force')
             end

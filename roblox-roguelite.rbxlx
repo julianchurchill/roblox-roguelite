@@ -27249,6 +27249,7 @@ return module]]></ProtectedString>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 local connections = require(script.Parent.Connections)
+local Experience = require(script.Parent.Parent.Stats.Experience)
 
 function module.AddKillableBehaviourTo(killableTarget)
     local killableHumanoid = killableTarget:FindFirstChildWhichIsA("Humanoid")
@@ -27259,6 +27260,7 @@ function module.AddKillableBehaviourTo(killableTarget)
             if attackerPlayer then
                 local killer = attackerPlayer.Value
                 print(killedHumanoid.Name .. ' was killed by ' .. killer.Name)
+                Experience.AddExperience(killer, 1)
             else
                 print(killedHumanoid.Name .. ' was killed by an unknown force')
             end
@@ -27342,12 +27344,10 @@ return module]]></ProtectedString>
 						<string name="ScriptGuid">{2431310E-4B86-4EF7-B967-111A77F950EB}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-local addExperienceRemoteFn = game.ReplicatedStorage.Shared:WaitForChild("AddExperienceRemoteFn")
 local DataStoreService = require(script.Parent.Parent.DataStoreServiceWrapper)
 local DataStoreUtils = require(script.Parent.Parent.Modules.DataStoreUtils)
 local StatsDataStore = DataStoreService:GetDataStore("Stats")
 local ExperienceChangedEvent = game.ReplicatedStorage.Shared:WaitForChild("ExperienceChangedEvent")
-local Range = require(script.Parent.Parent.Modules.Range)
 
 local experienceDataStoreKey = "Experience"
 local defaultExperience = 0
@@ -27378,18 +27378,10 @@ local function UpdateExperience(Player, UpdateFunc)
     end
 end
 
-local maxDistanceToExperienceGiver = 20
-
-function AddExperienceServerInvoke()
-    addExperienceRemoteFn.OnServerInvoke = function(player, amountOfExperienceToAdd, experienceGiver)
-        if Range.InRange(experienceGiver, player.Character:FindFirstChild("HumanoidRootPart"), maxDistanceToExperienceGiver) then
-            UpdateExperience(player, function(currentExperience)
-                return currentExperience + amountOfExperienceToAdd
-            end)
-            return "SUCCESS"
-        end
-        return "FAILURE"
-    end
+function module.AddExperience(player, amountOfExperienceToAdd)
+    UpdateExperience(player, function(currentExperience)
+        return currentExperience + amountOfExperienceToAdd
+    end)
 end
 
 function SetCurrentExperience(Player, experience)
@@ -27412,7 +27404,6 @@ function module.Initialize(Player)
     if module.GetCurrentValue(Player) == nil then
         SetCurrentExperience(Player, defaultExperience)
     end
-    AddExperienceServerInvoke()
 end
 
 return module]]></ProtectedString>
@@ -27585,18 +27576,6 @@ cy9UYWdFZGl0b3IvVGFnLnBuZwcAAABWaXNpYmxlAwE=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<UniqueId name="UniqueId">2a5028586c6038c1063fd6e700018dd9</UniqueId>
-				</Properties>
-			</Item>
-			<Item class="RemoteFunction" referent="RBXBB0396A07347404CA9925DEBAB3A6632">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
-					<bool name="DefinesCapabilities">false</bool>
-					<UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
-					<string name="Name">AddExperienceRemoteFn</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<UniqueId name="UniqueId">5dc791d4e6af092306493ed600004159</UniqueId>
 				</Properties>
 			</Item>
 			<Item class="BindableEvent" referent="RBXAEEBD28D7B79411E9E3D7A00ED167C79">
