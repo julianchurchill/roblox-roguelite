@@ -26,6 +26,7 @@ local function UpdateExperience(Player, UpdateFunc)
     end)
     if success then
         ExperienceChangedEvent:Fire(result)
+        print("Experience updated to: " .. result)
         return result
     else
         print("Error updating experience: " .. result)
@@ -47,6 +48,7 @@ function SetCurrentExperience(Player, experience)
     end)
     if success then
         ExperienceChangedEvent:Fire(experience)
+        print("Experience set to: " .. experience)
     else
         print("Error setting experience: " .. result)
     end

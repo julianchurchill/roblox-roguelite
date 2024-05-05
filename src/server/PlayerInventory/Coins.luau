@@ -32,6 +32,7 @@ local function UpdateCoins(Player, UpdateFunc)
     end)
     if success then
         CoinsChangedEvent:Fire(result)
+        print("Coins updated to: " .. result)
         return result
     else
         print("Error updating coins: " .. result)
@@ -59,6 +60,7 @@ function SetCurrentCoins(Player, coins)
     end)
     if success then
         CoinsChangedEvent:Fire(coins)
+        print("Coins set to: " .. coins)
     else
         print("Error setting coins: " .. result)
     end
