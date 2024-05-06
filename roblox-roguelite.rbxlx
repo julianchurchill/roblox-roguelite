@@ -78,18 +78,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-25.4847927</X>
-					<Y>20.6812439</Y>
-					<Z>17.5510902</Z>
-					<R00>0.993745387</R00>
-					<R01>-0.0622924119</R01>
-					<R02>0.0926817656</R02>
+					<X>-25.6920452</X>
+					<Y>20.7749634</Y>
+					<Z>17.4943314</Z>
+					<R00>0.999905586</R00>
+					<R01>0.00830908492</R01>
+					<R02>-0.0109443674</R02>
 					<R10>-0</R10>
-					<R11>0.829959154</R11>
-					<R12>0.557824373</R12>
-					<R20>-0.111670293</R20>
-					<R21>-0.554335415</R21>
-					<R22>0.824767947</R22>
+					<R11>0.79646492</R11>
+					<R12>0.604684889</R12>
+					<R20>0.0137411812</R20>
+					<R21>-0.604627788</R21>
+					<R22>0.796389699</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -25535,7 +25535,8 @@ RunService.RenderStepped:Connect(CameraWithFixedAngleAndDistance)]]></ProtectedS
 				<string name="Name">Server</string>
 				<token name="RunContext">0</token>
 				<string name="ScriptGuid">{64A2963A-BA27-4CF1-AF88-634B7CFED073}</string>
-				<ProtectedString name="Source"><![CDATA[local Inventory = require(script.PlayerInventory.Inventory)
+				<ProtectedString name="Source"><![CDATA[local Workspace = game:GetService("Workspace")
+local Inventory = require(script.PlayerInventory.Inventory)
 local Stats = require(script.Stats.Stats)
 
 print("Hello world, from init.server.luau!")
@@ -25548,7 +25549,42 @@ local attack = require(script.Modules.Attack)
 local kill = require(script.Modules.Kill)
 
 behaviour.SetupBehaviour("Attackable", attack.AddAttackableBehaviourTo)
-behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)]]></ProtectedString>
+behaviour.SetupBehaviour("Killable", kill.AddKillableBehaviourTo)
+
+local minAmount = 1
+local maxAmount = 10
+local name = "Worm"
+local spawnRate = 0.5
+local monsterEntry = {}
+monsterEntry.minAmount = minAmount
+monsterEntry.maxAmount = maxAmount
+monsterEntry.name = name
+monsterEntry.spawnRate = spawnRate
+monsterEntry.modelTemplate = Workspace.Templates.Worm
+
+local availableMonsterList = {}
+table.insert(availableMonsterList, monsterEntry)
+
+local function PopulateMonsters(spawnableAreas, monsterList)
+	for _, monster in pairs(monsterList) do
+        print("Monster found: " .. monster.name)
+        for _, spawnableArea in pairs(spawnableAreas) do
+            print("Spawning in area " .. spawnableArea.Parent.name .. " with position "
+             .. spawnableArea.Position.X .. ", " .. spawnableArea.Position.Y .. ", " .. spawnableArea.Position.Z
+             .. " and size "
+             .. spawnableArea.Size.X .. ", " .. spawnableArea.Size.Y .. ", " .. spawnableArea.Size.Z)
+
+             -- spawn min monsters
+             -- then spawn max-min based on spawnRate
+             -- how do we avoid the monsters colliding with each other on spawning? do we need to?
+        end
+    end
+end
+
+local candidateSpawnableAreas = {}
+table.insert(candidateSpawnableAreas, Workspace.Dungeon.LeftRoom.SpawnArea)
+table.insert(candidateSpawnableAreas, Workspace.Dungeon.RightRoom.SpawnArea)
+PopulateMonsters(candidateSpawnableAreas, availableMonsterList)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<UniqueId name="UniqueId">2dc884ed4f30d9280619b1df00003cd7</UniqueId>
