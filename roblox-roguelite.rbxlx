@@ -4118,7 +4118,7 @@ end
 						<token name="ModelStreamingMode">0</token>
 						<string name="Name">Worm</string>
 						<bool name="NeedsPivotMigration">false</bool>
-						<Ref name="PrimaryPart">null</Ref>
+						<Ref name="PrimaryPart">RBX1EAD65F5204F4D159363C056F15036E4</Ref>
 						<float name="ScaleFactor">1</float>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags">QXR0YWNrYWJsZQBLaWxsYWJsZQ==</BinaryString>
@@ -13500,7 +13500,7 @@ end
 					<token name="ModelStreamingMode">0</token>
 					<string name="Name">Worm</string>
 					<bool name="NeedsPivotMigration">false</bool>
-					<Ref name="PrimaryPart">null</Ref>
+					<Ref name="PrimaryPart">RBX7C280B31BFD246D4A57DE847913A9284</Ref>
 					<float name="ScaleFactor">1</float>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags">QXR0YWNrYWJsZQBLaWxsYWJsZQ==</BinaryString>
@@ -25575,6 +25575,15 @@ local function PopulateMonsters(spawnableAreas, monsterList)
              .. spawnableArea.Size.X .. ", " .. spawnableArea.Size.Y .. ", " .. spawnableArea.Size.Z)
 
              -- spawn min monsters
+             for _ = 1, monster.minAmount do
+                local newMonsterModel = monster.modelTemplate:Clone()
+                newMonsterModel.Parent = spawnableArea.Parent
+                local xOffset = 0
+                local zOffset = 0
+                local upALittleBit = Vector3.new(xOffset, 1, zOffset)
+                local newMonsterCFrame = spawnableArea.CFrame + upALittleBit
+                newMonsterModel:SetPrimaryPartCFrame(newMonsterCFrame)
+             end
              -- then spawn max-min based on spawnRate
              -- how do we avoid the monsters colliding with each other on spawning? do we need to?
         end

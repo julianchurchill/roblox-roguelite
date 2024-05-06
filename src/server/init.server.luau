@@ -36,6 +36,17 @@ local function PopulateMonsters(spawnableAreas, monsterList)
              .. spawnableArea.Position.X .. ", " .. spawnableArea.Position.Y .. ", " .. spawnableArea.Position.Z
              .. " and size "
              .. spawnableArea.Size.X .. ", " .. spawnableArea.Size.Y .. ", " .. spawnableArea.Size.Z)
+
+             -- spawn min monsters
+             for _ = 1, monster.minAmount do
+                local newMonsterModel = monster.modelTemplate:Clone()
+                newMonsterModel.Parent = spawnableArea.Parent
+                local xOffset = 0
+                local zOffset = 0
+                local upALittleBit = Vector3.new(xOffset, 1, zOffset)
+                local newMonsterCFrame = spawnableArea.CFrame + upALittleBit
+                newMonsterModel:SetPrimaryPartCFrame(newMonsterCFrame)
+             end
     end
 end
 
